@@ -2,6 +2,7 @@
 
 # lighthouse result
 /.lighthouseci
+/report
 
 # dependencies
 /node_modules

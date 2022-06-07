@@ -29,21 +29,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Format lighthouse score
-        id: format_lighthouse_score
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const fs = require('fs');
-            const results = JSON.parse(fs.readFileSync("./report/totalMetrics.json"));
+      - name: generate report
+        run: yarn test
 
-            core.setOutput('results', results)
-
-      - name: comment PR
-        uses: unsplash/comment-on-pr@v1.3.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # msg: ${{ steps.format_lighthouse_score.outputs.comments}}
-          msg: 'test'
+      - name: Update changes in GitHub repository
+        run: |
+          git config --global user.name 'hochan222' 
+          git config --global user.email 'hochan049@gmail.com'
+          git add -A
+          git commit -m '[automated update] generate web performance markdown'
+          git push
