@@ -1,8 +1,9 @@
 import * as fs from 'fs';
+import { readFile } from 'fs/promises';
 
-const totalMetrics = require('../report/totalMetrics.json');
+export async function l2s() {
+  let totalMetrics = JSON.parse(await readFile('report/totalMetrics.json', 'utf8'));
 
-export function l2s() {
   console.log(totalMetrics, totalMetrics.firstContentfulPaint);
 
   if (!fs.existsSync('./history')) {
