@@ -45,4 +45,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ steps.format_lighthouse_score.outputs.comments}}
+          # msg: ${{ steps.format_lighthouse_score.outputs.comments}}
+          msg: 'test'
