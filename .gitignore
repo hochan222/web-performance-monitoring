@@ -3,6 +3,8 @@
 # lighthouse result
 /.lighthouseci
 /report
+# temp
+/history
 
 # dependencies
 /node_modules

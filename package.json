@@ -6,8 +6,7 @@
   "author": "hochan222",
   "license": "MIT",
   "scripts": {
-    "test": "ts-node src/performance.ts",
-    "lt": "ts-node src/lighthouse/lighthouse.ts"
+    "test": "ts-node src/performance.ts"
   },
   "dependencies": {
     "@caporal/core": "^2.0.2",
