@@ -46,7 +46,7 @@ program
     //   fs.writeFileSync('report/lhreport.json', JSON.stringify(runnerResult));
     const { lhr, artifacts, report } = runnerResult;
 
-    reportAudits(lhr);
+    await reportAudits(lhr);
     l2s();
 
     // `.lhr` is the Lighthouse Result as a JS object

@@ -5,7 +5,7 @@ function getMetrics(audits) {
   return audits.metrics.details.items[0];
 }
 
-export function reportAudits(lhr) {
+export async function reportAudits(lhr) {
   const { audits } = lhr;
 
   if (!fs.existsSync('./report')) {
