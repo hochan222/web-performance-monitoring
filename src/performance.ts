@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
 import * as os from 'os';
+import { l2s } from './l2s';
 
 import { reportAudits } from './lighthouse/lhr/audits';
 
@@ -46,6 +47,7 @@ program
     const { lhr, artifacts, report } = runnerResult;
 
     reportAudits(lhr);
+    l2s();
 
     // `.lhr` is the Lighthouse Result as a JS object
     console.log('Report is done for', runnerResult.lhr.finalUrl);

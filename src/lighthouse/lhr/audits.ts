@@ -7,6 +7,10 @@ function getMetrics(audits) {
 
 export function reportAudits(lhr) {
   const { audits } = lhr;
+
+  if (!fs.existsSync('./report')) {
+    fs.mkdirSync('./report', { recursive: true });
+  }
   fs.writeFileSync('report/totalMetrics.json', JSON.stringify(getMetrics(audits)));
 
   return;

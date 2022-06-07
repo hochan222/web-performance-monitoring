@@ -30,7 +30,7 @@ jobs:
         run: yarn install
 
       - name: generate report
-        run: yarn test
+        run: yarn test l2s
 
       - name: Update changes in GitHub repository
         run: |
