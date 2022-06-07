@@ -36,7 +36,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const fs = require('fs');
-            const results = JSON.parse(fs.readFileSync("/report/totalMetrics.json"));
+            const results = JSON.parse(fs.readFileSync("./report/totalMetrics.json"));
 
             core.setOutput('results', results)
 
