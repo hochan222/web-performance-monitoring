@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { l2s } from './l2s';
 import { runLightHouse } from './lighthouse/lighthouse';
-import { generateMarkdown } from './markdown/markdown';
+import { generateMarkdown } from './markdown';
 const { program } = require('@caporal/core');
 
 program
