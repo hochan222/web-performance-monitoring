@@ -2,19 +2,19 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-|  🟢 91 | 🟠 83 | 🔴 43 | 🔴 40 | 🟠 83 |
+|  🟠 85 | 🟠 83 | 🔴 33 | 🔴 40 | 🟠 76 |
 
 | Category | Score |
 | --- | --- |
-| JavaScript execution time | 0.5 s |
+| JavaScript execution time | undefined |
 | First Contentful Paint | 4.1 s |
-| Largest Contentful Paint | 7.6 s |
+| Largest Contentful Paint | 8.6 s |
 | Speed Index | 6.4 s |
-| Cumulative Layout Shift | 0.042 |
+| Cumulative Layout Shift | 0.101 |
 | First Meaningful Paint | 4.1 s |
-| Time to Interactive | 9.9 s |
-| Initial server response time was short | Root document took 40 ms |
-| Total Blocking Time | 460 ms |
+| Time to Interactive | 10.5 s |
+| Initial server response time was short | Root document took 30 ms |
+| Total Blocking Time | 800 ms |
 
 ### JavaScript execution time
 
@@ -27,13 +27,13 @@
 - Unit
   - millisecond
 - wastedMs
-  - 506.892
+  - 511.264000000001
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-|  https://m.naver.com/ | 3039.051999999998 | 14.063999999999995 | 8.2 |
-|  https://ssl.pstatic.net/tveta/libs/glad/prod/2.0.0/gfp-sentry-bundle-1.0.0.js | 261.312 | 222.636 | 1.924 |
-|  Unattributable | 246.1200000000027 | 6.7360000000000015 | 0.352 |
-|  https://mm.pstatic.net/js/build/main.a4cebb6a.js?o=m | 245.09200000000004 | 137.30000000000007 | 6.828 |
-|  https://mm.pstatic.net/js/build/vendors.295cfd12.js?o=m | 183.80399999999997 | 89.10399999999996 | 19.748 |
-|  https://mm.pstatic.net/css/ncache/build/w.58f31592.css | 116.06799999999998 | 0 | 0 |
+|  https://ssl.pstatic.net/tveta/libs/glad/prod/2.0.0/gfp-sentry-bundle-1.0.0.js | 3371.4439999997235 | 265.0360000000007 | 1.6399999999999997 |
+|  https://m.naver.com/ | 2482.9120000000003 | 5.211999999999998 | 7.368 |
+|  https://mm.pstatic.net/js/build/main.a4cebb6a.js?o=m | 848.9120000000031 | 143.07200000000032 | 13.512 |
+|  Unattributable | 188.03600000000014 | 5.32 | 0.288 |
+|  https://mm.pstatic.net/js/build/vendors.295cfd12.js?o=m | 135.50799999999998 | 62.03999999999999 | 7.776 |
+|  https://mm.pstatic.net/css/ncache/build/w.58f31592.css | 92.72800000000001 | 0 | 0 |

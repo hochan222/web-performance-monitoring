@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { l2s } from './l2s';
 import { runLightHouse } from './lighthouse/lighthouse';
 import { generateMarkdown } from './markdown';
 const { program } = require('@caporal/core');
@@ -23,7 +24,7 @@ program
 
     if (options.mode === 'once') {
       await runLightHouse({ logger, options, path: title, url: url });
-      // await l2s();
+      await l2s({ path: title });
       await generateMarkdown({ path: title });
     }
     // The recommendation is do each LH run in a separate process. The performance metrics will be affected.

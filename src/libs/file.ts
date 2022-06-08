@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { stat } from 'fs/promises';
 
 export function guaranteeFolderPath(path: string): void {
   if (!fs.existsSync(path)) {
@@ -20,4 +21,10 @@ export function write({ path, content, type = 'json' }: { path: string; content:
     return;
   }
   console.warn('[file.ts] function write: \n No type specified.');
+}
+
+export async function isExistFile(fileName): Promise<boolean> {
+  return await stat(fileName)
+    .then(() => true)
+    .catch(() => false);
 }
