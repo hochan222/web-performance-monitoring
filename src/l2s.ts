@@ -4,18 +4,20 @@ import { guaranteeFolderPath, isExistFile, write } from './libs/file';
 import { getDate } from './libs/utils';
 
 async function initPersistenceData(fileName) {
-  const exist = await isExistFile(`${PERSISTENT_DATA_PATH}/${fileName}`);
+  const exist = await isExistFile(`${PERSISTENT_DATA_PATH}/${fileName}/${getDate()}`);
   if (!exist) {
-    guaranteeFolderPath(`./${PERSISTENT_DATA_PATH}`);
-    write({ path: `${PERSISTENT_DATA_PATH}/${fileName}.json`, content: {}, type: 'json' });
+    guaranteeFolderPath(`./${PERSISTENT_DATA_PATH}/${fileName}`);
+    write({ path: `${PERSISTENT_DATA_PATH}/${fileName}/${getDate()}.json`, content: {}, type: 'json' });
   }
 }
 
 async function updatePersistenceData({ path, ...data }) {
-  const parsedData = JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${path}.json`, 'utf8'));
-  parsedData[getDate()] = data;
+  const parsedData = {
+    ...data,
+    ...JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${path}/${getDate()}.json`, 'utf8')),
+  };
   guaranteeFolderPath(`./${PERSISTENT_DATA_PATH}`);
-  write({ path: `${PERSISTENT_DATA_PATH}/${path}.json`, content: parsedData, type: 'json' });
+  write({ path: `${PERSISTENT_DATA_PATH}/${path}/${getDate()}.json`, content: parsedData, type: 'json' });
 }
 
 export async function l2s({ path }: { path: string }) {

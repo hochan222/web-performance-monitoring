@@ -2,19 +2,19 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-|  🟠 85 | 🟠 83 | 🔴 33 | 🔴 40 | 🟠 76 |
+|  🟢 91 | 🟠 83 | 🔴 24 | 🔴 40 | 🟠 84 |
 
 | Category | Score |
 | --- | --- |
-| JavaScript execution time | undefined |
-| First Contentful Paint | 4.1 s |
-| Largest Contentful Paint | 8.6 s |
-| Speed Index | 6.4 s |
-| Cumulative Layout Shift | 0.101 |
-| First Meaningful Paint | 4.1 s |
-| Time to Interactive | 10.5 s |
+| JavaScript execution time | 0.8 s |
+| First Contentful Paint | 4.2 s |
+| Largest Contentful Paint | 13.5 s |
+| Speed Index | 7.6 s |
+| Cumulative Layout Shift | 0.067 |
+| First Meaningful Paint | 4.2 s |
+| Time to Interactive | 11.3 s |
 | Initial server response time was short | Root document took 30 ms |
-| Total Blocking Time | 800 ms |
+| Total Blocking Time | 1,690 ms |
 
 ### JavaScript execution time
 
@@ -27,13 +27,14 @@
 - Unit
   - millisecond
 - wastedMs
-  - 511.264000000001
+  - 757.6600000000008
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-|  https://ssl.pstatic.net/tveta/libs/glad/prod/2.0.0/gfp-sentry-bundle-1.0.0.js | 3371.4439999997235 | 265.0360000000007 | 1.6399999999999997 |
-|  https://m.naver.com/ | 2482.9120000000003 | 5.211999999999998 | 7.368 |
-|  https://mm.pstatic.net/js/build/main.a4cebb6a.js?o=m | 848.9120000000031 | 143.07200000000032 | 13.512 |
-|  Unattributable | 188.03600000000014 | 5.32 | 0.288 |
-|  https://mm.pstatic.net/js/build/vendors.295cfd12.js?o=m | 135.50799999999998 | 62.03999999999999 | 7.776 |
-|  https://mm.pstatic.net/css/ncache/build/w.58f31592.css | 92.72800000000001 | 0 | 0 |
+|  https://ssl.pstatic.net/tveta/libs/glad/prod/2.0.0/gfp-sentry-bundle-1.0.0.js | 8305.631999999678 | 309.7520000000006 | 1.7519999999999998 |
+|  https://m.naver.com/ | 3358.5479999999984 | 4.367999999999999 | 6.492 |
+|  https://mm.pstatic.net/js/build/main.a4cebb6a.js?o=m | 298.28800000000007 | 141.20000000000022 | 12.62 |
+|  https://ssl.pstatic.net/melona/libs/assets/js/mo/main/min/mocoplex_image_extension_nnmain.min.js?20220407 | 215.564 | 193.788 | 0.396 |
+|  Unattributable | 186.56000000000336 | 5.420000000000001 | 0.276 |
+|  https://mm.pstatic.net/js/build/vendors.295cfd12.js?o=m | 140.008 | 74.10000000000001 | 7.496 |
+|  https://mm.pstatic.net/css/ncache/build/w.58f31592.css | 72.44800000000001 | 0 | 0 |

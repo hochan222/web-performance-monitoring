@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "test": "ts-node src/performance.ts",
-    "multi": "sh ./multi-run.sh"
+    "multi": "sh ./multi-run.sh",
+    "compress-folder": "tar -czf persistentData.tar.gz persistentData/ && rm -rf persistentData",
+    "decompress-folder": "tar -xzf persistentData.tar.gz"
   },
   "dependencies": {
     "@caporal/core": "^2.0.2",

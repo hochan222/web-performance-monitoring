@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises';
 import { PERSISTENT_DATA_PATH, REPORT_PATH } from '../libs/constants';
 import { guaranteeFolderPath, write } from '../libs/file';
+import { getDate } from '../libs/utils';
 import { generateAuditsMarkdown } from './lhr/audits';
 import { generateCategoryMarkdown } from './lhr/categories';
 import { BREAK_LINE, h1 } from './markdown';
@@ -10,11 +11,8 @@ function sortLastestDate(data) {
 }
 
 export async function generateMarkdown({ path }) {
-  const data = JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${path}.json`, 'utf8'));
-  data.sortedDate = sortLastestDate(data);
-
-  const latestData = data[data.sortedDate[0]];
-  const { categories, audits } = latestData;
+  const data = JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${path}/${getDate()}.json`, 'utf8'));
+  const { categories, audits } = data;
 
   const content = [
     h1('Web Performance Report'),

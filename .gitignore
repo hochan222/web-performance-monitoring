@@ -3,6 +3,7 @@
 # lighthouse result
 /.lighthouseci
 /tempData
+/persistentData
 
 # dependencies
 /node_modules
