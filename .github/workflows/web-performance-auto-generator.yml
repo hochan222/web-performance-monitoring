@@ -29,13 +29,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: generate report
-        run: yarn test l2s
+      # - name: generate report
+      #   run: yarn test l2s
 
-      - name: Update changes in GitHub repository
-        run: |
-          git config --global user.name 'hochan222' 
-          git config --global user.email 'hochan049@gmail.com'
-          git add -A
-          git commit -m '[automated update] generate web performance markdown'
-          git push
+      # - name: Update changes in GitHub repository
+      #   run: |
+      #     git config --global user.name 'hochan222'
+      #     git config --global user.email 'hochan049@gmail.com'
+      #     git add -A
+      #     git commit -m '[automated update] generate web performance markdown'
+      #     git push
