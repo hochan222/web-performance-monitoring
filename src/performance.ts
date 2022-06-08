@@ -20,8 +20,8 @@ program
   .action(async ({ logger, args, options }) => {
     logger.info(`Starting lighthouse metric to statistics conversion in ${options.mode} mode`);
 
-    await runLightHouse({ logger, args, options });
-    await l2s();
+    // await runLightHouse({ logger, args, options });
+    // await l2s();
     await generateMarkdown();
   });
 

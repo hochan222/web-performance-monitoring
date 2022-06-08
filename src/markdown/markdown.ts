@@ -1,14 +1,67 @@
 import { readFile } from 'fs/promises';
 import { guaranteeFolderPath, write } from '../libs/file';
 
+const BREAK_LINE = '';
+
+function h3(content: string): string {
+  return `### ${content}`;
+}
+
+function tHead(heads): string {
+  const content = ['|'];
+
+  heads.forEach((head) => content.push(` ${head} |`));
+  return content.join('');
+}
+
+function tAlignLine(length): string {
+  return '| '.concat(' --- |'.repeat(length));
+}
+
+function tBody(body): string {
+  const content = [];
+
+  body.forEach((x) => content.push(` ${x} |`));
+  return content.join('');
+}
+
+function mlist(list, listItem): string[] {
+  return [`- ${list}`, ...listItem.map((item) => `  - ${item}`)];
+}
+
+function getBootupTime(audits): string[] {
+  const { title, details, numericUnit, numericValue } = audits['bootup-time'];
+  const { headings, items } = details;
+  let content = [
+    h3(title),
+    BREAK_LINE,
+    ...mlist('Unit', [numericUnit]),
+    ...mlist('wastedMs', [numericValue]),
+    BREAK_LINE,
+    tHead(headings.map((heading) => heading.text)),
+    tAlignLine(headings.length),
+  ];
+
+  items.forEach((item) => {
+    const { url, total, scripting, scriptParseCompile } = item;
+    content = content.concat(tBody([url, total, scripting, scriptParseCompile]));
+  });
+
+  return content;
+}
+
 function getAuditToTable(audits): string {
-  const detail = [
+  let detail = [
     `| Category | Score |`,
     `| --- | --- |`,
+    `| ${audits['bootup-time'].title} | ${audits['bootup-time'].displayValue} |`,
     `| ${audits['first-contentful-paint'].title} | ${audits['first-contentful-paint'].displayValue} |`,
-  ].join('\n');
+    '',
+  ];
 
-  return detail;
+  detail = detail.concat(getBootupTime(audits));
+
+  return detail.join('\n');
 }
 
 export async function generateMarkdown() {
