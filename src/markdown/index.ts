@@ -33,6 +33,13 @@ function getAuditToTable(audits): string {
     `| --- | --- |`,
     `| ${audits['bootup-time'].title} | ${audits['bootup-time'].displayValue} |`,
     `| ${audits['first-contentful-paint'].title} | ${audits['first-contentful-paint'].displayValue} |`,
+    `| ${audits['largest-contentful-paint'].title} | ${audits['largest-contentful-paint'].displayValue} |`,
+    `| ${audits['speed-index'].title} | ${audits['speed-index'].displayValue} |`,
+    `| ${audits['cumulative-layout-shift'].title} | ${audits['cumulative-layout-shift'].displayValue} |`,
+    `| ${audits['first-meaningful-paint'].title} | ${audits['first-meaningful-paint'].displayValue} |`,
+    `| ${audits['interactive'].title} | ${audits['interactive'].displayValue} |`,
+    `| ${audits['server-response-time'].title} | ${audits['server-response-time'].displayValue} |`,
+    `| ${audits['total-blocking-time'].title} | ${audits['total-blocking-time'].displayValue} |`,
     '',
   ];
 
@@ -47,5 +54,5 @@ export async function generateMarkdown() {
   const auditsTable = getAuditToTable(audits);
 
   guaranteeFolderPath('./history');
-  write({ path: `history/${new Date().toString()}-report.md`, content: auditsTable, type: 'string' });
+  write({ path: `history/report.md`, content: auditsTable, type: 'string' });
 }
