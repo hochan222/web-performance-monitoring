@@ -4,7 +4,7 @@
 /.lighthouseci
 /report
 # temp
-/history
+# /history
 
 # dependencies
 /node_modules
