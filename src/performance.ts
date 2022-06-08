@@ -24,7 +24,7 @@ program
     if (options.mode === 'once') {
       await runLightHouse({ logger, options, path: title, url: url });
       // await l2s();
-      await generateMarkdown({ path: 'naver' });
+      await generateMarkdown({ path: title });
     }
     // The recommendation is do each LH run in a separate process. The performance metrics will be affected.
     // https://github.com/GoogleChrome/lighthouse/issues/7187

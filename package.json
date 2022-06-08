@@ -6,7 +6,8 @@
   "author": "hochan222",
   "license": "MIT",
   "scripts": {
-    "test": "ts-node src/performance.ts"
+    "test": "ts-node src/performance.ts",
+    "multi": "sh ./multi-run.sh"
   },
   "dependencies": {
     "@caporal/core": "^2.0.2",

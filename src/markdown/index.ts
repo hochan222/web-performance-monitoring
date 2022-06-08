@@ -13,6 +13,7 @@ export async function generateMarkdown({ path }) {
     ...(await generateAuditsMarkdown(path)),
     BREAK_LINE,
   ].join('\n');
+
   guaranteeFolderPath(`./${REPORT_PATH}/${path}`);
   write({ path: `${REPORT_PATH}/${path}/report.md`, content, type: 'string' });
 }
