@@ -2,19 +2,19 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-|  96 | 75 | 31 | 30 | 73 |
+|  🟢 96 | 🟠 75 | 🔴 36 | 🔴 30 | 🟠 74 |
 
 | Category | Score |
 | --- | --- |
-| JavaScript execution time | 1.2 s |
-| First Contentful Paint | 2.3 s |
-| Largest Contentful Paint | 13.9 s |
-| Speed Index | 9.6 s |
+| JavaScript execution time | 1.1 s |
+| First Contentful Paint | 2.2 s |
+| Largest Contentful Paint | 10.5 s |
+| Speed Index | 9.0 s |
 | Cumulative Layout Shift | 0.002 |
-| First Meaningful Paint | 7.1 s |
-| Time to Interactive | 12.5 s |
-| Reduce initial server response time | Root document took 950 ms |
-| Total Blocking Time | 1,230 ms |
+| First Meaningful Paint | 7.0 s |
+| Time to Interactive | 10.1 s |
+| Reduce initial server response time | Root document took 670 ms |
+| Total Blocking Time | 930 ms |
 
 ### JavaScript execution time
 
@@ -27,13 +27,12 @@
 - Unit
   - millisecond
 - wastedMs
-  - 1188.3519999999535
+  - 1094.7919999999592
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-|  http://search.11st.co.kr/js/searchFront/bundle/vendor~app.chunk.js?v=v_123 | 4105.507999999952 | 963.5079999999534 | 8.292 |
-|  Unattributable | 420.2119999999861 | 6.0520000000000005 | 0.332 |
-|  http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 376.6919999999999 | 12.056000000000001 | 25.8 |
-|  http://m.11st.co.kr/MW/js/rake/rakeLog-mobile-1.0.2.js | 73.516 | 68.636 | 3.068 |
-|  http://c.m.011st.com/MW/js/rake/bundle/rake.bundle-0.0.2.js | 55.536 | 47.888000000000005 | 0.968 |
-|  http://search.11st.co.kr/js/searchFront/bundle/vendor~Kukkuk_v_123~Present_v_123~Review_v_123~Totalv_123.chunk.js | 55.42799999999998 | 47.40399999999998 | 4.348 |
+|  http://search.11st.co.kr/js/searchFront/bundle/vendor~app.chunk.js?v=v_123 | 3459.11599999996 | 920.7359999999593 | 8.396 |
+|  Unattributable | 558.8199999999944 | 5.9479999999999995 | 0.368 |
+|  http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 481.072 | 10.232 | 25.036 |
+|  http://m.11st.co.kr/MW/js/rake/rakeLog-mobile-1.0.2.js | 81.55200000000005 | 74.81200000000004 | 2.896 |
+|  http://c.m.011st.com/MW/js/rake/bundle/rake.bundle-0.0.2.js | 54.212 | 44.71600000000001 | 1.652 |
