@@ -30,7 +30,11 @@ function mlist(list, listItem): string[] {
 }
 
 function summary(title, description) {
-  return `<details><summary>${title}</summary>${description}</details>`;
+  return `<details><summary>${title}</summary>
+  
+  ${description}
+  
+  </details>`;
 }
 
 function getBootupTime(audits): string[] {
