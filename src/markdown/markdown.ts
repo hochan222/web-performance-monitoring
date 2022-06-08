@@ -8,19 +8,31 @@ function h3(content: string): string {
   return `### ${content}`;
 }
 
-function tHead(heads): string {
+function tHead(heads: string[]): string {
   const content = ['|'];
 
   heads.forEach((head) => content.push(` ${head} |`));
   return content.join('');
 }
 
-function tAlignLine(length): string {
-  return '| '.concat(' --- |'.repeat(length));
+function tAlignLine(length: number, align?: string): string {
+  let alignMarkdown = ' --- |';
+
+  if (align === 'center') {
+    alignMarkdown = ' :---: |';
+  }
+  if (align === 'right') {
+    alignMarkdown = ' ---: |';
+  }
+  if (align === 'left') {
+    alignMarkdown = ' :--- |';
+  }
+
+  return '|'.concat(alignMarkdown.repeat(length));
 }
 
-function tBody(body): string {
-  const content = [];
+function tBody(body: string[]): string {
+  const content = ['| '];
 
   body.forEach((x) => content.push(` ${x} |`));
   return content.join('');

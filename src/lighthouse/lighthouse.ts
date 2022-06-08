@@ -17,7 +17,12 @@ function replacePathForWindowFormat(folderSearch) {
 
 async function runChrome() {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
-  const chromeOptions = { logLevel: 'info', output: 'json', onlyCategories: ['performance'], port: chrome.port };
+  const chromeOptions = {
+    logLevel: 'info',
+    output: 'json',
+    onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
+    port: chrome.port,
+  };
   const runnerResult = await lighthouse(URL, chromeOptions);
 
   await chrome.kill();
@@ -34,5 +39,4 @@ export async function runLightHouse({ logger, args, options }) {
   reportLhr(lhr);
 
   console.log('Report is done for', lhr.finalUrl);
-  console.log('Performance score was', lhr.categories.performance.score * 100);
 }

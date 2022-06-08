@@ -11,6 +11,10 @@ export function write({ path, content, type = 'json' }: { path: string; content:
     fs.writeFileSync(path, JSON.stringify(content));
     return;
   }
+  if (type === 'array') {
+    fs.writeFileSync(path, JSON.stringify(content));
+    return;
+  }
   if (type === 'string') {
     fs.writeFileSync(path, content);
     return;
