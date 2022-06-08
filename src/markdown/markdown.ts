@@ -29,11 +29,17 @@ function mlist(list, listItem): string[] {
   return [`- ${list}`, ...listItem.map((item) => `  - ${item}`)];
 }
 
+function summary(title, description) {
+  return `<details><summary>${title}</summary>${description}</details>`;
+}
+
 function getBootupTime(audits): string[] {
-  const { title, details, numericUnit, numericValue } = audits['bootup-time'];
+  const { title, details, numericUnit, numericValue, description } = audits['bootup-time'];
   const { headings, items } = details;
   let content = [
     h3(title),
+    BREAK_LINE,
+    summary('description', description),
     BREAK_LINE,
     ...mlist('Unit', [numericUnit]),
     ...mlist('wastedMs', [numericValue]),
