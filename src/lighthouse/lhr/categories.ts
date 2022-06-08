@@ -1,6 +1,7 @@
+import { TEMP_DATA_PATH } from '../../libs/constants';
 import { guaranteeFolderPath, write } from '../../libs/file';
 
-function reportCategorySummary(categories) {
+function reportCategorySummary(categories, path) {
   const { accessibility, performance, pwa, seo } = categories;
   const bestPractice = categories['best-practices'];
 
@@ -31,13 +32,13 @@ function reportCategorySummary(categories) {
       score: seo.score,
     },
   ];
-  guaranteeFolderPath('./report');
-  write({ path: 'report/category-summary.txt', content: categorySummary, type: 'array' });
+  guaranteeFolderPath(`./${TEMP_DATA_PATH}/${path}`);
+  write({ path: `${TEMP_DATA_PATH}/${path}/category-summary.txt`, content: categorySummary, type: 'array' });
 }
 
-export function reportCategories(categories) {
-  reportCategorySummary(categories);
-  guaranteeFolderPath('./report');
-  write({ path: 'report/categories.json', content: categories, type: 'json' });
+export function reportCategories(categories, path) {
+  reportCategorySummary(categories, path);
+  guaranteeFolderPath(`./${TEMP_DATA_PATH}/${path}`);
+  write({ path: `${TEMP_DATA_PATH}/${path}/categories.json`, content: categories, type: 'json' });
   return;
 }

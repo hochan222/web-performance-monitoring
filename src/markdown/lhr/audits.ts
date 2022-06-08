@@ -1,4 +1,5 @@
 import { readFile } from 'fs/promises';
+import { TEMP_DATA_PATH } from '../../libs/constants';
 import { BREAK_LINE, h1, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
 function getBootupTime(audits): string[] {
@@ -45,8 +46,8 @@ function getAuditToTable(audits): string[] {
   return detail;
 }
 
-export async function generateAuditsMarkdown(): Promise<string[]> {
-  let audits = JSON.parse(await readFile('report/audits.json', 'utf8'));
+export async function generateAuditsMarkdown(path): Promise<string[]> {
+  let audits = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/audits.json`, 'utf8'));
 
   return getAuditToTable(audits);
 }

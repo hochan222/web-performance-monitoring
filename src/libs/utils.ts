@@ -7,3 +7,9 @@ export function score(score: number) {
   }
   return `🟢 ${score}`;
 }
+
+function createFileName(title, fileType) {
+  const currentTime = new Date().toISOString().slice(0, 16);
+  const fileExtension = fileType === 'json' ? 'json' : 'html';
+  return `${currentTime}-${title}.${fileExtension}`;
+}

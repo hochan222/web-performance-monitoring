@@ -2,8 +2,6 @@
 import * as os from 'os';
 import { reportLhr } from './lhr/lhr';
 
-const URL =
-  'http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=1648181889888';
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 
@@ -15,7 +13,7 @@ function replacePathForWindowFormat(folderSearch) {
   return folderSearch;
 }
 
-async function runChrome() {
+async function runChrome(url) {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
   const chromeOptions = {
     logLevel: 'info',
@@ -23,20 +21,20 @@ async function runChrome() {
     onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
     port: chrome.port,
   };
-  const runnerResult = await lighthouse(URL, chromeOptions);
+  const runnerResult = await lighthouse(url, chromeOptions);
 
   await chrome.kill();
 
   return runnerResult;
 }
 
-export async function runLightHouse({ logger, args, options }) {
-  let folderSearch = args.folder;
-  folderSearch = replacePathForWindowFormat(folderSearch);
+export async function runLightHouse({ logger, options, path, url }) {
+  // let folderSearch = args.folder;
+  // folderSearch = replacePathForWindowFormat(folderSearch);
 
-  const { lhr, artifacts, report } = await runChrome();
+  const { lhr, artifacts, report } = await runChrome(url);
 
-  reportLhr(lhr);
+  reportLhr(lhr, path);
 
   console.log('Report is done for', lhr.finalUrl);
 }
