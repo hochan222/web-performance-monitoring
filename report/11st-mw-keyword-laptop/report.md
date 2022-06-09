@@ -6,6 +6,7 @@
 
 | Category | Score |
 | --- | --- |
+| **Basic Metrics** | |
 | JavaScript execution time | 1.0 s |
 | First Contentful Paint | 2.4 s |
 | Largest Contentful Paint | 14.5 s |
@@ -16,6 +17,14 @@
 | Reduce initial server response time | Root document took 1,250 ms |
 | Total Blocking Time | 810 ms |
 | apple touch icon | ❌ |
+| **Aria** | |
+| aria-allowed-attr | ✅ |
+| aria-hidden-body | ✅ |
+| aria-hidden-focus | ❌ |
+| aria-required-attr | ✅ |
+| aria-roles | ✅ |
+| aria-valid-attr | ✅ |
+| aria-valid-attr-value | ✅ |
 
 ### JavaScript execution time
 

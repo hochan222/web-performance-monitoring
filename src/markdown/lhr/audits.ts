@@ -1,14 +1,7 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
-import { kebabCaseToString, toFixedTwo } from '../../libs/utils';
-import { BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
-
-function getAppleTouchIcon(appleTouchIcon, tempAppleTouchIcon): string {
-  const { score } = appleTouchIcon;
-  const { id } = tempAppleTouchIcon;
-  const content = tBody([kebabCaseToString(id), score === 1 ? '✅' : '❌']);
-  return content;
-}
+import { kebabCaseToString, passOrFail, toFixedTwo } from '../../libs/utils';
+import { bold, BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
 function getBootupTime(bootupTime, tempBootupTime): string[] {
   const { numericValue } = bootupTime;
@@ -34,10 +27,24 @@ function getBootupTime(bootupTime, tempBootupTime): string[] {
   return content;
 }
 
-function getAuditToTable(audits, tempAudits): string[] {
-  let detail = [
+function getAriaToTable(audits): string[] {
+  const ariaList = [
+    'aria-allowed-attr',
+    'aria-hidden-body',
+    'aria-hidden-focus',
+    'aria-required-attr',
+    'aria-roles',
+    'aria-valid-attr',
+    'aria-valid-attr-value',
+  ];
+  return ariaList.map((aria) => tBody([audits[aria].id, passOrFail(audits[aria].score)]));
+}
+
+function getSummaryAuditToTable(tempAudits) {
+  let content = [
     `| Category | Score |`,
     `| --- | --- |`,
+    `| ${bold('Basic Metrics')} | |`,
     `| ${tempAudits['bootup-time'].title} | ${tempAudits['bootup-time'].displayValue} |`,
     `| ${tempAudits['first-contentful-paint'].title} | ${tempAudits['first-contentful-paint'].displayValue} |`,
     `| ${tempAudits['largest-contentful-paint'].title} | ${tempAudits['largest-contentful-paint'].displayValue} |`,
@@ -47,13 +54,20 @@ function getAuditToTable(audits, tempAudits): string[] {
     `| ${tempAudits['interactive'].title} | ${tempAudits['interactive'].displayValue} |`,
     `| ${tempAudits['server-response-time'].title} | ${tempAudits['server-response-time'].displayValue} |`,
     `| ${tempAudits['total-blocking-time'].title} | ${tempAudits['total-blocking-time'].displayValue} |`,
-    getAppleTouchIcon(audits['apple-touch-icon'], tempAudits['apple-touch-icon']),
+    tBody([kebabCaseToString(tempAudits['apple-touch-icon'].id), passOrFail(tempAudits['apple-touch-icon'].score)]),
+    `| ${bold('Aria')} | |`,
+    ...getAriaToTable(tempAudits),
     '',
   ];
 
-  detail = detail.concat(getBootupTime(audits['bootup-time'], tempAudits['bootup-time']));
+  return content;
+}
 
-  return detail;
+function getAuditToTable(audits, tempAudits): string[] {
+  let content = getSummaryAuditToTable(tempAudits);
+
+  content = content.concat(getBootupTime(audits['bootup-time'], tempAudits['bootup-time']));
+  return content;
 }
 
 export async function generateAuditsMarkdown(path, audits): Promise<string[]> {

@@ -50,4 +50,8 @@ function summary(title, description) {
   </details>`;
 }
 
-export { BREAK_LINE, h1, h3, tHead, tAlignLine, tBody, mlist, summary };
+function bold(str) {
+  return `**${str}**`;
+}
+
+export { BREAK_LINE, h1, h3, tHead, tAlignLine, tBody, mlist, summary, bold };

@@ -12,6 +12,10 @@ export function score(score: number) {
   return `🟢 ${score}`;
 }
 
+export function passOrFail(score: number) {
+  return score === 1 ? '✅' : '❌';
+}
+
 export function getDate() {
   return new Date().toISOString().slice(0, 10);
 }
