@@ -111,3 +111,17 @@
 | mainDocumentTransferSize | maxRtt | maxServerLatency | numFonts | numRequests | numScripts | numStylesheets | numTasks | numTasksOver10ms | numTasksOver25ms | numTasksOver50ms | numTasksOver100ms | numTasksOver500ms | rtt | throughput | totalByteWeight | totalTaskTime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 88109 | 39.39 | 79.38 | 2 | 127 | 16 | 2 | 4760 | 13 | 6 | 4 | 3 | - | 6.23 | 24558229.42 | 2470728 | 1454.96 |
+
+### 🔴 Avoid an excessive DOM size
+
+<details><summary>description</summary>
+  
+  A large DOM will increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://web.dev/dom-size/).
+  
+  </details>
+
+| Statistic | Element | Value |
+| :---: | :---: | :---: |
+| Total DOM Elements | - | 9641 |
+| Maximum DOM Depth | dl > div.c-card-item__name > dd > a | 21 |
+| Maximum Child Elements | section#cts > div > div.l-grid > ul.l-grid__row | 60 |

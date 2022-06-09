@@ -166,6 +166,26 @@ function getDiagnostics(diagnostics) {
   return content;
 }
 
+function getDomSize(domSize) {
+  const { description, title, details, score: dScore } = domSize;
+  const { headings, items } = details;
+  let content = [
+    h3(`${score(dScore)} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(getHeadingText(headings)),
+    tAlignLine(headings.length, 'center'),
+  ];
+
+  items.forEach((item) => {
+    const { statistic, node, value } = item;
+    content = content.concat(tBody([statistic, node?.selector, value]));
+  });
+
+  return content;
+}
+
 // ===== Audits End =====
 
 function getArrayToTable(audits, arr): string[] {
@@ -236,6 +256,8 @@ function getAuditToTable(audits, tempAudits): string[] {
     getCumulativeLayoutShift(tempAudits['cumulative-layout-shift']),
     BREAK_LINE,
     getDiagnostics(tempAudits['diagnostics']),
+    BREAK_LINE,
+    getDomSize(tempAudits['dom-size']),
   );
   return content;
 }
