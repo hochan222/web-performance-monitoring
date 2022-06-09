@@ -3,6 +3,7 @@ import { guaranteeFolderPath, write } from '../../libs/file';
 import { convertPercentage, toFixedTwo } from '../../libs/utils';
 
 function reportAuditSummary(audits, path) {
+  const appleTouchIcon = audits['apple-touch-icon'];
   const bootupTime = audits['bootup-time'];
   const criticalRequestChains = audits['critical-request-chains'];
   const cumulativeLayoutShift = audits['cumulative-layout-shift'];
@@ -65,6 +66,9 @@ function reportAuditSummary(audits, path) {
   const viewport = audits['viewport'];
 
   const auditSummary = {
+    'apple-touch-icon': {
+      score: appleTouchIcon.score,
+    },
     'bootup-time': {
       numericValue: toFixedTwo(bootupTime.numericValue),
       score: convertPercentage(bootupTime.score),

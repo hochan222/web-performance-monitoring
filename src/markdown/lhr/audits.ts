@@ -1,11 +1,18 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
-import { toFixedTwo } from '../../libs/utils';
+import { kebabCaseToString, toFixedTwo } from '../../libs/utils';
 import { BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
-function getBootupTime(audits, tempAudits): string[] {
-  const { numericValue } = audits['bootup-time'];
-  const { title, details, numericUnit, description } = tempAudits['bootup-time'];
+function getAppleTouchIcon(appleTouchIcon, tempAppleTouchIcon): string {
+  const { score } = appleTouchIcon;
+  const { id } = tempAppleTouchIcon;
+  const content = tBody([kebabCaseToString(id), score === 1 ? '✅' : '❌']);
+  return content;
+}
+
+function getBootupTime(bootupTime, tempBootupTime): string[] {
+  const { numericValue } = bootupTime;
+  const { title, details, numericUnit, description } = tempBootupTime;
   const { headings, items } = details;
   let content = [
     h3(title),
@@ -40,10 +47,11 @@ function getAuditToTable(audits, tempAudits): string[] {
     `| ${tempAudits['interactive'].title} | ${tempAudits['interactive'].displayValue} |`,
     `| ${tempAudits['server-response-time'].title} | ${tempAudits['server-response-time'].displayValue} |`,
     `| ${tempAudits['total-blocking-time'].title} | ${tempAudits['total-blocking-time'].displayValue} |`,
+    getAppleTouchIcon(audits['apple-touch-icon'], tempAudits['apple-touch-icon']),
     '',
   ];
 
-  detail = detail.concat(getBootupTime(audits, tempAudits));
+  detail = detail.concat(getBootupTime(audits['bootup-time'], tempAudits['bootup-time']));
 
   return detail;
 }

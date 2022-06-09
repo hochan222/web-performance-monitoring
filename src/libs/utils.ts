@@ -19,3 +19,7 @@ export function getDate() {
 export function toFixedTwo(num: number): number {
   return +num.toFixed(2);
 }
+
+export function kebabCaseToString(str: string): string {
+  return str.replaceAll(/-/g, ' ');
+}

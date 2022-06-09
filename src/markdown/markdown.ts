@@ -32,7 +32,7 @@ function tAlignLine(length: number, align?: string): string {
 }
 
 function tBody(body: string[]): string {
-  const content = ['| '];
+  const content = ['|'];
 
   body.forEach((x) => content.push(` ${x} |`));
   return content.join('');
