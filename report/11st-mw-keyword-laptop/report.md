@@ -2,20 +2,20 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-| 🟢 96 | 🟠 75 | 🔴 30 | 🔴 30 | 🟠 74 |
+| 🟢 96 | 🟠 75 | 🔴 36 | 🔴 30 | 🟠 74 |
 
 | Category | Score |
 | --- | --- |
 | **Basic Metrics** | |
-| Reduce JavaScript execution time | 1.5 s |
+| JavaScript execution time | 1.1 s |
 | First Contentful Paint | 2.3 s |
-| Largest Contentful Paint | 14.2 s |
-| Speed Index | 9.5 s |
+| Largest Contentful Paint | 13.4 s |
+| Speed Index | 8.2 s |
 | Cumulative Layout Shift | 0.002 |
-| First Meaningful Paint | 7.2 s |
-| Time to Interactive | 12.8 s |
-| Reduce initial server response time | Root document took 1,020 ms |
-| Total Blocking Time | 1,370 ms |
+| First Meaningful Paint | 7.1 s |
+| Time to Interactive | 11.8 s |
+| Reduce initial server response time | Root document took 1,100 ms |
+| Total Blocking Time | 860 ms |
 | apple touch icon | ❌ |
 | **Aria** | |
 | [aria-allowed-attr](https://web.dev/aria-allowed-attr/) | ✅ |
@@ -41,7 +41,7 @@
 | [color-contrast](https://web.dev/color-contrast/) | ❌ |
 | [content-width](https://web.dev/content-width/) | ✅ |
 
-### Reduce JavaScript execution time
+### JavaScript execution time
 
 <details><summary>description</summary>
   
@@ -52,16 +52,16 @@
 - Unit
   - millisecond
 - wastedMs
-  - 1528.31
+  - 1127.87
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-| http://search.11st.co.kr/js/searchFront/bundle/vendor~app.chunk.js?v=v_123 | 4258.43 | 1232.66 | 8.5 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 694.28 | 16.38 | 27.12 |
-| Unattributable | 438.64 | 10.7 | 0.86 |
-| http://search.11st.co.kr/js/searchFront/bundle/vendor~Kukkuk_v_123~Present_v_123~Review_v_123~Totalv_123.chunk.js | 108.12 | 100.28 | 4.24 |
-| http://m.11st.co.kr/MW/js/rake/rakeLog-mobile-1.0.2.js | 95.46 | 81.57 | 3.24 |
-| http://c.m.011st.com/MW/js/rake/bundle/rake.bundle-0.0.2.js | 51.12 | 41.71 | 1.06 |
+| http://search.11st.co.kr/js/searchFront/bundle/vendor~app.chunk.js?v=v_123 | 2976.41 | 886.18 | 8.27 |
+| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 649.96 | 15.86 | 35.39 |
+| Unattributable | 387.26 | 4.77 | 0.31 |
+| http://m.11st.co.kr/MW/js/rake/rakeLog-mobile-1.0.2.js | 81.24 | 76.22 | 3.18 |
+| http://search.11st.co.kr/js/searchFront/bundle/vendor~Kukkuk_v_123~Present_v_123~Review_v_123~Totalv_123.chunk.js | 55.64 | 47.95 | 4.26 |
+| http://c.m.011st.com/MW/js/rake/bundle/rake.bundle-0.0.2.js | 53.57 | 44.44 | 1.04 |
 
 ### Avoid chaining critical requests
 
@@ -74,7 +74,7 @@
 7 chains found
 |  | duration | length | transferSize |
 | :---: | :---: | :---: | :---: |
-| longestChain | 1998.43 | 3 | 429993 |
+| longestChain | 1699.3 | 3 | 429993 |
 
 ### Ensure CSP is effective against XSS attacks
 
@@ -110,7 +110,7 @@
 
 | mainDocumentTransferSize | maxRtt | maxServerLatency | numFonts | numRequests | numScripts | numStylesheets | numTasks | numTasksOver10ms | numTasksOver25ms | numTasksOver50ms | numTasksOver100ms | numTasksOver500ms | rtt | throughput | totalByteWeight | totalTaskTime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 88109 | 39.39 | 79.38 | 2 | 127 | 16 | 2 | 4760 | 13 | 6 | 4 | 3 | - | 6.23 | 24558229.42 | 2470728 | 1454.96 |
+| 88142 | 86.35 | 111.71 | 2 | 128 | 16 | 2 | 4845 | 11 | 5 | 4 | 3 | - | 4.86 | 30020914.49 | 2457943 | 1099.09 |
 
 ### 🔴 Avoid an excessive DOM size
 
@@ -122,6 +122,6 @@
 
 | Statistic | Element | Value |
 | :---: | :---: | :---: |
-| Total DOM Elements | - | 9641 |
+| Total DOM Elements | - | 9647 |
 | Maximum DOM Depth | dl > div.c-card-item__name > dd > a | 21 |
 | Maximum Child Elements | section#cts > div > div.l-grid > ul.l-grid__row | 60 |

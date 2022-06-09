@@ -79,12 +79,12 @@ function reportAuditSummary(audits, path) {
     diagnostics: {
       items: diagnostics.details.items,
     },
-    // 'dom-size': {
-    //   score: domSize.score,
-    //   numericValue: domSize.numericValue,
-    //   displayValue: domSize.displayValue,
-    //   item: domSize.details.items,
-    // },
+    'dom-size': {
+      score: domSize.score,
+      totalDomElements: domSize.details.items[0].value,
+      maximumDomDepth: domSize.details.items[1].value,
+      maximumChildElements: domSize.details.items[2].value,
+    },
     // 'duplicated-javascript': {
     //   score: duplicatedJavascript.score,
     //   numericValue: duplicatedJavascript.numericValue,
