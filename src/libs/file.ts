@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { stat } from 'fs/promises';
+import * as path from 'path';
 
 export function guaranteeFolderPath(path: string): void {
   if (!fs.existsSync(path)) {
@@ -27,4 +28,12 @@ export async function isExistFile(fileName): Promise<boolean> {
   return await stat(fileName)
     .then(() => true)
     .catch(() => false);
+}
+
+function getDirectoryFileList(relativeName: string): string[] {
+  const folderPath = path.join(process.cwd(), ...relativeName.split('/'));
+  return fs
+    .readdirSync(folderPath, { withFileTypes: true })
+    .filter((dirent) => dirent.isFile())
+    .map((dirent) => dirent.name.split('.')[0]);
 }

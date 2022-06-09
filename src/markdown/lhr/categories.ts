@@ -9,6 +9,6 @@ export async function generateCategoryMarkdown(path, categories): Promise<string
   return [
     tHead(staticCategories.map((category) => category.title)),
     tAlignLine(categories.length, 'center'),
-    tBody(categories.map((category) => score(category.score * 100))),
+    tBody(categories.map((category) => score(category.score))),
   ];
 }

@@ -1,5 +1,6 @@
 import { TEMP_DATA_PATH } from '../../libs/constants';
 import { guaranteeFolderPath, write } from '../../libs/file';
+import { convertPercentage } from '../../libs/utils';
 
 function reportCategorySummary(categories, path) {
   const { accessibility, performance, pwa, seo } = categories;
@@ -9,27 +10,27 @@ function reportCategorySummary(categories, path) {
     {
       id: accessibility.id,
       title: accessibility.title,
-      score: accessibility.score,
+      score: convertPercentage(accessibility.score),
     },
     {
       id: bestPractice.id,
       title: bestPractice.title,
-      score: bestPractice.score,
+      score: convertPercentage(bestPractice.score),
     },
     {
       id: performance.id,
       title: performance.title,
-      score: performance.score,
+      score: convertPercentage(performance.score),
     },
     {
       id: pwa.id,
       title: pwa.title,
-      score: pwa.score,
+      score: convertPercentage(pwa.score),
     },
     {
       id: seo.id,
       title: seo.title,
-      score: seo.score,
+      score: convertPercentage(seo.score),
     },
   ];
   guaranteeFolderPath(`./${TEMP_DATA_PATH}/${path}`);

@@ -1,11 +1,11 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
-import { BREAK_LINE, h1, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
+import { BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
-function getBootupTime(audits, staticAudits): string[] {
-  const { numericValue, items } = audits['bootup-time'];
-  const { title, details, numericUnit, description } = staticAudits['bootup-time'];
-  const { headings } = details;
+function getBootupTime(audits, tempAudits): string[] {
+  const { numericValue } = audits['bootup-time'];
+  const { title, details, numericUnit, description } = tempAudits['bootup-time'];
+  const { headings, items } = details;
   let content = [
     h3(title),
     BREAK_LINE,
@@ -26,29 +26,29 @@ function getBootupTime(audits, staticAudits): string[] {
   return content;
 }
 
-function getAuditToTable(audits, staticAudits): string[] {
+function getAuditToTable(audits, tempAudits): string[] {
   let detail = [
     `| Category | Score |`,
     `| --- | --- |`,
-    `| ${staticAudits['bootup-time'].title} | ${audits['bootup-time'].displayValue} |`,
-    `| ${staticAudits['first-contentful-paint'].title} | ${staticAudits['first-contentful-paint'].displayValue} |`,
-    `| ${staticAudits['largest-contentful-paint'].title} | ${staticAudits['largest-contentful-paint'].displayValue} |`,
-    `| ${staticAudits['speed-index'].title} | ${staticAudits['speed-index'].displayValue} |`,
-    `| ${staticAudits['cumulative-layout-shift'].title} | ${staticAudits['cumulative-layout-shift'].displayValue} |`,
-    `| ${staticAudits['first-meaningful-paint'].title} | ${staticAudits['first-meaningful-paint'].displayValue} |`,
-    `| ${staticAudits['interactive'].title} | ${staticAudits['interactive'].displayValue} |`,
-    `| ${staticAudits['server-response-time'].title} | ${staticAudits['server-response-time'].displayValue} |`,
-    `| ${staticAudits['total-blocking-time'].title} | ${staticAudits['total-blocking-time'].displayValue} |`,
+    `| ${tempAudits['bootup-time'].title} | ${tempAudits['bootup-time'].displayValue} |`,
+    `| ${tempAudits['first-contentful-paint'].title} | ${tempAudits['first-contentful-paint'].displayValue} |`,
+    `| ${tempAudits['largest-contentful-paint'].title} | ${tempAudits['largest-contentful-paint'].displayValue} |`,
+    `| ${tempAudits['speed-index'].title} | ${tempAudits['speed-index'].displayValue} |`,
+    `| ${tempAudits['cumulative-layout-shift'].title} | ${tempAudits['cumulative-layout-shift'].displayValue} |`,
+    `| ${tempAudits['first-meaningful-paint'].title} | ${tempAudits['first-meaningful-paint'].displayValue} |`,
+    `| ${tempAudits['interactive'].title} | ${tempAudits['interactive'].displayValue} |`,
+    `| ${tempAudits['server-response-time'].title} | ${tempAudits['server-response-time'].displayValue} |`,
+    `| ${tempAudits['total-blocking-time'].title} | ${tempAudits['total-blocking-time'].displayValue} |`,
     '',
   ];
 
-  detail = detail.concat(getBootupTime(audits, staticAudits));
+  detail = detail.concat(getBootupTime(audits, tempAudits));
 
   return detail;
 }
 
 export async function generateAuditsMarkdown(path, audits): Promise<string[]> {
-  let staticAudits = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/audits.json`, 'utf8'));
+  let tempAudits = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/audits.json`, 'utf8'));
 
-  return getAuditToTable(audits, staticAudits);
+  return getAuditToTable(audits, tempAudits);
 }

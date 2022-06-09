@@ -1,3 +1,7 @@
+export function convertPercentage(score) {
+  return score * 100;
+}
+
 export function score(score: number) {
   if (score < 50) {
     return `🔴 ${score}`;
