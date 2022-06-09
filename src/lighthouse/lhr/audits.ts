@@ -85,22 +85,9 @@ function reportAuditSummary(audits, path) {
       maximumDomDepth: domSize.details.items[1].value,
       maximumChildElements: domSize.details.items[2].value,
     },
-    // 'duplicated-javascript': {
-    //   score: duplicatedJavascript.score,
-    //   numericValue: duplicatedJavascript.numericValue,
-    //   displayValue: duplicatedJavascript.displayValue,
-    //   details: duplicatedJavascript.details,
-    // },
-    // 'efficient-animated-content': {
-    //   score: efficientAnimatedContent.score,
-    //   numericValue: efficientAnimatedContent.numericValue,
-    //   displayValue: efficientAnimatedContent.displayValue,
-    //   details: efficientAnimatedContent.details,
-    // },
-    // 'final-screenshot': {
-    //   score: finalScreenshot.score,
-    //   details: finalScreenshot.details,
-    // },
+    'final-screenshot': {
+      timing: finalScreenshot.details.timing,
+    },
     // 'first-contentful-paint': {
     //   displayValue: firstContentfulPaint.displayValue,
     //   numericValue: firstContentfulPaint.numericValue,

@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
 import { kebabCaseToString, passOrFail, score, toFixedTwo } from '../../libs/utils';
-import { bold, BREAK_LINE, h3, h4, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
+import { bold, BREAK_LINE, h3, h4, image, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
 function getHeadingText(headings) {
   return headings.map((heading) => heading.text);
@@ -186,6 +186,21 @@ function getDomSize(domSize) {
   return content;
 }
 
+function getFinalScreenshot(finalScreenshot) {
+  const { description, title, details } = finalScreenshot;
+  const { timing, data } = details;
+  let content = [
+    h3(`${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    `timing: ${timing}`,
+    BREAK_LINE,
+    image(data, title),
+  ];
+
+  return content;
+}
+
 // ===== Audits End =====
 
 function getArrayToTable(audits, arr): string[] {
@@ -206,6 +221,8 @@ function getSummaryAuditToTable(audits) {
     'custom-controls-labels',
     'custom-controls-roles',
   ];
+  const javascriptList = ['duplicated-javascript', 'errors-in-console'];
+  const networkList = ['efficient-animated-content'];
   const htmlList = [
     'charset',
     'crawlable-anchors',
@@ -214,6 +231,8 @@ function getSummaryAuditToTable(audits) {
     'dlitem',
     'doctype',
     'document-title',
+    'duplicate-id-active',
+    'duplicate-id-aria',
   ];
   const styleList = ['color-contrast', 'content-width'];
 
@@ -233,6 +252,10 @@ function getSummaryAuditToTable(audits) {
     tBody([kebabCaseToString(audits['apple-touch-icon'].id), passOrFail(audits['apple-touch-icon'].score)]),
     `| ${bold('Aria')} | |`,
     ...getArrayToTable(audits, ariaList),
+    `| ${bold('Javascript')} | |`,
+    ...getArrayToTable(audits, javascriptList),
+    `| ${bold('Network')} | |`,
+    ...getArrayToTable(audits, networkList),
     `| ${bold('HTML')} | |`,
     ...getArrayToTable(audits, htmlList),
     `| ${bold('Style')} | |`,
@@ -258,6 +281,8 @@ function getAuditToTable(audits, tempAudits): string[] {
     getDiagnostics(tempAudits['diagnostics']),
     BREAK_LINE,
     getDomSize(tempAudits['dom-size']),
+    BREAK_LINE,
+    getFinalScreenshot(tempAudits['final-screenshot']),
   );
   return content;
 }

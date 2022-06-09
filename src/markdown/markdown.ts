@@ -69,4 +69,8 @@ function bold(str) {
   return `**${str}**`;
 }
 
-export { BREAK_LINE, h1, h3, h4, h5, tHead, tAlignLine, tBody, mlist, summary, bold };
+function image(url: string, title: string = 'none'): string {
+  return `![${title}](${url})`;
+}
+
+export { BREAK_LINE, h1, h3, h4, h5, tHead, tAlignLine, tBody, mlist, summary, bold, image };
