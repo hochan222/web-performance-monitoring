@@ -1,18 +1,21 @@
-export function convertPercentage(score) {
+export function convertPercentage(score: number): number {
   return score * 100;
 }
 
-export function score(score: number) {
+export function score(score: number): string {
   if (score < 50) {
-    return `🔴 ${score}`;
+    return `🔴`;
   }
   if (score < 90) {
-    return `🟠 ${score}`;
+    return `🟠`;
   }
-  return `🟢 ${score}`;
+  return `🟢`;
 }
 
-export function passOrFail(score: number) {
+export function passOrFail(score: number): string {
+  if (score === null) {
+    return 'It is for reference only.';
+  }
   return score === 1 ? '✅' : '❌';
 }
 

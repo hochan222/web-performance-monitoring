@@ -1,11 +1,16 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
-import { kebabCaseToString, passOrFail, toFixedTwo } from '../../libs/utils';
-import { bold, BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
+import { kebabCaseToString, passOrFail, score, toFixedTwo } from '../../libs/utils';
+import { bold, BREAK_LINE, h3, h4, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
-function getBootupTime(bootupTime, tempBootupTime): string[] {
-  const { numericValue } = bootupTime;
-  const { title, details, numericUnit, description } = tempBootupTime;
+function getHeadingText(headings) {
+  return headings.map((heading) => heading.text);
+}
+
+// ===== Audits Start =====
+
+function getBootupTime(bootupTime): string[] {
+  const { title, details, numericUnit, description, numericValue } = bootupTime;
   const { headings, items } = details;
   let content = [
     h3(title),
@@ -15,7 +20,7 @@ function getBootupTime(bootupTime, tempBootupTime): string[] {
     ...mlist('Unit', [numericUnit]),
     ...mlist('wastedMs', [toFixedTwo(numericValue)]),
     BREAK_LINE,
-    tHead(headings.map((heading) => heading.text)),
+    tHead(getHeadingText(headings)),
     tAlignLine(headings.length),
   ];
 
@@ -27,7 +32,147 @@ function getBootupTime(bootupTime, tempBootupTime): string[] {
   return content;
 }
 
-function getAriaToTable(audits): string[] {
+function getCriticalRequestChains(criticalRequestChains) {
+  const { description, details, title, displayValue } = criticalRequestChains;
+  const { chains, longestChain } = details;
+  const { duration, length, transferSize } = longestChain;
+  let content = [
+    h3(title),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    tHead(['', 'duration', 'length', 'transferSize']),
+    tAlignLine(longestChain.length + 1, 'center'),
+    tBody(['longestChain', toFixedTwo(duration), length, transferSize]),
+  ];
+  return content;
+}
+
+function getCspXss(cspXss) {
+  const { description, details, title } = cspXss;
+  const { headings, items } = details;
+  let content = [
+    h3(title),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(getHeadingText(headings)),
+    tAlignLine(headings.length, 'center'),
+  ];
+
+  items.forEach((item) => {
+    const { description, directive, severity } = item;
+    content = content.concat(tBody([description, directive, severity]));
+  });
+
+  return content;
+}
+
+function getCumulativeLayoutShift(cumulativeLayoutShift) {
+  const { description, details, title, score: cScore } = cumulativeLayoutShift;
+  const { items } = details;
+  let content = [
+    h3(`${score(cScore)} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(['cumulativeLayoutShiftMainFrame', 'totalCumulativeLayoutShift']),
+    tAlignLine(2, 'center'),
+  ];
+
+  items.forEach((item) => {
+    const { cumulativeLayoutShiftMainFrame, totalCumulativeLayoutShift } = item;
+    content = content.concat(tBody([cumulativeLayoutShiftMainFrame, totalCumulativeLayoutShift]));
+  });
+
+  return content;
+}
+
+function getDiagnostics(diagnostics) {
+  const { description, details, title } = diagnostics;
+  const { items } = details;
+  const HEAD_LIST = [
+    'mainDocumentTransferSize',
+    'maxRtt',
+    'maxServerLatency',
+    'numFonts',
+    'numRequests',
+    'numScripts',
+    'numStylesheets',
+    'numTasks',
+    'numTasksOver10ms',
+    'numTasksOver25ms',
+    'numTasksOver50ms',
+    'numTasksOver100ms',
+    'numTasksOver500ms',
+    'rtt',
+    'throughput',
+    'totalByteWeight',
+    'totalTaskTime',
+  ];
+  let content = [
+    h3(title),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(HEAD_LIST),
+    tAlignLine(HEAD_LIST.length, 'center'),
+  ];
+
+  items.forEach((item) => {
+    const {
+      mainDocumentTransferSize,
+      maxRtt,
+      maxServerLatency,
+      numFonts,
+      numRequests,
+      numScripts,
+      numStylesheets,
+      numTasks,
+      numTasksOver10ms,
+      numTasksOver25ms,
+      numTasksOver50ms,
+      numTasksOver100ms,
+      numTasksOver500ms,
+      rtt,
+      throughput,
+      totalByteWeight,
+      totalTaskTime,
+    } = item;
+    content = content.concat(
+      tBody([
+        mainDocumentTransferSize,
+        toFixedTwo(maxRtt),
+        toFixedTwo(maxServerLatency),
+        numFonts,
+        numRequests,
+        numScripts,
+        numStylesheets,
+        numTasks,
+        numTasksOver10ms,
+        numTasksOver25ms,
+        numTasksOver50ms,
+        numTasksOver100ms,
+        numTasksOver500ms,
+        toFixedTwo(rtt),
+        toFixedTwo(throughput),
+        totalByteWeight,
+        toFixedTwo(totalTaskTime),
+      ]),
+    );
+  });
+
+  return content;
+}
+
+// ===== Audits End =====
+
+function getArrayToTable(audits, arr): string[] {
+  return arr.map((aria) => tBody([audits[aria].id, passOrFail(audits[aria].score)], audits[aria].id));
+}
+
+function getSummaryAuditToTable(audits) {
   const ariaList = [
     'aria-allowed-attr',
     'aria-hidden-body',
@@ -36,27 +181,42 @@ function getAriaToTable(audits): string[] {
     'aria-roles',
     'aria-valid-attr',
     'aria-valid-attr-value',
+    'button-name',
+    'bypass',
+    'custom-controls-labels',
+    'custom-controls-roles',
   ];
-  return ariaList.map((aria) => tBody([audits[aria].id, passOrFail(audits[aria].score)]));
-}
+  const htmlList = [
+    'charset',
+    'crawlable-anchors',
+    'definition-list',
+    'deprecations',
+    'dlitem',
+    'doctype',
+    'document-title',
+  ];
+  const styleList = ['color-contrast', 'content-width'];
 
-function getSummaryAuditToTable(tempAudits) {
   let content = [
     `| Category | Score |`,
     `| --- | --- |`,
     `| ${bold('Basic Metrics')} | |`,
-    `| ${tempAudits['bootup-time'].title} | ${tempAudits['bootup-time'].displayValue} |`,
-    `| ${tempAudits['first-contentful-paint'].title} | ${tempAudits['first-contentful-paint'].displayValue} |`,
-    `| ${tempAudits['largest-contentful-paint'].title} | ${tempAudits['largest-contentful-paint'].displayValue} |`,
-    `| ${tempAudits['speed-index'].title} | ${tempAudits['speed-index'].displayValue} |`,
-    `| ${tempAudits['cumulative-layout-shift'].title} | ${tempAudits['cumulative-layout-shift'].displayValue} |`,
-    `| ${tempAudits['first-meaningful-paint'].title} | ${tempAudits['first-meaningful-paint'].displayValue} |`,
-    `| ${tempAudits['interactive'].title} | ${tempAudits['interactive'].displayValue} |`,
-    `| ${tempAudits['server-response-time'].title} | ${tempAudits['server-response-time'].displayValue} |`,
-    `| ${tempAudits['total-blocking-time'].title} | ${tempAudits['total-blocking-time'].displayValue} |`,
-    tBody([kebabCaseToString(tempAudits['apple-touch-icon'].id), passOrFail(tempAudits['apple-touch-icon'].score)]),
+    `| ${audits['bootup-time'].title} | ${audits['bootup-time'].displayValue} |`,
+    `| ${audits['first-contentful-paint'].title} | ${audits['first-contentful-paint'].displayValue} |`,
+    `| ${audits['largest-contentful-paint'].title} | ${audits['largest-contentful-paint'].displayValue} |`,
+    `| ${audits['speed-index'].title} | ${audits['speed-index'].displayValue} |`,
+    `| ${audits['cumulative-layout-shift'].title} | ${audits['cumulative-layout-shift'].displayValue} |`,
+    `| ${audits['first-meaningful-paint'].title} | ${audits['first-meaningful-paint'].displayValue} |`,
+    `| ${audits['interactive'].title} | ${audits['interactive'].displayValue} |`,
+    `| ${audits['server-response-time'].title} | ${audits['server-response-time'].displayValue} |`,
+    `| ${audits['total-blocking-time'].title} | ${audits['total-blocking-time'].displayValue} |`,
+    tBody([kebabCaseToString(audits['apple-touch-icon'].id), passOrFail(audits['apple-touch-icon'].score)]),
     `| ${bold('Aria')} | |`,
-    ...getAriaToTable(tempAudits),
+    ...getArrayToTable(audits, ariaList),
+    `| ${bold('HTML')} | |`,
+    ...getArrayToTable(audits, htmlList),
+    `| ${bold('Style')} | |`,
+    ...getArrayToTable(audits, styleList),
     '',
   ];
 
@@ -66,7 +226,17 @@ function getSummaryAuditToTable(tempAudits) {
 function getAuditToTable(audits, tempAudits): string[] {
   let content = getSummaryAuditToTable(tempAudits);
 
-  content = content.concat(getBootupTime(audits['bootup-time'], tempAudits['bootup-time']));
+  content = content.concat(
+    getBootupTime(tempAudits['bootup-time']),
+    BREAK_LINE,
+    getCriticalRequestChains(tempAudits['critical-request-chains']),
+    BREAK_LINE,
+    getCspXss(tempAudits['csp-xss']),
+    BREAK_LINE,
+    getCumulativeLayoutShift(tempAudits['cumulative-layout-shift']),
+    BREAK_LINE,
+    getDiagnostics(tempAudits['diagnostics']),
+  );
   return content;
 }
 

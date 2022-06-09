@@ -8,6 +8,14 @@ function h3(content: string): string {
   return `### ${content}`;
 }
 
+function h4(content: string): string {
+  return `#### ${content}`;
+}
+
+function h5(content: string): string {
+  return `##### ${content}`;
+}
+
 function tHead(heads: string[]): string {
   const content = ['|'];
 
@@ -31,10 +39,17 @@ function tAlignLine(length: number, align?: string): string {
   return '|'.concat(alignMarkdown.repeat(length));
 }
 
-function tBody(body: string[]): string {
+function tBody(body: string[], linkAttr?: string): string {
   const content = ['|'];
+  const link = linkAttr ? (x) => `[${x}](https://web.dev/${linkAttr}/)` : (x) => x;
 
-  body.forEach((x) => content.push(` ${x} |`));
+  body.forEach((x, i) => {
+    let attr = i === 0 ? link(x) : x;
+    if (!attr) {
+      attr = '-';
+    }
+    content.push(` ${attr} |`);
+  });
   return content.join('');
 }
 
@@ -54,4 +69,4 @@ function bold(str) {
   return `**${str}**`;
 }
 
-export { BREAK_LINE, h1, h3, tHead, tAlignLine, tBody, mlist, summary, bold };
+export { BREAK_LINE, h1, h3, h4, h5, tHead, tAlignLine, tBody, mlist, summary, bold };

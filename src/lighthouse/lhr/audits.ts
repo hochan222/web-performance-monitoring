@@ -69,20 +69,16 @@ function reportAuditSummary(audits, path) {
       numericValue: toFixedTwo(bootupTime.numericValue),
       score: convertPercentage(bootupTime.score),
     },
-    // 'critical-request-chains': {
-    //   displayValue: criticalRequestChains.displayValue,
-    //   details: criticalRequestChains.details,
-    //   score: cumulativeLayoutShift.score,
-    // },
-    // 'cumulative-layout-shift': {
-    //   displayValue: cumulativeLayoutShift.displayValue,
-    //   numericValue: cumulativeLayoutShift.numericValue,
-    //   items: cumulativeLayoutShift.details.items,
-    // },
-    // diagnostics: {
-    //   score: diagnostics.score,
-    //   items: diagnostics.details.items,
-    // },
+    'critical-request-chains': {
+      displayValue: criticalRequestChains.displayValue,
+    },
+    'cumulative-layout-shift': {
+      displayValue: cumulativeLayoutShift.displayValue,
+      score: cumulativeLayoutShift.score,
+    },
+    diagnostics: {
+      items: diagnostics.details.items,
+    },
     // 'dom-size': {
     //   score: domSize.score,
     //   numericValue: domSize.numericValue,
