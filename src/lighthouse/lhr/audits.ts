@@ -1,6 +1,6 @@
 import { TEMP_DATA_PATH } from '../../libs/constants';
 import { guaranteeFolderPath, write } from '../../libs/file';
-import { convertPercentage } from '../../libs/utils';
+import { convertPercentage, toFixedTwo } from '../../libs/utils';
 
 function reportAuditSummary(audits, path) {
   const bootupTime = audits['bootup-time'];
@@ -66,7 +66,7 @@ function reportAuditSummary(audits, path) {
 
   const auditSummary = {
     'bootup-time': {
-      numericValue: bootupTime.numericValue,
+      numericValue: toFixedTwo(bootupTime.numericValue),
       score: convertPercentage(bootupTime.score),
     },
     // 'critical-request-chains': {

@@ -15,3 +15,7 @@ export function score(score: number) {
 export function getDate() {
   return new Date().toISOString().slice(0, 10);
 }
+
+export function toFixedTwo(num: number): number {
+  return +num.toFixed(2);
+}

@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
+import { toFixedTwo } from '../../libs/utils';
 import { BREAK_LINE, h3, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
 function getBootupTime(audits, tempAudits): string[] {
@@ -12,7 +13,7 @@ function getBootupTime(audits, tempAudits): string[] {
     summary('description', description),
     BREAK_LINE,
     ...mlist('Unit', [numericUnit]),
-    ...mlist('wastedMs', [numericValue]),
+    ...mlist('wastedMs', [toFixedTwo(numericValue)]),
     BREAK_LINE,
     tHead(headings.map((heading) => heading.text)),
     tAlignLine(headings.length),
@@ -20,7 +21,7 @@ function getBootupTime(audits, tempAudits): string[] {
 
   items.forEach((item) => {
     const { url, total, scripting, scriptParseCompile } = item;
-    content = content.concat(tBody([url, total, scripting, scriptParseCompile]));
+    content = content.concat(tBody([url, toFixedTwo(total), toFixedTwo(scripting), toFixedTwo(scriptParseCompile)]));
   });
 
   return content;
