@@ -39,13 +39,14 @@ function tAlignLine(length: number, align?: string): string {
   return '|'.concat(alignMarkdown.repeat(length));
 }
 
-function tBody(body: string[], linkAttr?: string): string {
+function tBody(body: (number | string)[], linkAttr?: string): string {
   const content = ['|'];
   const link = linkAttr ? (x) => `[${x}](https://web.dev/${linkAttr}/)` : (x) => x;
+  const isValidAttribute = (attr) => attr || attr === 0;
 
   body.forEach((x, i) => {
     let attr = i === 0 ? link(x) : x;
-    if (!attr) {
+    if (!isValidAttribute(attr)) {
       attr = '-';
     }
     content.push(` ${attr} |`);

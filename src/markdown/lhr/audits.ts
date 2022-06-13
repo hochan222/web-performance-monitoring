@@ -1,9 +1,9 @@
 import { readFile } from 'fs/promises';
 import { TEMP_DATA_PATH } from '../../libs/constants';
-import { kebabCaseToString, passOrFail, score, toFixedTwo } from '../../libs/utils';
+import { convertPercentage, kebabCaseToString, passOrFail, score, toFixedTwo } from '../../libs/utils';
 import { bold, BREAK_LINE, h3, h4, image, mlist, summary, tAlignLine, tBody, tHead } from '../markdown';
 
-function getHeadingText(headings) {
+function getHeadingText(headings): string[] {
   return headings.map((heading) => heading.text);
 }
 
@@ -73,7 +73,7 @@ function getCumulativeLayoutShift(cumulativeLayoutShift) {
   const { description, details, title, score: cScore } = cumulativeLayoutShift;
   const { items } = details;
   let content = [
-    h3(`${score(cScore)} ${title}`),
+    h3(`${score(convertPercentage(cScore))} ${title}`),
     BREAK_LINE,
     summary('description', description),
     BREAK_LINE,
@@ -170,7 +170,7 @@ function getDomSize(domSize) {
   const { description, title, details, score: dScore } = domSize;
   const { headings, items } = details;
   let content = [
-    h3(`${score(dScore)} ${title}`),
+    h3(`${score(convertPercentage(dScore))} ${title}`),
     BREAK_LINE,
     summary('description', description),
     BREAK_LINE,
@@ -195,7 +195,149 @@ function getFinalScreenshot(finalScreenshot) {
     summary('description', description),
     `timing: ${timing}`,
     BREAK_LINE,
-    image(data, title),
+    summary('image', image(data, title)),
+  ];
+
+  return content;
+}
+
+function getFirstContentfulPaint(firstContentfulPaint) {
+  const { description, title, score: fscore, numericValue, displayValue } = firstContentfulPaint;
+  const content = [
+    h3(`${score(convertPercentage(fscore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    BREAK_LINE,
+    tHead(['Score', 'FCP']),
+    tAlignLine(2, 'center'),
+    tBody([convertPercentage(fscore), toFixedTwo(numericValue)]),
+  ];
+
+  return content;
+}
+
+function getFirstMeaningfulPaint(firstMeaningfulPaint) {
+  const { description, title, score: fscore, numericValue, displayValue } = firstMeaningfulPaint;
+  const content = [
+    h3(`${score(convertPercentage(fscore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    BREAK_LINE,
+    tHead(['Score', 'FMP']),
+    tAlignLine(2, 'center'),
+    tBody([convertPercentage(fscore), toFixedTwo(numericValue)]),
+  ];
+
+  return content;
+}
+
+function getFontDisplay(fontDisplay) {
+  const { description, title, score: fscore, details } = fontDisplay;
+  const { items, headings } = details;
+  let content = [
+    h3(`${score(convertPercentage(fscore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(getHeadingText(headings)),
+    tAlignLine(headings.length),
+  ];
+
+  items.forEach((item) => {
+    const { url, wastedMs } = item;
+    content = content.concat(tBody([url, toFixedTwo(wastedMs)]));
+  });
+
+  return content;
+}
+
+function getFontSize(fontSize) {
+  const { description, title, score: fscore, displayValue } = fontSize;
+  let content = [
+    h3(`${score(convertPercentage(fscore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+  ];
+
+  return content;
+}
+
+function getFullPageScreenshot(fullPageScreenshot) {
+  const { description, title, details } = fullPageScreenshot;
+  const { screenshot } = details;
+  const { data, height, width } = screenshot;
+  let content = [
+    h3(`${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    tHead(['height', 'width']),
+    tAlignLine(2),
+    tBody([height, width]),
+    BREAK_LINE,
+    summary('image', image(data, title)),
+  ];
+
+  return content;
+}
+
+function getInteractive(interactive) {
+  const { description, title, numericValue, score: iScore, displayValue } = interactive;
+  const content = [
+    h3(`${score(convertPercentage(iScore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    BREAK_LINE,
+    tHead(['Score', 'FCP']),
+    tAlignLine(2, 'center'),
+    tBody([convertPercentage(iScore), toFixedTwo(numericValue)]),
+  ];
+
+  return content;
+}
+
+function getIsOnHttps(isOnHttp) {
+  const { description, title, details, displayValue, score: iScore } = isOnHttp;
+  const { items, headings } = details;
+  let content = [
+    h3(`${score(convertPercentage(iScore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    BREAK_LINE,
+    tHead(getHeadingText(headings).reverse()),
+    tAlignLine(headings.length),
+  ];
+
+  items.forEach((item) => {
+    const { url, resolution } = item;
+    content = content.concat(tBody([resolution, url]));
+  });
+
+  return content;
+}
+
+function getLargestContentfulPaint(largestContentfulPaint) {
+  const { description, title, score: fscore, numericValue, displayValue } = largestContentfulPaint;
+  const content = [
+    h3(`${score(convertPercentage(fscore))} ${title}`),
+    BREAK_LINE,
+    summary('description', description),
+    BREAK_LINE,
+    displayValue,
+    BREAK_LINE,
+    tHead(['Score', 'LCP']),
+    tAlignLine(2, 'center'),
+    tBody([convertPercentage(fscore), toFixedTwo(numericValue)]),
   ];
 
   return content;
@@ -220,9 +362,12 @@ function getSummaryAuditToTable(audits) {
     'bypass',
     'custom-controls-labels',
     'custom-controls-roles',
+    'focus-traps',
+    'focusable-controls',
+    'interactive-element-affordance',
   ];
-  const javascriptList = ['duplicated-javascript', 'errors-in-console'];
-  const networkList = ['efficient-animated-content'];
+  const javascriptList = ['duplicated-javascript', 'errors-in-console', 'geolocation-on-start', 'js-libraries'];
+  const networkList = ['efficient-animated-content', 'http-status-code', 'inspector-issues'];
   const htmlList = [
     'charset',
     'crawlable-anchors',
@@ -233,8 +378,19 @@ function getSummaryAuditToTable(audits) {
     'document-title',
     'duplicate-id-active',
     'duplicate-id-aria',
+    'form-field-multiple-labels',
+    'frame-title',
+    'heading-order',
+    'hreflang',
+    'html-has-lang',
+    'html-lang-valid',
+    'image-alt',
+    'input-image-alt',
+    'installable-manifest',
+    'is-crawlable',
+    'label',
   ];
-  const styleList = ['color-contrast', 'content-width'];
+  const styleList = ['color-contrast', 'content-width', 'image-aspect-ratio', 'image-size-responsive'];
 
   let content = [
     `| Category | Score |`,
@@ -283,6 +439,22 @@ function getAuditToTable(audits, tempAudits): string[] {
     getDomSize(tempAudits['dom-size']),
     BREAK_LINE,
     getFinalScreenshot(tempAudits['final-screenshot']),
+    BREAK_LINE,
+    getFirstContentfulPaint(tempAudits['first-contentful-paint']),
+    BREAK_LINE,
+    getFirstMeaningfulPaint(tempAudits['first-meaningful-paint']),
+    BREAK_LINE,
+    getFontDisplay(tempAudits['font-display']),
+    BREAK_LINE,
+    getFontSize(tempAudits['font-size']),
+    BREAK_LINE,
+    getFullPageScreenshot(tempAudits['full-page-screenshot']),
+    BREAK_LINE,
+    getInteractive(tempAudits['interactive']),
+    BREAK_LINE,
+    getIsOnHttps(tempAudits['is-on-https']),
+    BREAK_LINE,
+    getLargestContentfulPaint(tempAudits['largest-contentful-paint']),
   );
   return content;
 }
