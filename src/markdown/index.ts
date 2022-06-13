@@ -23,6 +23,6 @@ export async function generateMarkdown({ path }) {
     BREAK_LINE,
   ].join('\n');
 
-  guaranteeFolderPath(`./${REPORT_PATH}/${path}`);
-  write({ path: `${REPORT_PATH}/${path}/report.md`, content, type: 'string' });
+  guaranteeFolderPath(`./${REPORT_PATH}`);
+  write({ path: `${REPORT_PATH}/${path}-report.md`, content, type: 'string' });
 }
