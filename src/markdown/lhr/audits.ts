@@ -10,8 +10,9 @@ function getHeadingText(headings, attr: string = 'text'): string[] {
 // ===== Audits Start =====
 
 function getBootupTime(bootupTime): string[] {
-  const { title, details, numericUnit, description, numericValue } = bootupTime;
+  const { title, details = {}, numericUnit, description, numericValue } = bootupTime;
   const { headings, items } = details;
+
   let content = [
     h3(title),
     BREAK_LINE,
@@ -33,8 +34,8 @@ function getBootupTime(bootupTime): string[] {
 }
 
 function getCriticalRequestChains(criticalRequestChains) {
-  const { description, details, title, displayValue } = criticalRequestChains;
-  const { longestChain } = details;
+  const { description, details = {}, title, displayValue } = criticalRequestChains;
+  const { longestChain = {} } = details;
   const { duration, length, transferSize } = longestChain;
   let content = [
     h3(title),
@@ -50,7 +51,7 @@ function getCriticalRequestChains(criticalRequestChains) {
 }
 
 function getCspXss(cspXss) {
-  const { description, details, title } = cspXss;
+  const { description, details = {}, title } = cspXss;
   const { headings, items } = details;
   let content = [
     h3(title),
@@ -70,7 +71,7 @@ function getCspXss(cspXss) {
 }
 
 function getCumulativeLayoutShift(cumulativeLayoutShift) {
-  const { description, details, title, score: cScore } = cumulativeLayoutShift;
+  const { description, details = {}, title, score: cScore } = cumulativeLayoutShift;
   const { items } = details;
   let content = [
     h3(`${score(convertPercentage(cScore))} ${title}`),
@@ -90,7 +91,7 @@ function getCumulativeLayoutShift(cumulativeLayoutShift) {
 }
 
 function getDiagnostics(diagnostics) {
-  const { description, details, title } = diagnostics;
+  const { description, details = {}, title } = diagnostics;
   const { items } = details;
   const HEAD_LIST = [
     'mainDocumentTransferSize',
@@ -167,7 +168,7 @@ function getDiagnostics(diagnostics) {
 }
 
 function getDomSize(domSize) {
-  const { description, title, details, score: dScore } = domSize;
+  const { description, title, details = {}, score: dScore } = domSize;
   const { headings, items } = details;
   let content = [
     h3(`${score(convertPercentage(dScore))} ${title}`),
@@ -187,7 +188,7 @@ function getDomSize(domSize) {
 }
 
 function getFinalScreenshot(finalScreenshot) {
-  const { description, title, details } = finalScreenshot;
+  const { description, title, details = {} } = finalScreenshot;
   const { timing, data } = details;
   let content = [
     h3(`${title}`),
@@ -236,7 +237,7 @@ function getFirstMeaningfulPaint(firstMeaningfulPaint) {
 }
 
 function getFontDisplay(fontDisplay) {
-  const { description, title, score: fscore, details } = fontDisplay;
+  const { description, title, score: fscore, details = {} } = fontDisplay;
   const { items, headings } = details;
   let content = [
     h3(`${score(convertPercentage(fscore))} ${title}`),
@@ -269,7 +270,7 @@ function getFontSize(fontSize) {
 }
 
 function getFullPageScreenshot(fullPageScreenshot) {
-  const { description, title, details } = fullPageScreenshot;
+  const { description, title, details = {} } = fullPageScreenshot;
   const { screenshot } = details;
   const { data, height, width } = screenshot;
   let content = [
@@ -305,7 +306,7 @@ function getInteractive(interactive) {
 }
 
 function getIsOnHttps(isOnHttp) {
-  const { description, title, details, displayValue, score: iScore } = isOnHttp;
+  const { description, title, details = {}, displayValue, score: iScore } = isOnHttp;
   const { items, headings } = details;
   let content = [
     h3(`${score(convertPercentage(iScore))} ${title}`),
@@ -344,7 +345,7 @@ function getLargestContentfulPaint(largestContentfulPaint) {
 }
 
 function getLargestContentfulPaintElement(largestContentfulPaintElement) {
-  const { description, title, displayValue, details } = largestContentfulPaintElement;
+  const { description, title, displayValue, details = {} } = largestContentfulPaintElement;
   const { headings, items } = details;
   let content = [
     h3(`${title}`),
@@ -366,7 +367,7 @@ function getLargestContentfulPaintElement(largestContentfulPaintElement) {
 }
 
 function getLayoutShiftElements(layoutShiftElements) {
-  const { description, title, displayValue, details } = layoutShiftElements;
+  const { description, title, displayValue, details = {} } = layoutShiftElements;
   const { headings, items } = details;
   let content = [
     h3(`${title}`),
@@ -388,7 +389,7 @@ function getLayoutShiftElements(layoutShiftElements) {
 }
 
 function getLcpLazyLoaded(lcpLazyLoaded) {
-  const { description, title, details, score: lScore } = lcpLazyLoaded;
+  const { description, title, details = {}, score: lScore } = lcpLazyLoaded;
   const { headings, items } = details;
   let content = [
     h3(`${score(convertPercentage(lScore))} ${title}`),
@@ -408,7 +409,7 @@ function getLcpLazyLoaded(lcpLazyLoaded) {
 }
 
 function getLegacyJavascript(legacyJavascript) {
-  const { description, title, details, score: lScore, displayValue } = legacyJavascript;
+  const { description, title, details = {}, score: lScore, displayValue } = legacyJavascript;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
   let content = [
     h3(`${score(convertPercentage(lScore))} ${title}`),
@@ -437,7 +438,7 @@ function getLegacyJavascript(legacyJavascript) {
 }
 
 function getLongTasks(longTasks) {
-  const { description, title, details, displayValue } = longTasks;
+  const { description, title, details = {}, displayValue } = longTasks;
   const { headings, items } = details;
   let content = [
     h3(`${title}`),
@@ -459,7 +460,7 @@ function getLongTasks(longTasks) {
 }
 
 function getMainthreadWorkBreakdown(mainthreadWorkBreakdown) {
-  const { description, title, details, displayValue, score: mScore, numericValue } = mainthreadWorkBreakdown;
+  const { description, title, details = {}, displayValue, score: mScore, numericValue } = mainthreadWorkBreakdown;
   const { headings, items } = details;
   let content = [
     h3(`${score(convertPercentage(mScore))} ${title}`),
@@ -502,13 +503,15 @@ function getMaxPotentialFid(maxPotentialFid) {
 }
 
 function getMetrics(metrics) {
-  const { description, title, details } = metrics;
+  const { description, title, details = {} } = metrics;
   const { items } = details;
-  const metricItems = items[0];
+  const metricItems = items.at(0);
   let metricTable: string[] = [];
 
-  for (const mkey in metricItems) {
-    metricTable = metricTable.concat(`| ${mkey} | ${metricItems[mkey]} |`);
+  if (metricItems) {
+    for (const mkey in metricItems) {
+      metricTable = metricTable.concat(`| ${mkey} | ${metricItems[mkey]} |`);
+    }
   }
 
   let content = [
@@ -525,7 +528,7 @@ function getMetrics(metrics) {
 }
 
 function getModernImageFormats(modernImageFormats) {
-  const { description, title, details, score: mScore, displayValue } = modernImageFormats;
+  const { description, title, details = {}, score: mScore, displayValue } = modernImageFormats;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -552,7 +555,7 @@ function getModernImageFormats(modernImageFormats) {
 }
 
 function getNetworkRtt(netWorkRtt) {
-  const { description, title, details, displayValue } = netWorkRtt;
+  const { description, title, details = {}, displayValue } = netWorkRtt;
   const { items, headings } = details;
 
   let content = [
@@ -577,7 +580,7 @@ function getNetworkRtt(netWorkRtt) {
 }
 
 function getNetworkServerLatency(networkServerLatency) {
-  const { description, title, details, displayValue } = networkServerLatency;
+  const { description, title, details = {}, displayValue } = networkServerLatency;
   const { items, headings } = details;
 
   let content = [
@@ -603,7 +606,7 @@ function getNetworkServerLatency(networkServerLatency) {
 }
 
 function getOffscreenImages(offscreenImages) {
-  const { description, title, details, displayValue, score: oScore } = offscreenImages;
+  const { description, title, details = {}, displayValue, score: oScore } = offscreenImages;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -630,7 +633,7 @@ function getOffscreenImages(offscreenImages) {
 }
 
 function getPreloadLcpImage(preloadLcpImage) {
-  const { description, title, details, displayValue, score: pScore } = preloadLcpImage;
+  const { description, title, details = {}, displayValue, score: pScore } = preloadLcpImage;
   const { items, overallSavingsMs } = details;
 
   let content = [
@@ -657,7 +660,7 @@ function getPreloadLcpImage(preloadLcpImage) {
 }
 
 function getRenderBlockingResources(renderBlockingResources) {
-  const { description, title, details, displayValue, score: rScore } = renderBlockingResources;
+  const { description, title, details = {}, displayValue, score: rScore } = renderBlockingResources;
   const { items, overallSavingsMs } = details;
 
   let content = [
@@ -684,7 +687,7 @@ function getRenderBlockingResources(renderBlockingResources) {
 }
 
 function getResourceSummary(resourceSummary) {
-  const { description, title, details, displayValue } = resourceSummary;
+  const { description, title, details = {}, displayValue } = resourceSummary;
   const { items, headings } = details;
 
   let content = [
@@ -707,7 +710,7 @@ function getResourceSummary(resourceSummary) {
 }
 
 function getScriptTreemapData(scriptTreemapData) {
-  const { description, title, details, displayValue } = scriptTreemapData;
+  const { description, title, details = {}, displayValue } = scriptTreemapData;
   const { nodes } = details;
 
   let content = [
@@ -730,7 +733,7 @@ function getScriptTreemapData(scriptTreemapData) {
 }
 
 function getServerResponseTime(serverResponseTime) {
-  const { description, title, details, displayValue, score: sScore } = serverResponseTime;
+  const { description, title, details = {}, displayValue, score: sScore } = serverResponseTime;
   const { overallSavingsMs, items } = details;
 
   let content = [
@@ -775,8 +778,8 @@ function getSpeedIndex(speedIndex) {
 }
 
 function getThirdPartySummary(thirdPartySummary) {
-  const { description, title, details, displayValue, score: tScore } = thirdPartySummary;
-  const { items, summary: tSummary } = details;
+  const { description, title, details = {}, displayValue, score: tScore } = thirdPartySummary;
+  const { items, summary: tSummary = {} } = details;
   const { wastedBytes, wastedMs } = tSummary;
 
   let content = [
@@ -821,7 +824,7 @@ function getTotalBlockingTime(totalBlockingTime) {
 }
 
 function getTotalByteWeight(totalByteWeight) {
-  const { description, title, details, displayValue, score: tScore, numericValue } = totalByteWeight;
+  const { description, title, details = {}, displayValue, score: tScore, numericValue } = totalByteWeight;
   const { items, headings } = details;
 
   let content = [
@@ -848,7 +851,7 @@ function getTotalByteWeight(totalByteWeight) {
 }
 
 function getUnminifiedCss(unminifiedCss) {
-  const { description, title, details, displayValue, score: uScore, numericValue } = unminifiedCss;
+  const { description, title, details = {}, displayValue, score: uScore, numericValue } = unminifiedCss;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -875,7 +878,7 @@ function getUnminifiedCss(unminifiedCss) {
 }
 
 function getUnminifiedJavascript(unminifiedJavascript) {
-  const { description, title, details, displayValue, score: uScore, numericValue } = unminifiedJavascript;
+  const { description, title, details = {}, displayValue, score: uScore, numericValue } = unminifiedJavascript;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -902,7 +905,7 @@ function getUnminifiedJavascript(unminifiedJavascript) {
 }
 
 function getUnsizedImages(unsizedImages) {
-  const { description, title, details, score: uScore } = unsizedImages;
+  const { description, title, details = {}, score: uScore } = unsizedImages;
   const { items } = details;
 
   let content = [
@@ -924,7 +927,7 @@ function getUnsizedImages(unsizedImages) {
 }
 
 function getUnusedCssRules(unusedCssRules) {
-  const { description, title, details, score: uScore, displayValue } = unusedCssRules;
+  const { description, title, details = {}, score: uScore, displayValue } = unusedCssRules;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -951,7 +954,7 @@ function getUnusedCssRules(unusedCssRules) {
 }
 
 function getUnusedJavascript(unusedJavascript) {
-  const { description, title, details, score: uScore, displayValue } = unusedJavascript;
+  const { description, title, details = {}, score: uScore, displayValue } = unusedJavascript;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -978,7 +981,7 @@ function getUnusedJavascript(unusedJavascript) {
 }
 
 function getUsesHttp2(usesHttp2) {
-  const { description, title, details, score: uScore, displayValue } = usesHttp2;
+  const { description, title, details = {}, score: uScore, displayValue } = usesHttp2;
   const { items, overallSavingsMs } = details;
 
   let content = [
@@ -1005,7 +1008,7 @@ function getUsesHttp2(usesHttp2) {
 }
 
 function getUsesLongCacheTtl(usesLongCacheTtl) {
-  const { description, title, details, score: uScore, displayValue } = usesLongCacheTtl;
+  const { description, title, details = {}, score: uScore, displayValue } = usesLongCacheTtl;
   const { items, summary: uSummary } = details;
   const { wastedBytes } = uSummary;
 
@@ -1035,7 +1038,7 @@ function getUsesLongCacheTtl(usesLongCacheTtl) {
 }
 
 function getUsesOptimizedImages(usesOptimizedImages) {
-  const { description, title, details, score: uScore, displayValue } = usesOptimizedImages;
+  const { description, title, details = {}, score: uScore, displayValue } = usesOptimizedImages;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -1062,7 +1065,7 @@ function getUsesOptimizedImages(usesOptimizedImages) {
 }
 
 function getusesRelPreconnect(usesRelPreconnect) {
-  const { description, title, details, score: uScore, displayValue } = usesRelPreconnect;
+  const { description, title, details = {}, score: uScore, displayValue } = usesRelPreconnect;
   const { items, overallSavingsMs } = details;
 
   let content = [
@@ -1089,7 +1092,7 @@ function getusesRelPreconnect(usesRelPreconnect) {
 }
 
 function getUsesResponsiveImages(usesResponsiveImages) {
-  const { description, title, details, score: uScore, displayValue } = usesResponsiveImages;
+  const { description, title, details = {}, score: uScore, displayValue } = usesResponsiveImages;
   const { items, overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
@@ -1116,7 +1119,7 @@ function getUsesResponsiveImages(usesResponsiveImages) {
 }
 
 function getUsesTextCompression(usesTextCompression) {
-  const { description, title, details, score: uScore, displayValue } = usesTextCompression;
+  const { description, title, details = {}, score: uScore, displayValue } = usesTextCompression;
   const { overallSavingsBytes, overallSavingsMs } = details;
 
   let content = [
