@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "ts-node src/performance.ts",
-    "multi": "sh ./multi-run.sh",
+    "report": "sh ./report.sh",
     "compress": "tar -czf persistentData.tar.gz persistentData/",
     "decompress": "tar -xzf persistentData.tar.gz"
   },
