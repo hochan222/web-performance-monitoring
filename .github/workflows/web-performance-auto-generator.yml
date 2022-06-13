@@ -5,7 +5,7 @@ name: web-performance-auto-generator
 # 8 to 23
 on:
   schedule:
-    - cron: '36 17 * * *'
+    - cron: '* */6 * * *'
 
 jobs:
   web-performance-auto-generator:
