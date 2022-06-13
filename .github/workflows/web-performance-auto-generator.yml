@@ -1,9 +1,11 @@
 name: web-performance-auto-generator
 
 # https://crontab.guru/
+# 2 to 17
+# 8 to 23
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '36 17 * * *'
 
 jobs:
   web-performance-auto-generator:
