@@ -19,12 +19,18 @@ export function passOrFail(score: number): string {
   return score === 1 ? '✅' : '❌';
 }
 
+function convertToKoreaTime() {
+  const d = new Date();
+
+  return d.getTime() - d.getTimezoneOffset() * 60000;
+}
+
 export function getDate() {
-  return new Date().toISOString().slice(0, 10);
+  return new Date(convertToKoreaTime()).toISOString().slice(0, 10);
 }
 
 export function toFixedTwo(num: number): number {
-  return +num.toFixed(2);
+  return +num?.toFixed(2);
 }
 
 export function kebabCaseToString(str: string): string {
