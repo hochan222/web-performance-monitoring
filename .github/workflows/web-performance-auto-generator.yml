@@ -3,7 +3,7 @@ name: web-performance-auto-generator
 # https://crontab.guru/
 on:
   schedule:
-    - cron: '23 * * * 1-5'
+    - cron: '*/10 * * * *'
 
 jobs:
   web-performance-auto-generator:
