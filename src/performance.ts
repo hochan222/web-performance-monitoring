@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+import { ECOMMERCE_KEYWORD_LAPTOP } from '../config/settings';
 import { l2s } from './l2s';
 import { runLightHouse } from './lighthouse/lighthouse';
-import { generateMarkdown } from './markdown';
+import { generateDiff, generateReport } from './markdown';
 const { program } = require('@caporal/core');
 
 program
@@ -25,10 +26,14 @@ program
     if (options.mode === 'once') {
       await runLightHouse({ logger, options, path: title, url: url });
       await l2s({ path: title });
-      await generateMarkdown({ path: title });
+      await generateReport({ path: title });
     }
     // The recommendation is do each LH run in a separate process. The performance metrics will be affected.
     // https://github.com/GoogleChrome/lighthouse/issues/7187
-  });
+  })
 
+  .command('diff', 'Compare lighthouse metric')
+  .action(async ({ logger, args, options }) => {
+    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP);
+  });
 program.run();

@@ -18,8 +18,13 @@ async function runChrome(url) {
   const chromeOptions = {
     logLevel: 'info',
     output: 'json',
-    onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
     port: chrome.port,
+    onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
+    throttling: {
+      // rttMs: 40,
+      // cpuSlowdownMultiplier: 1,
+      // throughputKbps: 10240,
+    },
   };
   const runnerResult = await lighthouse(url, chromeOptions);
 

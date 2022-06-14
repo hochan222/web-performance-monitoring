@@ -13,5 +13,5 @@ yarn test l2s --mode once wemakeprice-mw-keyword-laptop "https://msearch.wemakep
 yarn test l2s --mode once tmon-mw "https://m.tmon.co.kr/" &&
 yarn test l2s --mode once tmon-mw-keyword-laptop "http://m.search.tmon.co.kr/search?useArtistchaiRegion=Y#_=1655137593350&keyword=%EB%85%B8%ED%8A%B8%EB%B6%81&sortType=POPULAR&thr=ms&useTypoCorrection=true" &&
 yarn test l2s --mode once 11st-mw "http://m.11st.co.kr/page/main/home" &&
-yarn test l2s --mode once 11st-mw-keyword-laptop "http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898"88 
+yarn test l2s --mode once 11st-mw-keyword-laptop "http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898" &&
 yarn compress
