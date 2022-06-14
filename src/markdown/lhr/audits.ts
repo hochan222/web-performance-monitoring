@@ -44,7 +44,7 @@ function getCriticalRequestChains(criticalRequestChains) {
     BREAK_LINE,
     displayValue,
     tHead(['', 'duration', 'length', 'transferSize']),
-    tAlignLine(longestChain.length + 1, 'center'),
+    tAlignLine(4, 'center'),
     tBody(['longestChain', toFixedTwo(duration), length, transferSize]),
   ];
   return content;
@@ -1080,7 +1080,7 @@ function getusesRelPreconnect(usesRelPreconnect) {
     tBody([toFixedTwo(convertPercentage(uScore)), toFixedTwo(overallSavingsMs)]),
     BREAK_LINE,
     tHead(['wastedMs', 'url']),
-    tAlignLine(3),
+    tAlignLine(2),
   ];
 
   items?.forEach((item) => {
