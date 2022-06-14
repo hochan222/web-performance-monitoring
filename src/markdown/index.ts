@@ -1,16 +1,13 @@
+import * as fs from 'fs';
 import { readFile } from 'fs/promises';
 import { PERSISTENT_DATA_PATH, REPORT_PATH } from '../libs/constants';
-import { guaranteeFolderPath, write } from '../libs/file';
+import { getDirectoryFileList, guaranteeFolderPath, write } from '../libs/file';
 import { getDate } from '../libs/utils';
 import { generateAuditsDiff } from './diff/audits';
 import { generateCategoryDiff } from './diff/categories';
 import { generateAuditsMarkdown } from './lhr/audits';
 import { generateCategoryMarkdown } from './lhr/categories';
 import { BREAK_LINE, h1 } from './markdown';
-
-function sortLastestDate(data) {
-  return Object.keys(data).sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
-}
 
 export async function generateReport({ path }) {
   const data = JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${path}/${getDate()}.json`, 'utf8'));
@@ -29,13 +26,21 @@ export async function generateReport({ path }) {
   write({ path: `${REPORT_PATH}/${path}-report.md`, content, type: 'string' });
 }
 
+function sortLastestDate(data) {
+  return data.sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
+}
+
+function getLastestDate(path: string) {
+  return sortLastestDate(getDirectoryFileList(`${PERSISTENT_DATA_PATH}/${path}/`)).at(0);
+}
+
 async function getPersistentData(data) {
   return Promise.all(
     data.map(async ({ company, name, url }) => ({
       company,
       name,
       url,
-      data: JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${name}/${getDate()}.json`, 'utf8')),
+      data: JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${name}/${getLastestDate(name)}.json`, 'utf8')),
     })),
   );
 }

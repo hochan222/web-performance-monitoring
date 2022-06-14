@@ -30,7 +30,7 @@ export async function isExistFile(fileName): Promise<boolean> {
     .catch(() => false);
 }
 
-function getDirectoryFileList(relativeName: string): string[] {
+export function getDirectoryFileList(relativeName: string): string[] {
   const folderPath = path.join(process.cwd(), ...relativeName.split('/'));
   return fs
     .readdirSync(folderPath, { withFileTypes: true })
