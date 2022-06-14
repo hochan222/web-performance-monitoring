@@ -1,11 +1,10 @@
 name: web-performance-auto-generator
 
 # https://crontab.guru/
-# 2 to 17
-# 8 to 23
+# ko locale 1 to UTC 16
 on:
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '0 16 * * *'
 
 jobs:
   web-performance-auto-generator:
