@@ -110,7 +110,7 @@ function reportAuditSummary(audits, path) {
       score: convertPercentage(mainthreadWorkBreakdown.score),
     },
     'max-potential-fid': {
-      numericValue: maxPotentialFid.numericValue,
+      numericValue: toFixedTwo(maxPotentialFid.numericValue),
       score: convertPercentage(maxPotentialFid.score),
     },
     metrics: {
