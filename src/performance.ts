@@ -19,12 +19,13 @@ program
   })
   .argument('[title]', 'title')
   .argument('[url]', 'url')
+  .argument('[fast]', 'fast')
   .action(async ({ logger, args, options }) => {
-    const { title, url } = args;
+    const { title, url, fast } = args;
     logger.info(`Starting lighthouse metric to statistics conversion in ${options.mode} mode`);
 
     if (options.mode === 'once') {
-      await runLightHouse({ logger, options, path: title, url: url });
+      await runLightHouse({ logger, options, path: title, url: url, isFastOption: fast === 'fast' });
       await l2s({ path: title });
       await generateReport({ path: title });
     }

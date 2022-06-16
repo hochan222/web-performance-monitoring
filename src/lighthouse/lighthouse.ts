@@ -13,18 +13,21 @@ function replacePathForWindowFormat(folderSearch) {
   return folderSearch;
 }
 
-async function runChrome(url) {
+async function runChrome({ url, isFastOption = false }: { url: string; isFastOption: boolean }) {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
+  const throttling = isFastOption
+    ? {
+        rttMs: 40,
+        cpuSlowdownMultiplier: 1,
+        throughputKbps: 10240,
+      }
+    : undefined;
   const chromeOptions = {
     logLevel: 'info',
     output: 'json',
     port: chrome.port,
     onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
-    throttling: {
-      // rttMs: 40,
-      // cpuSlowdownMultiplier: 1,
-      // throughputKbps: 10240,
-    },
+    throttling,
   };
   const runnerResult = await lighthouse(url, chromeOptions);
 
@@ -33,11 +36,11 @@ async function runChrome(url) {
   return runnerResult;
 }
 
-export async function runLightHouse({ logger, options, path, url }) {
+export async function runLightHouse({ logger, options, path, url, isFastOption }) {
   // let folderSearch = args.folder;
   // folderSearch = replacePathForWindowFormat(folderSearch);
 
-  const { lhr, artifacts, report } = await runChrome(url);
+  const { lhr, artifacts, report } = await runChrome({ url, isFastOption });
 
   reportLhr(lhr, path);
 
