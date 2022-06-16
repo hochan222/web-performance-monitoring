@@ -20,9 +20,28 @@ async function updatePersistenceData({ path, ...data }) {
   write({ path: `${PERSISTENT_DATA_PATH}/${path}/${getDate()}.json`, content: parsedData, type: 'json' });
 }
 
+async function getCategories(path) {
+  const categories = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/category-summary.txt`, 'utf8'));
+
+  try {
+    const performanceScore = JSON.parse(
+      await readFile(`${TEMP_DATA_PATH}/${path}/only-performance.json`, 'utf8'),
+    )?.performance;
+
+    return categories?.map(({ id, title, score }) => {
+      if (id === 'performance') {
+        return { id, title, score: performanceScore };
+      }
+      return { id, title, score };
+    });
+  } catch {
+    return categories;
+  }
+}
+
 export async function l2s({ path }: { path: string }) {
   let audits = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/audit-summary.json`, 'utf8'));
-  let categories = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/category-summary.txt`, 'utf8'));
+  let categories = await getCategories(path);
   let lhr = JSON.parse(await readFile(`${TEMP_DATA_PATH}/${path}/lhr-summary.json`, 'utf8'));
 
   await initPersistenceData(path);

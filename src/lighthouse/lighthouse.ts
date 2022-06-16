@@ -13,7 +13,15 @@ function replacePathForWindowFormat(folderSearch) {
   return folderSearch;
 }
 
-async function runChrome({ url, isFastOption = false }: { url: string; isFastOption: boolean }) {
+async function runChrome({
+  url,
+  onlyCategories,
+  isFastOption = false,
+}: {
+  url: string;
+  onlyCategories: string[];
+  isFastOption: boolean;
+}) {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
   const throttling = isFastOption
     ? {
@@ -26,7 +34,7 @@ async function runChrome({ url, isFastOption = false }: { url: string; isFastOpt
     logLevel: 'info',
     output: 'json',
     port: chrome.port,
-    onlyCategories: ['performance', 'best-practices', 'accessibility', 'seo', 'pwa'],
+    onlyCategories,
     throttling,
   };
   const runnerResult = await lighthouse(url, chromeOptions);
@@ -36,13 +44,13 @@ async function runChrome({ url, isFastOption = false }: { url: string; isFastOpt
   return runnerResult;
 }
 
-export async function runLightHouse({ logger, options, path, url, isFastOption }) {
+export async function runLightHouse({ logger, options, path, url, onlyCategories, isFastOption }) {
   // let folderSearch = args.folder;
   // folderSearch = replacePathForWindowFormat(folderSearch);
 
-  const { lhr, artifacts, report } = await runChrome({ url, isFastOption });
-
-  reportLhr(lhr, path);
-
-  console.log('Report is done for', lhr.finalUrl);
+  return await runChrome({
+    url,
+    onlyCategories,
+    isFastOption,
+  });
 }
