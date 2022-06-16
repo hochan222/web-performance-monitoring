@@ -162,12 +162,6 @@ function reportAuditSummary(audits, path) {
       overallSavingsBytes: toFixedTwo(modernImageFormats.details?.overallSavingsBytes),
       overallSavingsMs: modernImageFormats.details?.overallSavingsMs,
     },
-    'network-rtt': {
-      longestRtt: toFixedTwo(networkRtt.numericValue),
-    },
-    'network-server-latency': {
-      longestServerLatency: toFixedTwo(networkServerLatency.numericValue),
-    },
     'offscreen-images': {
       overallSavingsBytes: offscreenImages.details?.overallSavingsBytes,
       overallSavingsMs: offscreenImages.details?.overallSavingsMs,
@@ -194,8 +188,8 @@ function reportAuditSummary(audits, path) {
     },
     'third-party-summary': {
       score: convertPercentage(thirdPartySummary.score),
-      wastedBytes: thirdPartySummary.details?.summary?.wastedBytes,
-      wastedMs: thirdPartySummary.details?.summary?.wastedMs,
+      wastedBytes: toFixedTwo(thirdPartySummary.details?.summary?.wastedBytes),
+      wastedMs: toFixedTwo(thirdPartySummary.details?.summary?.wastedMs),
     },
     'total-blocking-time': {
       numericValue: toFixedTwo(totalBlockingTime.numericValue),
@@ -206,12 +200,12 @@ function reportAuditSummary(audits, path) {
       score: convertPercentage(totalByteWeight.score),
     },
     'unminified-css': {
-      score: convertPercentage(unminifiedCss.score),
+      score: toFixedTwo(convertPercentage(unminifiedCss.score)),
       overallSavingsBytes: unminifiedCss.details?.overallSavingsBytes,
       overallSavingsMs: unminifiedCss.details?.overallSavingsMs,
     },
     'unminified-javascript': {
-      score: convertPercentage(unminifiedJavascript.score),
+      score: toFixedTwo(convertPercentage(unminifiedJavascript.score)),
       overallSavingsBytes: unminifiedJavascript.details?.overallSavingsBytes,
       overallSavingsMs: unminifiedJavascript.details?.overallSavingsMs,
     },
