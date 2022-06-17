@@ -74,4 +74,37 @@ const ECOMMERCE_KEYWORD_LAPTOP = [
   },
 ];
 
-export { ECOMMERCE_MAIN, ECOMMERCE_KEYWORD_LAPTOP };
+const _11ST_KEYWORDS = [
+  {
+    company: '항공권',
+    name: '11st-mw-keyword-airline-ticket',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=%ED%95%AD%EA%B3%B5%EA%B6%8C',
+  },
+  {
+    company: '다이슨 에어랩',
+    name: '11st-mw-keyword-dyson-airwrap',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=%EB%8B%A4%EC%9D%B4%EC%8A%A8%20%EC%97%90%EC%96%B4%EB%9E%A9',
+  },
+  {
+    company: '비비고',
+    name: '11st-mw-keyword-bibigo',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=%EB%B9%84%EB%B9%84%EA%B3%A0',
+  },
+  {
+    company: '아이폰13프로',
+    name: '11st-mw-keyword-iPhone-13-pro',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=iPhone%2013%20Pro',
+  },
+  {
+    company: '케이크',
+    name: '11st-mw-keyword-cake',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=%EC%BC%80%EC%9D%B4%ED%81%AC',
+  },
+  {
+    company: '노트북',
+    name: '11st-mw-keyword-laptop',
+    url: 'https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81',
+  },
+];
+
+export { ECOMMERCE_MAIN, ECOMMERCE_KEYWORD_LAPTOP, _11ST_KEYWORDS };

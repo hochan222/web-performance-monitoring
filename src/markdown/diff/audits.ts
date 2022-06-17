@@ -200,15 +200,15 @@ function getSizeMetrics(
   );
 
   resourceSummaryItems?.forEach((item) => {
-    totalSize.push(item.at(0)?.transferSize);
-    fontSize.push(item.at(1)?.transferSize);
-    imageSize.push(item.at(2)?.transferSize);
-    mediaSize.push(item.at(3)?.transferSize);
-    scriptSize.push(item.at(4)?.transferSize);
-    stylesheetSize.push(item.at(5)?.transferSize);
-    documentSize.push(item.at(6)?.transferSize);
-    otherSize.push(item.at(7)?.transferSize);
-    thirdPartySize.push(item.at(8)?.transferSize);
+    totalSize.push(item?.at(0)?.transferSize);
+    fontSize.push(item?.at(1)?.transferSize);
+    imageSize.push(item?.at(2)?.transferSize);
+    mediaSize.push(item?.at(3)?.transferSize);
+    scriptSize.push(item?.at(4)?.transferSize);
+    stylesheetSize.push(item?.at(5)?.transferSize);
+    documentSize.push(item?.at(6)?.transferSize);
+    otherSize.push(item?.at(7)?.transferSize);
+    thirdPartySize.push(item?.at(8)?.transferSize);
   });
   const content = [
     h3('Size Metrics'),

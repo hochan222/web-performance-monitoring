@@ -25,16 +25,34 @@ program
     logger.info(`Starting lighthouse metric to statistics conversion in ${options.mode} mode`);
 
     if (options.mode === 'once') {
-      await runLightHouse({ logger, options, path: title, url: url, isFastOption: fast === 'fast' });
-      await l2s({ path: title });
-      await generateReport({ path: title });
+      const isFastOption = fast === 'fast';
+      const path = isFastOption ? `${title}-fast` : title;
+
+      await runLightHouse({ logger, options, path, url: url, isFastOption });
+      await l2s({ path, isFastOption });
+      if (!isFastOption) {
+        await generateReport({ path });
+      }
     }
     // The recommendation is do each LH run in a separate process. The performance metrics will be affected.
     // https://github.com/GoogleChrome/lighthouse/issues/7187
   })
 
   .command('diff', 'Compare lighthouse metric')
-  .action(async ({ logger, args, options }) => {
-    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP);
+  .argument('[fast]', 'fast')
+  .action(async ({ args }) => {
+    const { fast } = args;
+    const isFastOption = fast === 'fast';
+
+    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption);
+  })
+
+  .command('11st-keywords', 'Compare 11st keywords metrics')
+  .argument('[fast]', 'fast')
+  .action(async ({ args }) => {
+    const { fast } = args;
+    const isFastOption = fast === 'fast';
+
+    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption);
   });
 program.run();

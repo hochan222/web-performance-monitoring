@@ -34,13 +34,16 @@ function getLastestDate(path: string) {
   return sortLastestDate(getDirectoryFileList(`${PERSISTENT_DATA_PATH}/${path}/`)).at(0);
 }
 
-async function getPersistentData(data) {
+async function getPersistentData(data, isFastOption) {
+  const folderPath = (name) => (isFastOption ? `${name}-fast` : name);
   return Promise.all(
     data.map(async ({ company, name, url }) => ({
       company,
       name,
       url,
-      data: JSON.parse(await readFile(`${PERSISTENT_DATA_PATH}/${name}/${getLastestDate(name)}.json`, 'utf8')),
+      data: JSON.parse(
+        await readFile(`${PERSISTENT_DATA_PATH}/${folderPath(name)}/${getLastestDate(folderPath(name))}.json`, 'utf8'),
+      ),
     })),
   );
 }
@@ -51,8 +54,10 @@ export async function generateDiff(
     name: string;
     url: string;
   }[],
+  isFastOption: boolean,
 ) {
-  const persistentData = await getPersistentData(data);
+  const path = isFastOption ? `${REPORT_PATH}/total-fast-report.md` : `${REPORT_PATH}/total-report.md`;
+  const persistentData = await getPersistentData(data, isFastOption);
 
   const content = [
     h1('Web Performance Report'),
@@ -63,5 +68,5 @@ export async function generateDiff(
   ].join('\n');
 
   guaranteeFolderPath(`./${REPORT_PATH}`);
-  write({ path: `${REPORT_PATH}/total-report.md`, content, type: 'string' });
+  write({ path, content, type: 'string' });
 }
