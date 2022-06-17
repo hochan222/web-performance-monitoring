@@ -1,3 +1,4 @@
+rm -rf persistentData
 yarn decompress
 
 yarn test l2s --mode once 11st-mw-keyword-airline-ticket "https://search.11st.co.kr/MW/search?searchKeyword=%ED%95%AD%EA%B3%B5%EA%B6%8C" &&

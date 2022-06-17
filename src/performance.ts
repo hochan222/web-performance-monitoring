@@ -44,7 +44,7 @@ program
     const { fast } = args;
     const isFastOption = fast === 'fast';
 
-    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption, 'ecommerce');
+    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption, 'ecommerce-search');
   })
 
   .command('11st-keywords', 'Compare 11st keywords metrics')
