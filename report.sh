@@ -32,7 +32,9 @@ yarn test l2s --mode once 11st-mw "http://m.11st.co.kr/page/main/home" fast &&
 yarn test l2s --mode once 11st-mw-keyword-laptop "http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898" fast &&
 
 yarn test diff &&
-yarn test diff fast 
+yarn test diff fast &&
+yarn test ecommerce-main-diff &&
+yarn test ecommerce-main-diff fast
 
 rm -rf persistentData/naver-mw
 rm -rf persistentData/naver-mw-keyword-laptop
