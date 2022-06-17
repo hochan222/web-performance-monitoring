@@ -55,8 +55,11 @@ export async function generateDiff(
     url: string;
   }[],
   isFastOption: boolean,
+  about,
 ) {
-  const path = isFastOption ? `${REPORT_PATH}/total-fast-report.md` : `${REPORT_PATH}/total-report.md`;
+  const path = isFastOption
+    ? `${REPORT_PATH}/total-${about}-fast-report.md`
+    : `${REPORT_PATH}/total-${about}-report.md`;
   const persistentData = await getPersistentData(data, isFastOption);
 
   const content = [

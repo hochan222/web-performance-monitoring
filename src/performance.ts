@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { ECOMMERCE_KEYWORD_LAPTOP } from '../config/settings';
+import { ECOMMERCE_KEYWORD_LAPTOP, _11ST_KEYWORDS } from '../config/settings';
 import { l2s } from './l2s';
 import { runLightHouse } from './lighthouse/lighthouse';
 import { generateDiff, generateReport } from './markdown';
@@ -44,7 +44,7 @@ program
     const { fast } = args;
     const isFastOption = fast === 'fast';
 
-    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption);
+    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption, 'ecommerce');
   })
 
   .command('11st-keywords', 'Compare 11st keywords metrics')
@@ -53,6 +53,6 @@ program
     const { fast } = args;
     const isFastOption = fast === 'fast';
 
-    await generateDiff(ECOMMERCE_KEYWORD_LAPTOP, isFastOption);
+    await generateDiff(_11ST_KEYWORDS, isFastOption, '11st');
   });
 program.run();
