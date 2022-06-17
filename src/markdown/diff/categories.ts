@@ -1,5 +1,5 @@
 import { score } from '../../libs/utils';
-import { tAlignLine, tBody, tHead } from '../markdown';
+import { hyperLink, tAlignLine, tBody, tHead } from '../markdown';
 
 export async function generateCategoryDiff(persistentData): Promise<string[]> {
   const company = [''];
@@ -9,9 +9,9 @@ export async function generateCategoryDiff(persistentData): Promise<string[]> {
   const pwa: string[] = [];
   const seo: string[] = [];
 
-  persistentData.forEach(({ data, company: cp }) => {
+  persistentData.forEach(({ data, company: cp, url }) => {
     const { categories } = data;
-    company.push(cp);
+    company.push(hyperLink(cp, url));
     accessibility.push(`${score(categories[0].score)} ${categories[0].score}`);
     bestPractice.push(`${score(categories[1].score)} ${categories[1].score}`);
     performance.push(`${score(categories[2].score)} ${categories[2].score}`);

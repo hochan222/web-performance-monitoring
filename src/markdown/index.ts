@@ -1,4 +1,3 @@
-import * as fs from 'fs';
 import { readFile } from 'fs/promises';
 import { PERSISTENT_DATA_PATH, REPORT_PATH } from '../libs/constants';
 import { getDirectoryFileList, guaranteeFolderPath, write } from '../libs/file';
