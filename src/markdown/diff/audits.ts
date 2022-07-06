@@ -38,6 +38,7 @@ function getBasicMetrics(company, interactive, maxPotentialFid, speedIndex) {
   const maxPotentialFidText = maxPotentialFid?.map(
     ({ numericValue, score: mScore }) => `${score(mScore)} ${numericValue}`,
   );
+  // speedIndex definition: https://github.com/GoogleChrome/lighthouse/issues/8148
   const speedIndexText = speedIndex?.map(({ score: sScore, numericValue }) => `${score(sScore)} ${numericValue}`);
   const content = [
     h3('Basic Metrics'),
