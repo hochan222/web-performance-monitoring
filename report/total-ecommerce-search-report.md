@@ -2,106 +2,106 @@
 
 |  | [11st](http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898) | [Naver](https://msearch.shopping.naver.com/search/all?query=%EB%85%B8%ED%8A%B8%EB%B6%81&frm=NVSHSRC&vertical=home) | [Coupang](https://m.coupang.com/nm/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81) | [Gmarket](https://browse.gmarket.co.kr/m/search?keyword=%EB%85%B8%ED%8A%B8%EB%B6%81) | [SSG](http://m.ssg.com/search.ssg?query=laptop) | [WeMakePrice](https://msearch.wemakeprice.com/search?keyword=%EB%85%B8%ED%8A%B8%EB%B6%81&tab=main&_service=5) | [TMON](http://m.search.tmon.co.kr/search?useArtistchaiRegion=Y#_=1655137593350&keyword=%EB%85%B8%ED%8A%B8%EB%B6%81&sortType=POPULAR&thr=ms&useTypoCorrection=true) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Accessibility | 🟠 89 | 🟠 83 | 🟠 67 | 🟠 77 | 🟠 73 | 🟠 83 | 🟠 81 |
+| Accessibility | 🟢 90 | 🟠 83 | 🟠 67 | 🟠 77 | 🟠 71 | 🟠 83 | 🟠 81 |
 | Best Practice | 🟠 83 | 🟢 100 | 🟠 67 | 🟠 50 | 🟠 58 | 🟠 83 | 🟠 75 |
-| Performance | 🔴 21 | 🔴 19 | 🔴 32 | 🔴 20 | 🔴 18 | 🔴 6 | 🔴 25 |
+| Performance | 🔴 21 | 🔴 25 | 🔴 35 | 🔴 20 | 🔴 18 | 🔴 5 | 🔴 24 |
 | PWA | 🔴 40 | 🔴 40 | 🔴 40 | 🔴 40 | 🔴 40 | 🔴 30 | 🔴 40 |
-| SEO | 🟢 96 | 🟠 74 | 🟠 73 | 🟢 92 | 🟠 81 | 🟠 84 | 🟢 92 |
+| SEO | 🟠 89 | 🟠 74 | 🟠 73 | 🟢 92 | 🟠 81 | 🟠 84 | 🟢 92 |
 
 ### CRUX Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| CLS | 🟢 0 | 🟠 0.178 | 🟢 0.063 | 🟢 0.093 | 🟢 0.022 | 🔴 0.407 | 🟢 0 |
-| FCP | 🔴 5713.59 | 🔴 3897.55 | 🟠 2993.98 | 🔴 6930.79 | 🔴 7406.8 | 🔴 10245.19 | 🔴 3934.05 |
-| FMP | 🔴 6248.57 | 🟠 3897.55 | 🟠 2993.98 | 🔴 6930.79 | 🔴 7958.9 | 🔴 13495.7 | 🔴 7409.86 |
-| LCP | 🔴 14505.3 | 🔴 12897.55 | 🔴 9276.35 | 🔴 9293.11 | 🔴 12446.44 | 🔴 25094.89 | 🔴 16884.79 |
+| CLS | 🟢 0 | 🟢 0 | 🟢 0.065 | 🟢 0.093 | 🟢 0.007 | 🔴 0.407 | 🟢 0 |
+| FCP | 🔴 5355.43 | 🔴 3910.94 | 🔴 3040.68 | 🔴 7044.92 | 🔴 7398.47 | 🔴 10510.11 | 🔴 3781.46 |
+| FMP | 🔴 5945.21 | 🟠 3910.94 | 🟠 3040.68 | 🔴 7044.92 | 🔴 7836.94 | 🔴 13755.92 | 🔴 7406 |
+| LCP | 🔴 14282.79 | 🔴 14594.77 | 🔴 8646.6 | 🔴 9978.69 | 🔴 11892.73 | 🔴 25316.05 | 🔴 17133.35 |
 
 ### Basic Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Interactive | 🔴 15354.69 | 🔴 17169.39 | 🔴 11442.94 | 🔴 15863.48 | 🔴 25867.84 | 🔴 24518.31 | 🔴 14808.94 |
-| Max Potential Fid | 🔴 730 | 🔴 1091 | 🔴 915 | 🔴 1001 | 🔴 2441 | 🔴 1304 | 🔴 926 |
-| Speed Index | 🔴 10126.7 | 🔴 10279.36 | 🔴 6985.37 | 🔴 12802.99 | 🔴 11668.17 | 🔴 23423.5 | 🔴 13559.72 |
+| Interactive | 🔴 15361.79 | 🔴 17117.55 | 🔴 11423.86 | 🔴 16893.19 | 🔴 26094.8 | 🔴 24154.85 | 🔴 15806.76 |
+| Max Potential Fid | 🔴 839 | 🔴 928 | 🔴 1031 | 🔴 937 | 🔴 2405 | 🔴 1304 | 🔴 1031 |
+| Speed Index | 🔴 10072.26 | 🔴 10876.91 | 🔴 6700.71 | 🔴 14433.92 | 🔴 12495.31 | 🔴 35142.42 | 🔴 12899.49 |
 
 ### Load Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Boot Up Time | 🟠 2494.51 | 🟠 2847.35 | 🟠 2743.66 | 🟠 2533.49 | 🔴 4631.32 | 🔴 6994.09 | 🟠 3278.26 |
-| Critical Request Chains | 1 chain found | - | 28 chains found | 16 chains found | 42 chains found | 11 chains found | 8 chains found |
-| Main Thread Work Breakdown | 🔴 7126.74 | 🔴 6560.29 | 🔴 5018.94 | 🔴 8936.1 | 🔴 11223.23 | 🔴 13585.71 | 🔴 7432.58 |
+| Boot Up Time | 🟠 2523.83 | 🟠 2674.93 | 🟠 2359.56 | 🟠 2646.77 | 🔴 4612.44 | 🔴 7048.89 | 🟠 3464.15 |
+| Critical Request Chains | 1 chain found | - | 28 chains found | 18 chains found | 42 chains found | 11 chains found | 8 chains found |
+| Main Thread Work Breakdown | 🔴 8013.54 | 🔴 6370.74 | 🔴 4754.51 | 🔴 9172.37 | 🔴 10685.82 | 🔴 14907.64 | 🔴 8082.95 |
 
 ### Network Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Requests | 97 | 111 | 114 | 75 | 257 | 119 | 161 |
-| Scripts | 20 | 38 | 31 | 12 | 48 | 19 | 20 |
+| Requests | 102 | 108 | 113 | 77 | 260 | 118 | 170 |
+| Scripts | 20 | 38 | 31 | 12 | 48 | 19 | 22 |
 | StyleSheets | 2 | 8 | 3 | 3 | 8 | 3 | 2 |
-| Fonts | 2 | 0 | 0 | 13 | 2 | 0 | 0 |
-| Tasks | 2760 | 1844 | 1387 | 3939 | 4081 | 9970 | 3296 |
-| Tasks Over 10ms | 19 | 21 | 20 | 21 | 35 | 30 | 21 |
-| Tasks Over 25ms | 8 | 10 | 12 | 11 | 15 | 15 | 8 |
-| Tasks Over 50ms | 2 | 3 | 5 | 8 | 8 | 9 | 4 |
-| Tasks Over 100ms | 2 | 3 | 1 | 4 | 5 | 3 | 3 |
-| Tasks Over 500ms | 0 | 1 | 0 | 1 | 1 | 1 | 0 |
-| RTT | 1.51 | 1.61 | 1.37 | 8.1 | 1.53 | 1.44 | 1.48 |
-| Throuhput | 10928482.1 | 14689431.79 | 40715959.35 | 10142977.7 | 23079002.06 | 3500105.78 | 9168470.2 |
-| Max Rtt | 190.65 | 191.47 | 6.69 | 216.44 | 227.44 | 191.77 | 191.71 |
-| Max Server Latency | 226.55 | 620.98 | 810.39 | 2787.16 | 227.48 | 1206.01 | 178.77 |
-| Total Byte Weight | 🟢 2114474 | 🟢 2540282 | 🟢 1389397 | 🟢 1903577 | 🔴 4507390 | 🟢 2382367 | 🔴 4183583 |
-| Total Task Time | 1781.68 | 1640.07 | 1254.73 | 2234.02 | 2805.81 | 3396.43 | 1858.14 |
-| Main Document TransferSize | 53507 | 188847 | 29470 | 180051 | 64264 | 447943 | 11227 |
-| Server Response Time Saving Ms | 🔴 663.08 | 🔴 941.91 | 🔴 528.71 | 🔴 2868.97 | 🔴 604.85 | 🔴 1655.55 | 🟢 116.45 |
-| Total Blocking Time | 🔴 1566.68 | 🔴 1400 | 🔴 1157.36 | 🔴 1295.88 | 🔴 2091 | 🔴 2075 | 🔴 1173 |
-| Uses Long Cache TTL | 🔴 1519803.52 | 🔴 282180.83 | 🔴 591553.14 | 🔴 1603154.67 | 🔴 3932069.01 | 🔴 1231718.28 | 🔴 1088416.17 |
-| Uses Rel Preconnect | 🟢 null | 🟢 null | 🟠 300.13 | 🟢 0 | 🟢 0 | 🟠 679.41 | 🟠 680.45 |
+| Fonts | 2 | 0 | 0 | 15 | 2 | 0 | 0 |
+| Tasks | 3049 | 1894 | 1217 | 4090 | 3667 | 10125 | 3189 |
+| Tasks Over 10ms | 19 | 22 | 17 | 21 | 28 | 34 | 24 |
+| Tasks Over 25ms | 7 | 9 | 8 | 10 | 14 | 16 | 10 |
+| Tasks Over 50ms | 3 | 4 | 3 | 9 | 9 | 9 | 4 |
+| Tasks Over 100ms | 2 | 3 | 2 | 6 | 4 | 3 | 2 |
+| Tasks Over 500ms | 0 | 0 | 0 | 0 | 1 | 1 | 1 |
+| RTT | 1.55 | 1.22 | 0.9 | 8.09 | 1.03 | 0.9 | 0.83 |
+| Throuhput | 7825837.15 | 16186047.27 | 28145464.5 | 10272242.78 | 23599012.28 | 3461014.12 | 10619022.78 |
+| Max Rtt | 189.07 | 198.08 | 21.45 | 220.25 | 224.15 | 190.22 | 190.91 |
+| Max Server Latency | 224.46 | 603.1 | 1051.76 | 2833.3 | 224.84 | 1078.35 | 177.23 |
+| Total Byte Weight | 🟢 2281162 | 🟢 2497064 | 🟢 1440079 | 🟢 1964569 | 🔴 4298824 | 🟢 2337836 | 🟠 4032251 |
+| Total Task Time | 2003.38 | 1592.68 | 1188.63 | 2293.09 | 2671.45 | 3726.91 | 2020.74 |
+| Main Document TransferSize | 53103 | 187683 | 29299 | 181286 | 63730 | 422014 | 11224 |
+| Server Response Time Saving Ms | 🔴 657.35 | 🔴 793.34 | 🟢 358.49 | 🔴 2920.39 | 🟢 497.54 | 🔴 1334.93 | 🟢 120.58 |
+| Total Blocking Time | 🔴 1608 | 🔴 1216.56 | 🔴 888.04 | 🔴 1197.88 | 🔴 1965 | 🔴 2631.29 | 🔴 1269.5 |
+| Uses Long Cache TTL | 🔴 1667149.66 | 🔴 278995.39 | 🔴 278718.79 | 🔴 1662941.08 | 🔴 3720570.06 | 🔴 1217721.28 | 🔴 1235391.7 |
+| Uses Rel Preconnect | 🟢 null | 🟢 null | 🟠 193.49 | 🟢 0 | 🟠 140.37 | 🟠 678.62 | 🟠 680.16 |
 
 ### Dom Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Total Dom Elements | 🔴 3152 | 🔴 1243 | 🔴 915 | 🔴 8639 | 🔴 5371 | 🔴 7316 | 🔴 3421 |
+| Total Dom Elements | 🔴 3419 | 🔴 1243 | 🔴 886 | 🔴 8694 | 🔴 5327 | 🔴 7066 | 🔴 3440 |
 | Maximum Dom Depth | 21 | 17 | 13 | 25 | 20 | 15 | 14 |
 | Maximum ChildElements | 26 | 30 | 29 | 200 | 99 | 126 | 64 |
 
 ### Size Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Total Size | 2114474 | 2540282 | 1389397 | 1903577 | 4507390 | 2382367 | 4183583 |
-| Uses Text Compression Saving Bytes | 🟠 52509 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 26651 | 🔴 655681 | 🟢 0 |
-| Uses Text Compression Saving Ms | 🟠 750 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 150 | 🔴 4070 | 🟢 0 |
-| Font Size | 759803 | 1397987 | 739301 | 1031850 | 2489839 | 1130222 | 3238838 |
-| Image Size | 736921 | 522539 | 526221 | 430339 | 1189677 | 458407 | 790264 |
-| Media Size | 446523 | 332250 | 71161 | 180051 | 712825 | 402677 | 86099 |
-| Script Size | 99875 | 190708 | 29470 | 120471 | 69360 | 320434 | 47322 |
-| Unminified JS Saving Bytes | 🟠 9877 | 🟢 6391 | 🟠 13913 | 🟠 16638 | 🔴 204306 | 🟢 0 | 🟢 0 |
-| Unminified JS Saving ms | 🟠 150 | 🟢 0 | 🟠 160 | 🟠 160 | 🔴 2100 | 🟢 0 | 🟢 0 |
-| Unused JS Saving Bytes | 🔴 327661 | 🔴 923182 | 🔴 251010 | 🔴 194523 | 🔴 583892 | 🔴 559048 | 🔴 333926 |
-| Unused Js Saving ms | 🔴 4670 | 🔴 3810 | 🔴 1350 | 🔴 1910 | 🔴 4730 | 🔴 3710 | 🔴 2460 |
-| Stylesheet Size | 53507 | 96798 | 23244 | 119887 | 26516 | 70627 | 21060 |
+| Total Size | 2281162 | 2497064 | 1440079 | 1964569 | 4298824 | 2337836 | 4032251 |
+| Uses Text Compression Saving Bytes | 🟠 52509 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 26651 | 🔴 627697 | 🟢 0 |
+| Uses Text Compression Saving Ms | 🟠 660 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 150 | 🔴 3360 | 🟢 0 |
+| Font Size | 759803 | 1397931 | 735851 | 1071793 | 2278547 | 1130032 | 2947921 |
+| Image Size | 736721 | 481662 | 580540 | 430353 | 1189599 | 432478 | 929936 |
+| Media Size | 481641 | 331129 | 71162 | 181286 | 712825 | 388648 | 86005 |
+| Script Size | 130597 | 189544 | 29299 | 140319 | 69409 | 316050 | 47322 |
+| Unminified JS Saving Bytes | 🟢 9877 | 🟢 6398 | 🟢 13682 | 🟠 16640 | 🔴 204306 | 🟢 0 | 🟢 0 |
+| Unminified JS Saving ms | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 150 | 🔴 2400 | 🟢 0 | 🟢 0 |
+| Unused JS Saving Bytes | 🔴 328172 | 🔴 923222 | 🔴 250432 | 🔴 194533 | 🔴 583542 | 🔴 559277 | 🔴 422879 |
+| Unused Js Saving ms | 🔴 4770 | 🔴 3890 | 🔴 1180 | 🔴 2100 | 🔴 4800 | 🔴 2730 | 🔴 2120 |
+| Stylesheet Size | 99852 | 96798 | 23227 | 119867 | 29271 | 70628 | 21067 |
 | Unminified CSS Saving Bytes | 🟢 0 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 37164 | 🟢 0 | 🟢 0 |
-| Unminified CSS Saving ms | 🟢 0 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 750 | 🟢 0 | 🟢 0 |
-| Unused CSS Saving Bytes | 🟠 91720 | 🟠 75216 | 🟢 63061 | 🟠 103382 | 🔴 688687 | 🔴 62073 | 🟠 40934 |
-| Unused CSS Saving ms | 🟠 680 | 🟠 150 | 🟢 0 | 🟠 630 | 🔴 7880 | 🔴 930 | 🟠 150 |
-| Document Size | 17845 | 0 | 0 | 20979 | 19173 | 0 | 0 |
-| Other Size | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Third Party Size | 1669310 | 2171980 | 995709 | 120914 | 4429609 | 1629147 | 4103448 |
+| Unminified CSS Saving ms | 🟢 0 | 🟢 0 | 🟢 0 | 🟢 0 | 🟠 450 | 🟢 0 | 🟢 0 |
+| Unused CSS Saving Bytes | 🔴 91449 | 🟠 75216 | 🟢 63063 | 🔴 103391 | 🔴 688687 | 🟠 62073 | 🟠 40896 |
+| Unused CSS Saving ms | 🔴 1020 | 🟠 450 | 🟢 0 | 🔴 990 | 🔴 7950 | 🟠 340 | 🟠 180 |
+| Document Size | 53103 | 0 | 0 | 20951 | 19173 | 0 | 0 |
+| Other Size | 19445 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Third Party Size | 1704609 | 2131029 | 1046484 | 140762 | 4221576 | 1646256 | 3951691 |
 
 ### Image Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Modern Image Format Saving Bytes | 🔴 225374.15 | 🟠 132719.85 | 🔴 133348.6 | 🔴 403542.7 | 🔴 1058735 | 🔴 264868.1 | 🔴 2126868.5 |
-| Modern Image Format Saving ms | 🔴 1400 | 🟠 630 | 🔴 910 | 🔴 1910 | 🔴 3750 | 🔴 1110 | 🔴 10200 |
-| Offscreen Images Saving Bytes | 🟢 5150 | 🟠 39949 | 🔴 196571 | 🔴 217841 | 🔴 1401365 | 🔴 109917 | 🟠 353260 |
-| Offscreen Format Saving ms | 🟢 0 | 🟠 150 | 🔴 910 | 🔴 800 | 🔴 3350 | 🔴 1420 | 🟠 440 |
-| Uses Optimized Images Saving Bytes | 🔴 130615 | 🟢 16286 | 🟢 0 | 🟠 52725 | 🔴 64966 | 🔴 73712 | 🔴 841569 |
-| Uses Optimized Images Saving Ms | 🔴 940 | 🟢 0 | 🟢 0 | 🟠 320 | 🔴 970 | 🔴 1080 | 🔴 4080 |
-| Uses Responsive Images Saving Bytes | 🟢 0 | 🟠 36762 | 🟠 57815 | 🟢 0 | 🔴 679389 | 🟢 45323 | 🔴 2221732 |
-| Uses Responsive Images Saving ms | 🟢 0 | 🟠 150 | 🟠 750 | 🟢 0 | 🔴 3300 | 🟢 0 | 🔴 10810 |
+| Modern Image Format Saving Bytes | 🔴 255659.85 | 🟠 105645.5 | 🔴 216606.65 | 🔴 433264.6 | 🔴 833007.2 | 🔴 248372.45 | 🔴 1918383.65 |
+| Modern Image Format Saving ms | 🔴 2340 | 🟠 600 | 🔴 900 | 🔴 1800 | 🔴 2560 | 🔴 1010 | 🔴 9150 |
+| Offscreen Images Saving Bytes | 🟢 5150 | 🟠 39949 | 🔴 205920 | 🔴 320186 | 🔴 1410119 | 🟠 144054 | 🟠 311659 |
+| Offscreen Format Saving ms | 🟢 0 | 🟠 300 | 🔴 1170 | 🔴 1610 | 🔴 4090 | 🟠 560 | 🟠 330 |
+| Uses Optimized Images Saving Bytes | 🔴 152300 | 🟠 16286 | 🟢 0 | 🟠 64533 | 🔴 64966 | 🟠 79654 | 🔴 784704 |
+| Uses Optimized Images Saving Ms | 🔴 1660 | 🟠 150 | 🟢 0 | 🟠 160 | 🔴 1350 | 🟠 250 | 🔴 3770 |
+| Uses Responsive Images Saving Bytes | 🟢 0 | 🟠 36762 | 🟠 83633 | 🟢 0 | 🔴 609056 | 🟠 45323 | 🔴 1905218 |
+| Uses Responsive Images Saving ms | 🟢 0 | 🟠 300 | 🟠 270 | 🟢 0 | 🔴 2550 | 🟠 260 | 🔴 9260 |
 
 ### ETC Metrics
 |  | 11st | Naver | Coupang | Gmarket | SSG | WeMakePrice | TMON |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Final Screenshot Time | 3443 | 4067 | 2273 | 6635 | 3337 | 16643 | 7356 |
-| Legacy Javascript Overall Savings Bytes | 🟠 21452 | 🟠 37215 | 🟠 47996 | 🟠 12211 | 🟠 73926 | 🟢 848 | 🟠 46103 |
-| Legacy Javascript Overall Savings ms | 🟠 340 | 🟠 450 | 🟠 160 | 🟠 170 | 🟠 450 | 🟢 0 | 🟠 210 |
-| Third Party Wasted Bytes | 🟢 291853 | 🔴 null | 🟢 193169 | 🔴 null | 🔴 401869 | 🔴 447323 | 🟢 270070 |
-| Third Party Wasted ms | 🟢 156.38 | 🔴 null | 🟢 25.95 | 🔴 null | 🔴 268.57 | 🔴 918.7 | 🟢 98.99 |
+| Final Screenshot Time | 3987 | 3724 | 2230 | 6468 | 6719 | 28769 | 6692 |
+| Legacy Javascript Overall Savings Bytes | 🟢 21453 | 🟠 37211 | 🟠 47668 | 🟠 12211 | 🔴 73929 | 🟢 848 | 🟠 57320 |
+| Legacy Javascript Overall Savings ms | 🟢 0 | 🟠 450 | 🟠 150 | 🟠 150 | 🔴 940 | 🟢 0 | 🟠 200 |
+| Third Party Wasted Bytes | 🟢 291633 | 🔴 null | 🟢 193137 | 🔴 null | 🔴 403126 | 🔴 445622 | 🟢 408852 |
+| Third Party Wasted ms | 🟢 162.16 | 🔴 null | 🟢 14.08 | 🔴 null | 🔴 398.23 | 🔴 768.66 | 🟢 118.72 |
