@@ -2,20 +2,20 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-| 🟢 90 | 🟠 83 | 🔴 25 | 🔴 40 | 🟠 89 |
+| 🟢 90 | 🟠 75 | 🔴 19 | 🔴 40 | 🟠 89 |
 
 | Category | Score |
 | --- | --- |
 | **Basic Metrics** | |
-| Reduce JavaScript execution time | 2.7 s |
-| First Contentful Paint | 5.8 s |
-| Largest Contentful Paint | 14.9 s |
-| Speed Index | 11.4 s |
-| Cumulative Layout Shift | 0 |
-| First Meaningful Paint | 6.4 s |
-| Time to Interactive | 15.6 s |
-| Reduce initial server response time | Root document took 970 ms |
-| Total Blocking Time | 990 ms |
+| Reduce JavaScript execution time | 3.4 s |
+| First Contentful Paint | 6.3 s |
+| Largest Contentful Paint | 13.6 s |
+| Speed Index | 9.4 s |
+| Cumulative Layout Shift | 0.012 |
+| First Meaningful Paint | 9.8 s |
+| Time to Interactive | 16.9 s |
+| Initial server response time was short | Root document took 550 ms |
+| Total Blocking Time | 2,240 ms |
 | apple touch icon | ✅ |
 | **Aria** | |
 | [aria-allowed-attr](https://web.dev/aria-allowed-attr/) | ✅ |
@@ -35,7 +35,7 @@
 | [link-name](https://web.dev/link-name/) | ✅ |
 | **Javascript** | |
 | [duplicated-javascript](https://web.dev/duplicated-javascript/) | ✅ |
-| [errors-in-console](https://web.dev/errors-in-console/) | ✅ |
+| [errors-in-console](https://web.dev/errors-in-console/) | ❌ |
 | [geolocation-on-start](https://web.dev/geolocation-on-start/) | ✅ |
 | [js-libraries](https://web.dev/js-libraries/) | It is for reference only. |
 | [no-unload-listeners](https://web.dev/no-unload-listeners/) | ✅ |
@@ -49,7 +49,7 @@
 | [inspector-issues](https://web.dev/inspector-issues/) | ❌ |
 | [redirects](https://web.dev/redirects/) | ✅ |
 | [render-blocking-resources](https://web.dev/render-blocking-resources/) | ✅ |
-| [server-response-time](https://web.dev/server-response-time/) | ❌ |
+| [server-response-time](https://web.dev/server-response-time/) | ✅ |
 | [timing-budget](https://web.dev/timing-budget/) | It is for reference only. |
 | [total-blocking-time](https://web.dev/total-blocking-time/) | ❌ |
 | [total-byte-weight](https://web.dev/total-byte-weight/) | ❌ |
@@ -127,7 +127,7 @@
 | **ETC** | |
 | [screenshot-thumbnails](https://web.dev/screenshot-thumbnails/) | It is for reference only. |
 | [unminified-css](https://web.dev/unminified-css/) | ✅ |
-| [unminified-javascript](https://web.dev/unminified-javascript/) | ✅ |
+| [unminified-javascript](https://web.dev/unminified-javascript/) | ❌ |
 | [user-timings](https://web.dev/user-timings/) | It is for reference only. |
 | [uses-passive-event-listeners](https://web.dev/uses-passive-event-listeners/) | ✅ |
 
@@ -142,21 +142,20 @@
 - Unit
   - millisecond
 - wastedMs
-  - 2675.45
+  - 3432.73
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 3356.16 | 1659.74 | 67.42 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 1902.94 | 8.98 | 4.26 |
-| Unattributable | 850.56 | 7.83 | 0 |
-| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 258.61 | 210.09 | 12.06 |
-| https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c | 195.44 | 178.1 | 16.3 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898 | 159.26 | 7.72 | 35.87 |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js | 147.55 | 129.62 | 15.01 |
-| http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 131.74 | 110.83 | 5.18 |
-| http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 83.88 | 63.03 | 15.45 |
-| https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable | 78.3 | 50.72 | 25.06 |
-| https://connect.facebook.net/en_US/fbevents.js | 52.64 | 45.48 | 6.67 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 4446.6 | 2152.6 | 84.04 |
+| https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 | 2414.89 | 22.74 | 47.2 |
+| Unattributable | 1194.73 | 22.4 | 0 |
+| https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c | 299.06 | 273.01 | 21.85 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js | 254.72 | 194.05 | 28.06 |
+| https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 168.28 | 148.9 | 8.42 |
+| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 167.97 | 141.7 | 25.2 |
+| https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 138.39 | 113.79 | 4.93 |
+| https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable | 88.68 | 58.09 | 30.05 |
+| https://connect.facebook.net/en_US/fbevents.js | 59.04 | 47.55 | 8.14 |
 
 ### Avoid chaining critical requests
 
@@ -169,7 +168,7 @@
 1 chain found
 |  | duration | length | transferSize |
 | :---: | :---: | :---: | :---: |
-| longestChain | 2085.91 | 2 | 14333 |
+| longestChain | 1156.18 | 2 | 14175 |
 
 ### Ensure CSP is effective against XSS attacks
 
@@ -193,7 +192,7 @@
 
 | cumulativeLayoutShiftMainFrame | totalCumulativeLayoutShift |
 | :---: | :---: |
-| 0 | 0 |
+| 0.012465362548828126 | 0.012465362548828126 |
 
 ### Diagnostics
 
@@ -205,7 +204,7 @@
 
 | mainDocumentTransferSize | maxRtt | maxServerLatency | numFonts | numRequests | numScripts | numStylesheets | numTasks | numTasksOver10ms | numTasksOver25ms | numTasksOver50ms | numTasksOver100ms | numTasksOver500ms | rtt | throughput | totalByteWeight | totalTaskTime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 65273 | 160.32 | 222.24 | 2 | 109 | 20 | 2 | 3256 | 19 | 10 | 2 | 2 | 0 | 8.81 | 9282234.06 | 2500722 | 1824.07 |
+| 64902 | 130.72 | 202.74 | 4 | 108 | 20 | 2 | 2797 | 26 | 11 | 5 | 2 | 0 | 1.66 | 17043040.22 | 2744687 | 2328.03 |
 
 ### 🔴 Avoid an excessive DOM size
 
@@ -228,7 +227,7 @@
   The last screenshot captured of the pageload.
   
   </details>
-timing: 3623
+timing: 2846
 
 <details><summary>image</summary>
   
@@ -244,11 +243,11 @@ timing: 3623
   
   </details>
 
-5.8 s
+6.3 s
 
 | Score | FCP |
 | :---: | :---: |
-| 4 | 5817.03 |
+| 3 | 6296.82 |
 
 ### 🔴 First Meaningful Paint
 
@@ -258,11 +257,11 @@ timing: 3623
   
   </details>
 
-6.4 s
+9.8 s
 
 | Score | FMP |
 | :---: | :---: |
-| 13 | 6353.15 |
+| 1 | 9811.74 |
 
 ### 🔴 Ensure text remains visible during webfont load
 
@@ -274,8 +273,8 @@ timing: 3623
 
 | URL | Potential Savings |
 | --- | --- |
-| http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff | 100.9 |
-| http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff | 154.97 |
+| https://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff | 45.13 |
+| https://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff | 45.57 |
 
 ### 🟢 Document uses legible font sizes
 
@@ -313,11 +312,11 @@ timing: 3623
   
   </details>
 
-15.6 s
+16.9 s
 
 | Score | FCP |
 | :---: | :---: |
-| 6 | 15642.7 |
+| 5 | 16941.19 |
 
 ### 🔴 Does not use HTTPS
 
@@ -327,52 +326,21 @@ timing: 3623
   
   </details>
 
-42 insecure requests found
+11 insecure requests found
 
 | Request Resolution | Insecure URL |
 | --- | --- |
-| Allowed | http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 |
-| Allowed | http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
-| Allowed | http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
-| Allowed | http://c.m.011st.com/MW/css/common/common.min.css |
-| Allowed | http://c.m.011st.com/MW/css/search/search.min.css |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| Allowed | http://m.11st.co.kr/MW/img/common/gnb/gnb-logo.png |
-| Allowed | http://c.m.011st.com/MW/img/pui/sprites/sp_icons.png?2020812_135733 |
-| Allowed | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2022816_112603.svg |
-| Allowed | http://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
-| Allowed | http://c.m.011st.com/MW/img/svg/logo/shooting_delivery.svg |
-| Allowed | http://c.m.011st.com/MW/img/svg/logo/star.svg |
-| Allowed | http://c.m.011st.com/MW/img/svg/logo/star_fill.svg |
-| Allowed | http://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
-| Allowed | http://m.11st.co.kr/MW/js/statistics/pixel.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
-| Allowed | http://m.11st.co.kr/MW/Common/getAllCartCnt.tmall |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
-| Allowed | http://m.11st.co.kr/MW/api/app/elevenst/ad/getPowerLinkV2.tmall?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&dispCtgrNo=0&isSearch=Y&channel=m_11st.ch1&pageSize=5&query=%EB%85%B8%ED%8A%B8%EB%B6%81&referer=&pageUrl=http%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%26decSearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%23_filterKey%3D16481818898 |
-| Allowed | http://m.11st.co.kr/MW/api/app/elevenst/ad/getLineBannerV2.tmall?isSearch=Y |
-| Allowed | http://c.m.011st.com/MW/img/common/sprites/sp_gnb2_202292_144417.png |
-| Allowed | http://c.m.011st.com/MW/img/svg/logo/amazon.svg |
-| Allowed | http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
-| Allowed | http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
-| Allowed | http://idm.skplanet.com/getuid?cb=jsonp_callback_3408 |
-| Allowed | http://idm.skplanet.com/pixel |
-| Allowed | http://c.m.011st.com/MW/img/pui/sprites/sp_icons_2022127_164248.png |
-| Allowed | http://c.m.011st.com/MW/img/search/sprites/sp_search_sorting_20211117_143657.png |
-| Allowed | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2023323_155816.svg |
-| Allowed | http://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
-| Allowed | http://c.m.011st.com/MW/img/svg/logo/amazon_icon.svg |
-| Allowed | http://c.m.011st.com/MW/img/svg/sprites/sp_common_202338_145939.svg |
-| Allowed | http://c.m.011st.com/MW/img/common/ico_percent.png |
-| Allowed | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| Allowed | http://cdn.011st.com/ds/2023/02/23/1376/3d3bf8b30ca28aa484a027b29bfccf06.jpg |
-| Allowed | http://c.m.011st.com/MW/img/product/no_image_100.gif |
+| Blocked | http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
+| Blocked | http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
+| Automatically upgraded to HTTPS | http://m.11st.co.kr/MW/img/common/gnb/gnb-logo.png |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/pui/sprites/sp_icons.png?2020812_135733 |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2022816_112603.svg |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/svg/logo/shooting_delivery.svg |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/svg/logo/star.svg |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/svg/logo/star_fill.svg |
+| Allowed with warning | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| Automatically upgraded to HTTPS | http://c.m.011st.com/MW/img/product/no_image_100.gif |
 
 ### 🔴 Largest Contentful Paint
 
@@ -382,11 +350,11 @@ timing: 3623
   
   </details>
 
-14.9 s
+13.6 s
 
 | Score | LCP |
 | :---: | :---: |
-| 0 | 14891.43 |
+| 0 | 13565.79 |
 
 ### Largest Contentful Paint element
 
@@ -410,10 +378,15 @@ timing: 3623
   
   </details>
 
+5 elements found
 
-
-|
-|
+| Element | CLS Contribution |
+| :---: | :---: |
+| nav.c-tab-bar > ul.c-tab__list > li.c-tab__item > a.c-tab__link | 0.0029679434640066966 |
+| nav.c-tab-bar > ul.c-tab__list > li.c-tab__item > a.c-tab__link | 0.002600483797034439 |
+| nav.c-tab-bar > ul.c-tab__list > li.c-tab__item > a.c-tab__link | 0.0025722176688058036 |
+| nav.c-tab-bar > ul.c-tab__list > li.c-tab__item > a.c-tab__link | 0.0022895563865194517 |
+| nav.c-tab-bar > ul.c-tab__list > li.c-tab__item > a.c-tab__link | 0.0020351612324617345 |
 
 ### 🟢 Largest Contentful Paint image was not lazily loaded
 
@@ -439,7 +412,7 @@ Potential savings of 25 KiB
 
 | score | overall Savings Bytes | overall Savings Ms |
 | :---: | :---: | :---: |
-| 97 | 25784 | 40 |
+| 100 | 25668 | 0 |
 
 | url | wasted bytes | subItems |
 | :---: | :---: | :---: |
@@ -450,7 +423,7 @@ Potential savings of 25 KiB
 | - | - | Array.prototype.includes |
 | - | - | Array.prototype.map |
 | - | - | Array.prototype.find |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 9143 | - |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 9131 | - |
 | - | - | @babel/plugin-transform-classes |
 | - | - | Object.entries |
 | - | - | Array.prototype.includes |
@@ -461,13 +434,13 @@ Potential savings of 25 KiB
 | - | - | Array.prototype.filter |
 | - | - | Object.defineProperty |
 | - | - | Array.isArray |
-| http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 5231 | - |
+| https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 5128 | - |
 | - | - | Array.prototype.some |
-| http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 169 | - |
+| https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 168 | - |
 | - | - | @babel/plugin-transform-classes |
 | https://connect.facebook.net/en_US/fbevents.js | 44 | - |
 | - | - | @babel/plugin-transform-classes |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js | 40 | - |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js | 40 | - |
 | - | - | @babel/plugin-transform-classes |
 
 ### Avoid long main-thread tasks
@@ -478,25 +451,29 @@ Potential savings of 25 KiB
   
   </details>
 
-15 long tasks found
+19 long tasks found
 
 | URL | Start Time | Duration |
 | :---: | :---: | :---: |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 13256.3 | 770 |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 11970.94 | 684 |
-| https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c | 8495.29 | 145 |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js | 16546.51 | 138 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581#_filterKey=16481818898 | 5197.46 | 123 |
-| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 17181.54 | 109 |
-| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 5105.46 | 92 |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 12654.94 | 81 |
-| https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable | 18816.44 | 78 |
-| http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 17103.54 | 78 |
-| http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 14459 | 76 |
-| http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 12735.94 | 61 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 1645.57 | 61 |
-| https://connect.facebook.net/en_US/fbevents.js | 15181.91 | 52 |
-| http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 | 1549.57 | 50 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 11025.7 | 946 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 9561.36 | 908 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js | 13529.22 | 244 |
+| https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c | 7130.43 | 238 |
+| https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 | 5907.53 | 148 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 20255.92 | 139 |
+| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 4475.43 | 105 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 10469.36 | 105 |
+| https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable | 8156.43 | 89 |
+| https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 | 2053.63 | 83 |
+| https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js | 20172.92 | 83 |
+| https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 | 2136.63 | 79 |
+| https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 | 10622.36 | 77 |
+| https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js | 10699.36 | 73 |
+| https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 | 1700.63 | 72 |
+| Unattributable | 1940.63 | 68 |
+| https://connect.facebook.net/en_US/fbevents.js | 4580.43 | 59 |
+| Unattributable | 1883.63 | 57 |
+| https://www.googletagmanager.com/gtag/js?id=AW-876562370 | 4419.43 | 56 |
 
 ### 🔴 Minimize main-thread work
 
@@ -508,18 +485,18 @@ Potential savings of 25 KiB
 
 | score | Total Time Spent |
 | :---: | :---: |
-| 13 | 7.3 s |
+| 5 | 9.3 s |
 
 | Category | Time Spent |
 | :---: | :---: |
-| Script Evaluation | 2512.88 |
-| Other | 2017.03 |
-| Style & Layout | 1601.48 |
-| Rendering | 683.29 |
-| Script Parsing & Compilation | 234.67 |
-| Garbage Collection | 133.26 |
-| Parse HTML & CSS | 113.66 |
-| Total Time Spent | 7296.29 |
+| Script Evaluation | 3202.93 |
+| Other | 2629.98 |
+| Style & Layout | 2016.4 |
+| Rendering | 873.91 |
+| Script Parsing & Compilation | 296.86 |
+| Parse HTML & CSS | 157.05 |
+| Garbage Collection | 135.01 |
+| Total Time Spent | 9312.13 |
 
 ### 🔴 Max Potential First Input Delay
 
@@ -529,11 +506,11 @@ Potential savings of 25 KiB
   
   </details>
 
-770 ms
+950 ms
 
 | Score | MPF |
 | :---: | :---: |
-| 1 | 770 |
+| 0 | 946 |
 
 ### Metrics
 
@@ -545,47 +522,47 @@ Potential savings of 25 KiB
 
 | Metrics | Value |
 | --- | --- |
-| firstContentfulPaint | 5817 |
-| firstMeaningfulPaint | 6353 |
-| largestContentfulPaint | 14891 |
-| interactive | 15643 |
-| speedIndex | 11366 |
-| totalBlockingTime | 989 |
-| maxPotentialFID | 770 |
-| cumulativeLayoutShift | 0 |
-| cumulativeLayoutShiftMainFrame | 0 |
-| totalCumulativeLayoutShift | 0 |
+| firstContentfulPaint | 6297 |
+| firstMeaningfulPaint | 9812 |
+| largestContentfulPaint | 13566 |
+| interactive | 16941 |
+| speedIndex | 9398 |
+| totalBlockingTime | 2244 |
+| maxPotentialFID | 946 |
+| cumulativeLayoutShift | 0.012465362548828126 |
+| cumulativeLayoutShiftMainFrame | 0.012465362548828126 |
+| totalCumulativeLayoutShift | 0.012465362548828126 |
 | observedTimeOrigin | 0 |
-| observedTimeOriginTs | 831810305 |
+| observedTimeOriginTs | 202962046 |
 | observedNavigationStart | 0 |
-| observedNavigationStartTs | 831810305 |
-| observedFirstPaint | 1694 |
-| observedFirstPaintTs | 833504221 |
-| observedFirstContentfulPaint | 2687 |
-| observedFirstContentfulPaintTs | 834497025 |
-| observedFirstContentfulPaintAllFrames | 2687 |
-| observedFirstContentfulPaintAllFramesTs | 834497025 |
-| observedFirstMeaningfulPaint | 3537 |
-| observedFirstMeaningfulPaintTs | 835347716 |
-| observedLargestContentfulPaint | 3537 |
-| observedLargestContentfulPaintTs | 835347716 |
-| observedLargestContentfulPaintAllFrames | 3537 |
-| observedLargestContentfulPaintAllFramesTs | 835347716 |
-| observedTraceEnd | 10745 |
-| observedTraceEndTs | 842554877 |
-| observedLoad | 6018 |
-| observedLoadTs | 837828368 |
-| observedDomContentLoaded | 2633 |
-| observedDomContentLoadedTs | 834443475 |
-| observedCumulativeLayoutShift | 0 |
-| observedCumulativeLayoutShiftMainFrame | 0 |
-| observedTotalCumulativeLayoutShift | 0 |
-| observedFirstVisualChange | 1689 |
-| observedFirstVisualChangeTs | 833499305 |
-| observedLastVisualChange | 3622 |
-| observedLastVisualChangeTs | 835432305 |
-| observedSpeedIndex | 3122 |
-| observedSpeedIndexTs | 834932101 |
+| observedNavigationStartTs | 202962046 |
+| observedFirstPaint | 1141 |
+| observedFirstPaintTs | 204103034 |
+| observedFirstContentfulPaint | 1929 |
+| observedFirstContentfulPaintTs | 204890813 |
+| observedFirstContentfulPaintAllFrames | 1929 |
+| observedFirstContentfulPaintAllFramesTs | 204890813 |
+| observedFirstMeaningfulPaint | 2692 |
+| observedFirstMeaningfulPaintTs | 205653576 |
+| observedLargestContentfulPaint | 2692 |
+| observedLargestContentfulPaintTs | 205653576 |
+| observedLargestContentfulPaintAllFrames | 2692 |
+| observedLargestContentfulPaintAllFramesTs | 205653576 |
+| observedTraceEnd | 8506 |
+| observedTraceEndTs | 211468413 |
+| observedLoad | 4153 |
+| observedLoadTs | 207114746 |
+| observedDomContentLoaded | 1960 |
+| observedDomContentLoadedTs | 204921859 |
+| observedCumulativeLayoutShift | 0.012465362548828126 |
+| observedCumulativeLayoutShiftMainFrame | 0.012465362548828126 |
+| observedTotalCumulativeLayoutShift | 0.012465362548828126 |
+| observedFirstVisualChange | 1146 |
+| observedFirstVisualChangeTs | 204108046 |
+| observedLastVisualChange | 2846 |
+| observedLastVisualChangeTs | 205808046 |
+| observedSpeedIndex | 2354 |
+| observedSpeedIndexTs | 205315954 |
 
 ### 🔴 Serve images in next-gen formats
 
@@ -599,18 +576,18 @@ Potential savings of 284 KiB
 
 | score | overall Savings Bytes | overall Savings Ms |
 | :---: | :---: | :---: |
-| 37 | 290726.2 | 1830 |
+| 45 | 290726.2 | 1200 |
 
 | total Bytes | wasted Bytes | wasted Webp Bytes | url |
 | :---: | :---: | :---: | :---: |
 | 58890 | 48525.9 | 46396 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/6/5/9/8/6/Jmoqp/5530565986_B.jpg |
 | 58007 | 47643 | 45267 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/8/7/7/9/3/ydPCw/5564087793_B.jpg |
 | 54496 | 44434.1 | 42140 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/3/7/8/8/5/WmlMt/5446537885_B.jpg |
-| 40784 | 33702.7 | 32402 | http://cdn.011st.com/ds/2023/02/23/1376/3d3bf8b30ca28aa484a027b29bfccf06.jpg |
+| 40784 | 33702.7 | 32402 | https://cdn.011st.com/ds/2023/02/16/1491/1f551fa766e86bd1ff4313e6a456c133.jpg |
 | 39718 | 32919.65 | 32514 | https://cdn.011st.com/11dims/resize/320/11src/brand/20220713/5849c3ae-e751-47ab-8341-2594572625c1.jpg |
 | 36439 | 29977 | 28989 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/1/9/3/4/8/fIViP/4262019348_L300.jpg |
-| 51704 | 18695.85 | 7318 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
-| 50649 | 18142.4 | 7185 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
+| 51704 | 18695.85 | 7318 | https://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
+| 50649 | 18142.4 | 7185 | https://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
 | 29792 | 16685.6 | 14306 | https://cdn.011st.com/11dims/resize/720/11src/product/5496464365/D.jpg?18000000 |
 
 ### Network Round Trip Times
@@ -623,29 +600,26 @@ Potential savings of 284 KiB
 
 | longest rtt |
 | :---: |
-| 160 ms |
+| 130 ms |
 
 | URL | Time Spent |
 | --- | --- |
-| http://m.11st.co.kr | 160.31500000000003 |
-| https://idm.skplanet.com | 158.29700000000003 |
-| http://search.11st.co.kr | 157.918 |
-| http://idm.skplanet.com | 157.684 |
-| https://ds.11st.co.kr | 157.25500000000002 |
-| https://action.adoffice.11st.co.kr | 156.81300000000002 |
-| https://rake.11st.co.kr | 156.72 |
-| http://snsvideo.11st.co.kr | 156.65100000000007 |
-| https://www.google.com | 34.653 |
-| https://googleads.g.doubleclick.net | 33.449 |
-| https://pm.w55c.net | 33.422999999999995 |
-| https://www.googletagmanager.com | 32.378 |
-| https://stats.g.doubleclick.net | 32.288000000000004 |
-| https://analytics.google.com | 14.658000000000001 |
-| https://connect.facebook.net | 14.569999999999997 |
-| https://cdn.011st.com | 10.129000000000005 |
-| http://cdn.011st.com | 10.033 |
-| http://c.m.011st.com | 9.54 |
-| https://www.facebook.com | 8.808 |
+| https://idm.skplanet.com | 130.72299999999998 |
+| https://ds.11st.co.kr | 130.43800000000002 |
+| https://search.11st.co.kr | 129.83100000000002 |
+| https://rake.11st.co.kr | 129.271 |
+| https://snsvideo.11st.co.kr | 129.16 |
+| https://action.adoffice.11st.co.kr | 128.823 |
+| https://m.11st.co.kr | 128.642 |
+| https://stats.g.doubleclick.net | 15.991 |
+| https://analytics.google.com | 6.069 |
+| https://connect.facebook.net | 4.574999999999999 |
+| https://cdn.011st.com | 2.3640000000000008 |
+| https://googleads.g.doubleclick.net | 2.125 |
+| https://c.m.011st.com | 1.824 |
+| https://www.google.com | 1.7690000000000001 |
+| https://www.facebook.com | 1.7000000000000002 |
+| https://www.googletagmanager.com | 1.662 |
 
 ### Server Backend Latencies
 
@@ -657,28 +631,25 @@ Potential savings of 284 KiB
 
 | longest server latency |
 | :---: |
-| 220 ms |
+| 200 ms |
 
 | URL | Time Spent |
 | --- | --- |
-| https://cdn.011st.com | 222.24 |
-| https://analytics.google.com | 16.33 |
-| https://googleads.g.doubleclick.net | 12.4 |
-| https://action.adoffice.11st.co.kr | 8.2 |
-| https://www.googletagmanager.com | 8.06 |
-| http://c.m.011st.com | 6.1 |
-| https://www.google.com | 6.08 |
-| http://search.11st.co.kr | 3.13 |
-| https://www.facebook.com | 2.26 |
-| https://rake.11st.co.kr | 2.23 |
-| http://m.11st.co.kr | 2.23 |
-| https://connect.facebook.net | 2.15 |
-| http://snsvideo.11st.co.kr | 1.03 |
-| https://stats.g.doubleclick.net | 1.01 |
-| http://cdn.011st.com | 0.31 |
-| https://pm.w55c.net | 0.23 |
-| https://ds.11st.co.kr | 0.09 |
-| http://idm.skplanet.com | 1 >= |
+| https://cdn.011st.com | 202.74 |
+| https://googleads.g.doubleclick.net | 28.87 |
+| https://www.google.com | 21.94 |
+| https://www.googletagmanager.com | 18.81 |
+| https://analytics.google.com | 12.85 |
+| https://search.11st.co.kr | 9.78 |
+| https://action.adoffice.11st.co.kr | 8.17 |
+| https://m.11st.co.kr | 3.79 |
+| https://rake.11st.co.kr | 2.69 |
+| https://c.m.011st.com | 2.69 |
+| https://www.facebook.com | 1.89 |
+| https://snsvideo.11st.co.kr | 1.27 |
+| https://stats.g.doubleclick.net | 0.4 |
+| https://connect.facebook.net | 1 >= |
+| https://ds.11st.co.kr | 1 >= |
 | https://idm.skplanet.com | 1 >= |
 
 ### 🟢 Defer offscreen images
@@ -697,7 +668,7 @@ Potential savings of 5 KiB
 
 | totalBytes | wastedBytes | url |
 | :---: | :---: | :---: |
-| 5150 | 5150 | http://c.m.011st.com/MW/img/svg/logo/amazon.svg |
+| 5150 | 5150 | https://c.m.011st.com/MW/img/svg/logo/amazon.svg |
 
 ### 🟢 Preload Largest Contentful Paint image
 
@@ -741,19 +712,19 @@ Potential savings of 5 KiB
   
   </details>
 
-108 requests • 2,442 KiB
+107 requests • 2,680 KiB
 
 | Resource Type | Requests | Transfer Size |
 | :---: | :---: | :---: |
-| Total | 108 | 2500722 |
-| Script | 20 | 817792 |
-| Font | 2 | 759804 |
-| Image | 57 | 592856 |
-| Media | 6 | 130902 |
-| Stylesheet | 2 | 115295 |
-| Document | 1 | 65273 |
-| Other | 20 | 18800 |
-| Third-party | 51 | 1831108 |
+| Total | 107 | 2744687 |
+| Script | 20 | 814617 |
+| Font | 4 | 760333 |
+| Image | 57 | 588042 |
+| Media | 8 | 386995 |
+| Stylesheet | 2 | 114990 |
+| Document | 1 | 64902 |
+| Other | 15 | 14808 |
+| Third-party | 48 | 1826242 |
 
 ### Script Treemap Data
 
@@ -767,29 +738,29 @@ Potential savings of 5 KiB
 
 | resourceBytes | unusedBytes | name |
 | --- | --- | --- |
-| 284294 | - | http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 |
-| 64747 | 17170 | http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
+| 282179 | - | https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 |
+| 64747 | 17170 | https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
 | 386511 | 315215 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
 | 109538 | 27650 | https://connect.facebook.net/en_US/fbevents.js |
-| 238474 | 81146 | https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c |
-| 2372 | 95 | https://googleads.g.doubleclick.net/pagead/viewthroughconversion/876562370/?random=1680193654499&cv=11&fst=1680193654499&bg=ffffff&guid=ON&async=1&gtm=45be33r0&u_w=360&u_h=640&url=http%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%26decSearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581&hn=www.googleadservices.com&frm=0&tiba=%EB%85%B8%ED%8A%B8%EB%B6%81%20-%2011%EB%B2%88%EA%B0%80%20%7C%20%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC&auid=1402500952.1680193655&data=event%3Dgtag.config&rfmt=3&fmt=4 |
-| 2411 | 95 | https://googleads.g.doubleclick.net/pagead/viewthroughconversion/876562370/?random=1680193654818&cv=11&fst=1680193654818&bg=ffffff&guid=ON&async=1&gtm=45be33r0&u_w=360&u_h=640&url=http%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%26decSearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581&hn=www.googleadservices.com&frm=0&tiba=%EB%85%B8%ED%8A%B8%EB%B6%81%20-%2011%EB%B2%88%EA%B0%80%20%7C%20%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC&auid=1402500952.1680193655&data=event%3Dsearch%3Bsearch_term%3D%EB%85%B8%ED%8A%B8%EB%B6%81&rfmt=3&fmt=4 |
-| 57469 | 11177 | http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
-| 13746 | 2068 | http://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
-| 4398 | 423 | http://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
-| 1101955 | 558793 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| 670 | 1 >= | http://m.11st.co.kr/MW/js/statistics/pixel.js |
-| 187134 | 64311 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
-| 3294 | 1128 | http://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
-| 34165 | 22987 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
-| 21583 | 13479 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
-| 371965 | 269182 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| 15394 | 14163 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
-| 12473 | 6606 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
-| 246276 | 220620 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
-| 58 | - | https://idm.skplanet.com/getuid?cb=jsonp_callback_3408 |
+| 238474 | 80048 | https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c |
+| 2270 | 95 | https://googleads.g.doubleclick.net/pagead/viewthroughconversion/876562370/?random=1680196256315&cv=11&fst=1680196256315&bg=ffffff&guid=ON&async=1&gtm=45be33r0&u_w=360&u_h=640&url=https%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&hn=www.googleadservices.com&frm=0&tiba=%EB%85%B8%ED%8A%B8%EB%B6%81%20-%2011%EB%B2%88%EA%B0%80%20%7C%20%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC&auid=338536572.1680196256&uamb=1&uam=Moto%20G4&uap=Android&uapv=6.0&uaw=0&data=event%3Dgtag.config&rfmt=3&fmt=4 |
+| 2309 | 95 | https://googleads.g.doubleclick.net/pagead/viewthroughconversion/876562370/?random=1680196256631&cv=11&fst=1680196256631&bg=ffffff&guid=ON&async=1&gtm=45be33r0&u_w=360&u_h=640&url=https%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&hn=www.googleadservices.com&frm=0&tiba=%EB%85%B8%ED%8A%B8%EB%B6%81%20-%2011%EB%B2%88%EA%B0%80%20%7C%20%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC&auid=338536572.1680196256&uamb=1&uam=Moto%20G4&uap=Android&uapv=6.0&uaw=0&data=event%3Dsearch%3Bsearch_term%3D%EB%85%B8%ED%8A%B8%EB%B6%81&rfmt=3&fmt=4 |
+| 57469 | 11177 | https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
+| 13746 | 2068 | https://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
+| 4398 | 423 | https://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
+| 1101955 | 555640 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
+| 670 | 1 >= | https://m.11st.co.kr/MW/js/statistics/pixel.js |
+| 187134 | 63436 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
+| 3294 | 1128 | https://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
+| 34165 | 22987 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
+| 21583 | 13479 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
+| 371965 | 269182 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
+| 15394 | 14163 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
+| 12473 | 6606 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
+| 246276 | 220620 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
+| 59 | 1 >= | https://idm.skplanet.com/getuid?cb=jsonp_callback_92273 |
 
-### 🔴 Reduce initial server response time
+### 🟢 Initial server response time was short
 
 <details><summary>description</summary>
   
@@ -797,15 +768,15 @@ Potential savings of 5 KiB
   
   </details>
 
-Root document took 970 ms
+Root document took 550 ms
 
 | score | overallSavingsMs |
 | :---: | :---: |
-| 0 | 867.76 |
+| 100 | 448.82 |
 
 | responseTime | url |
 | --- | --- |
-| 967.76 | http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 |
+| 548.82 | https://search.11st.co.kr/MW/search?searchKeyword=%EB%85%B8%ED%8A%B8%EB%B6%81 |
 
 ### 🔴 Speed Index
 
@@ -815,11 +786,11 @@ Root document took 970 ms
   
   </details>
 
-11.4 s
+9.4 s
 
 | score | Speed Index |
 | :---: | :---: |
-| 5 | 11365.72 |
+| 12 | 9397.88 |
 
 ### 🟢 Minimize third-party usage
 
@@ -829,20 +800,19 @@ Root document took 970 ms
   
   </details>
 
-Third-party code blocked the main thread for 120 ms
+Third-party code blocked the main thread for 220 ms
 
 | score | wastedBytes | wastedMs |
 | :---: | :---: | :---: |
-| 100 | 294583 | 116.724 |
+| 100 | 293236 | 221.96400000000003 |
 
 | entity | transferSize | blockingTime | mainThreadTime |
 | --- | --- | --- | --- |
-| Google Tag Manager | 148999 | 116.724 | 454.05 |
-| Facebook | 139706 | 0 | 130.94 |
-| Google/Doubleclick Ads | 3668 | 0 | 13.28 |
-| Dataxu | 1322 | 0 | 0 |
+| Google Tag Manager | 148998 | 215.48000000000002 | 467.03 |
+| Facebook | 139704 | 6.484000000000002 | 147.72 |
+| Google/Doubleclick Ads | 3645 | 0 | 12.98 |
 | Other Google APIs/SDKs | 563 | 0 | 0 |
-| Google Analytics | 325 | 0 | 0 |
+| Google Analytics | 326 | 0 | 0 |
 
 ### 🔴 Total Blocking Time
 
@@ -852,13 +822,13 @@ Third-party code blocked the main thread for 120 ms
   
   </details>
 
-990 ms
+2,240 ms
 
 | score | Total Blocking Time |
 | :---: | :---: |
-| 28.000000000000004 | 988.55 |
+| 6 | 2244 |
 
-### 🟢 Avoids enormous network payloads
+### 🟠 Avoid enormous network payloads
 
 <details><summary>description</summary>
   
@@ -866,24 +836,24 @@ Third-party code blocked the main thread for 120 ms
   
   </details>
 
-Total size was 2,442 KiB
+Total size was 2,680 KiB
 
 | score | Total Byte Weight |
 | :---: | :---: |
-| 94 | 2500722 |
+| 89 | 2744687 |
 
 | Transfer Size | URL |
 | --- | --- |
-| 430190 | http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
-| 329614 | http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
-| 279578 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| 110555 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
-| 88337 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| 87452 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| 81531 | http://c.m.011st.com/MW/css/search/search.min.css |
+| 430505 | https://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
+| 329828 | https://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
+| 327680 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 279229 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
+| 110556 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
+| 88033 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
 | 81384 | https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c |
-| 67615 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
-| 65335 | http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
+| 81368 | https://c.m.011st.com/MW/css/search/search.min.css |
+| 67614 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
+| 65239 | https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
 
 ### 🟢 Minify CSS
 
@@ -902,7 +872,7 @@ Total size was 2,442 KiB
 | totalBytes | wastedBytes | wastedPercent | url |
 | --- | --- | --- | --- |
 
-### 🟢 Minify JavaScript
+### 🟠 Minify JavaScript
 
 <details><summary>description</summary>
   
@@ -914,12 +884,12 @@ Potential savings of 10 KiB
 
 | score | overallSavingsBytes | overallSavingsMs |
 | :---: | :---: | :---: |
-| 100 | 9955 | 0 |
+| 88 | 9801 | 150 |
 
 | totalBytes | wastedBytes | wastedPercent | url |
 | --- | --- | --- | --- |
-| 11682 | 5294 | 45.32008561137309 | http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
-| 14333 | 4661 | 32.518550851156704 | http://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
+| 11453 | 5191 | 45.32008561137309 | https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
+| 14175 | 4610 | 32.518550851156704 | https://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
 
 ### 🟢 Image elements have explicit `width` and `height`
 
@@ -944,12 +914,12 @@ Potential savings of 105 KiB
 
 | score | overallSavingsBytes | overallSavingsMs |
 | :---: | :---: | :---: |
-| 51 | 107452 | 730 |
+| 67 | 107166 | 450 |
 
 | totalBytes | wastedBytes | url |
 | --- | --- | --- |
-| 81531 | 75316 | http://c.m.011st.com/MW/css/search/search.min.css |
-| 33764 | 32136 | http://c.m.011st.com/MW/css/common/common.min.css |
+| 81368 | 75165 | https://c.m.011st.com/MW/css/search/search.min.css |
+| 33622 | 32001 | https://c.m.011st.com/MW/css/common/common.min.css |
 
 ### 🔴 Reduce unused JavaScript
 
@@ -959,20 +929,20 @@ Potential savings of 105 KiB
   
   </details>
 
-Potential savings of 371 KiB
+Potential savings of 369 KiB
 
 | score | overallSavingsBytes | overallSavingsMs |
 | :---: | :---: | :---: |
-| 4 | 379720 | 4650 |
+| 32 | 377602 | 2250 |
 
 | wastedPercent | totalBytes | wastedBytes | url |
 | :---: | :---: | :---: | :---: |
-| 50.71 % | 279578 | 141772 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| 81.55 % | 110555 | 90162 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
-| 72.37 % | 88337 | 63927 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| 89.58 % | 36758 | 32929 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
-| 34.03 % | 81384 | 27693 | https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c |
-| 34.37 % | 67615 | 23237 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
+| 50.42 % | 279229 | 140796 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
+| 81.55 % | 110556 | 90163 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
+| 72.37 % | 88033 | 63707 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
+| 89.58 % | 36500 | 32698 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
+| 33.57 % | 81384 | 27318 | https://www.googletagmanager.com/gtag/js?id=G-6VBF5N51X2&l=dataLayer&cx=c |
+| 33.9 % | 67614 | 22920 | https://www.googletagmanager.com/gtag/js?id=AW-876562370 |
 
 ### 🔴 Use HTTP/2
 
@@ -982,76 +952,42 @@ Potential savings of 371 KiB
   
   </details>
 
-62 requests not served via HTTP/2
+28 requests not served via HTTP/2
 
 | score | overallSavingsMs |
 | :---: | :---: |
-| 43 | 1310 |
+| 48 | 900 |
 
 | protocol | url |
 | --- | --- |
-| http/1.1 | http://search.11st.co.kr/MW/search?searchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581&decSearchKeyword=%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581 |
-| http/1.1 | http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
-| http/1.1 | http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
-| http/1.1 | http://c.m.011st.com/MW/css/common/common.min.css |
-| http/1.1 | http://c.m.011st.com/MW/css/search/search.min.css |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| http/1.1 | http://c.m.011st.com/MW/img/pui/sprites/sp_icons.png?2020812_135733 |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2022816_112603.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/logo/shooting_delivery.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/logo/star.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/logo/star_fill.svg |
-| http/1.1 | http://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
-| http/1.1 | http://c.m.011st.com/MW/img/common/sprites/sp_gnb2_202292_144417.png |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/logo/amazon.svg |
-| http/1.1 | http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
-| http/1.1 | https://action.adoffice.11st.co.kr/netinsight/v1/imp/1HvGknqKMxec8iBxDiknegfcHyU5G-iWybjdmx9Gyorn2PghQq2pcCNS7g0svOOTw0_iJPuJwGvxOKSdOrs7q9axoN7uxJht5VaD9sFETQGEEHKSd6LK_H550jf2ow9pwNiJgMkySQq8B6L_2sPksx30-WlUTKiiQDyxoP2LjjUR2HFqfiA996kSGiAIPHA-j18ONgaZCv1Qy1PISLtndpHIUTpMUydargXzzbCCUt-o7gUIt9SLXAqM3VHw9ZLQiOUmcX9Tj_6KUhtPorG0KK66CTcHdh2uxgOWd3fT4584k22vn3y-Tm4txrHCHDS00WPJSPeDPh6Zir2Eeqd50udsUG4vdMOcBf8fQHECghS4CelTC81tTM3QL5d5pF9Tn7W19hc4MC6QUOB-lctaR0pPa_jie_m4i_-5wFHg_Cy8TF8xxr7s4VCBLESOCoXGmJx1XSf4CiZ-a0LcKjFM2g/compress?additionalLog=rKMbJ5cjtLVX4c2DEGjpQx4BVs8bk1gpzWiM5_rSByySoIWTayprQrQycCnBW8TRirnk-VeWC2Ms1aQsjBiLBWa-ptxTcCHNlKVHqHtv5IVfSb0X--dvqMLXuCd5z5q8ajv7kbXbeW8xmgE2y2JXZw&redirect= |
-| http/1.1 | http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
-| http/1.1 | http://c.m.011st.com/MW/img/pui/sprites/sp_icons_2022127_164248.png |
-| http/1.1 | http://c.m.011st.com/MW/img/search/sprites/sp_search_sorting_20211117_143657.png |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2023323_155816.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/logo/amazon_icon.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/svg/sprites/sp_common_202338_145939.svg |
-| http/1.1 | http://c.m.011st.com/MW/img/common/ico_percent.png |
-| http/1.1 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| http/1.1 | http://c.m.011st.com/MW/img/product/no_image_100.gif |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg8wgcnANSFDzRkJYfPrsgQJq9uvrejtqEwna8PVeOfStJO7bLVKjfLpkxxGFs7en1rStOdu1_S8r0PUbby6IZNv0o6_z6YKUOm_cuWu2juWTzO_-pBms9Pgj2fm2_Zh_VC-eIj1otsqq4cfcFiAeoss26zLHgCMBgcuJDAYdRg4i1t0-5IILyd6GtQhcqw8moVibXe4vNQ4Rix2EtI2qx29Xt93RMK0dr8CahFIyaMJCIoWdWySuNoU60v0LZ1sWvM87zn_nr49ksJY9ys1WiI1pVyOKoJQPpSxCRSUkC-7GXRVSxIs-30YrMG8R9rfE3ITSmxNCU-H-6kqN7Lyxdp3IwiP6DGkAD-mvXuUb5XhCjOyUl6A2ELz8ZxPf6o9P_YXnIwmCxTAQtLr51yN3-gu_KDvB3pfACbf10zGad7mO77fNrLqEAqXIEsMwOrMTE7kJfLdYjr2xixaOon3PjYyopigwFxtOoOutzzN8KpQyDfxkBGLcyL9uyvoExAV2VMvhmEfHca1yJ694v9bN-1XlBR69iF6V2ZR-KtoaGiBiNUfeGR97CJq0Ylx6CHR0RVGiTk3X_9_ekT1OnSRHKtYzVD60QD3LOuE9tUZIzreZGRZtOjGLPCEJp2Bi6dkVet315BtsJbLMleVa3SKfjM-a7SPa_kvI18HaPnAVqyRHDXgd8WSepfUZIOgBTorwYgXwZsNh5xdBY8sedfSLF83nM0eEmSuaWZuosIm3O7o5zvFVfqwM6hE7GEcNFHiw2569-ag5BWYiPpdDm0sdLlQ7rxK9o_GgVaRd20c07M_UUOSMm1o5aVQJro9QkBZwPPu-285V_prN2WYAE1vh6AhPzKTwnTLMmqUkEVZCS3QDilbtbDJ82bWeJ216RxdiJ3YzdR5JezyxMSNnWCTD7tkMhGlR1kyw3uVVCQeNnf6TpNgJp89kEJNUpZaUYgJxjOs5eujzOzxAgOgGKcFcbKpCodT9ClZnxXIiyvDSxr91Z2P_SNAIHwda7Jfp2ru78tg/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg89lN90SX_GBiJgI2Ab0kPDPX5xoIhh24vjMe8o46QXKJKvTN4zPLLBJDqMHpSS4pVyV3RYaHIUXdDNPeZoCmiFwrsKL0Gdt7UAzKUeIktLnM_Zf9ubTsXb6uOMtsjk--t9DWGtpoDEJHTXCV2DItEjWiRCJqeMrD6vzuBiTQoHsvJ-A8iWYv5UnpUoIstAkOZIL3Q-MHflk5NneHYG1j3L82U23aC08s5nQAfDmw1E9wonf9OoEme5X0trUe7O7DcJP1007ol5zqqSfDEN0m48YzCoAuR5Oi5KsF5veeMWor-PmmgSvyVMicfmuHeRZ5b0TqDjBP_qI4D-hCYq6ebgLO3cIBdu-sSEmJdUilPHZEG2kUB1SESSUvlG8UuTflYw4_LLxya67UnLtdlY1ln_93YsIIjvuKRjqKNJnUt7CPc8L8QrVG_lq3tmnf9XVuzJopVcCkiDzWPoZQlv_SQOaD7YA_i5WAhI2WgGgSddATEDSN4oDJcD8rkwlQ9wrJ5ftNgL3lzswwoMmUBAuyFkkN2jUyTOXDE6FZfLOjrvp9tSJchI4M5BHwDpA5Aa_uCckfmQQjivSGUsNPXndyHAm6y01OSRgBfiRvcUnU7TEwhgBVHx2voAkh0TB4OMGIoq9IE1HhL2gUNP1YeOsw5kNvvyt49NIMkzYL3m90MN3sJsTlU_IyogDAiTKwMCwQZFxtaopKMuGlbUdjpaPt59nSSePg3WkoptX9Or-GDnWsxBCUa7HXM9pCakhNehOlCGEU51QEVx9rwDOSErlxcNOgfQLUYwuk9SwhFlUBkA4AqcuCdJWVzQTdkGMfVJb-hK7jyI3xiGRksN3bQhd3ZXbFohkebkIwZQlVZj87koUsO9IW2-k_mpeWQQRFW_8OpH2ALrt754tMdXM8MjpXzfv8QWNxsPm4f5ZvKwo_Tmy2UoLlqJjExxGGNoOfuuiMYY4J2Qky0SQr2ygVcpuICAOeVIkIci9P2fVsPGwbRcjvOZVQ_giLFoUOp-bNd9Yzpg/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg83YIOQnQ7m4LJkcbESCBeVrbxg-0wY0DB6dgjtXwTLkhb1RDdbeZ-KC9UApzzztq0cGp3rNvz1Gug0EszyX_S2XJSIDIiizTo6SI9reGwS0uiim93GRC1t2ANTVQ7Bx0nUst7hOtap6QyGuZsqkVm0EmvIAFnN-4niN1VbKJXgL8BEMgx4N9xT1GZMfZeUjyirAJCPe9mpMsVTQjO3peRC11N1L4qxKCmT0ir2flO9h7ahqn4KyKQKeNSO-VoMUtSB40FFRuQPFonIlrGsDqUgGwW2jAF6g1NLoCeArqDEw9oQyXJFdSxaDxqeO3bsJNW7hIAKNAOVCcSmwJPyCXsiN9swTTTREUT7wWs7ME2fzCRYyEYMcSCmdIORzB0X7hRQr95c6ma3rFOV_Ir1T2PUnFe9ykQzWDMbFdCm-htuU1INiSdtxQ4S3JZ0uDD9eRVtKW4iY8Y3dAmEjRjZtTz2mOB8VvNPaEzWjjJ6KBDeUz09hw0Lwg_zw84mTdVGVHcKMxe6Bwzita2OEJ4B6MCdOJ_LJe4k5bhNeuSlc3y5ZeKTvWqmthpeKE5KD3nQJtg3tQaRO0bpJxwZpMaG6qOXapgC35hqK_p06_Y-AC_Kc1AvlQYuoO_ixwnpKuMUXLoDLehw8QjQ1lPtBun3YLsWaTox3Hgv7SOJSlDF2SlIR55f1s9amdHP8JWGBHZnlqPYGra99z7xksM2nBk528ZZjzZN_EKPiWOAHxLKcMRS5-V3EuwUi66Sszk50qsD5NGholc4ED0mypDU4OfB541Bj9rfTHMQXxyCrjSmKTvCPjOHCdYRwz9ldMvqmZRmgh2aoVaxooh2esFeW5bM68L-bn8HAZEna5pAcHt_pzpVDaYtrOt5k5ulL-bOcwvuW_sIm09_Q50R5B0l8yPjmlWn10TaE8gTnqZgsbRPxkL2TLYUMgaSxdVMbRKAce0jzaz-WVguCp2si0N7q7vxIX8wmXi2qazjECc76oEwzIZQc4GL7yC5RKT5U9mKp5mqEfAw/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg84N7Gl7oqXJrTNOEo8bNxVJxMWy9N_MK5Q7_PhRsOOgvd7PVRCXnbttV2k07jAfwz_QTpSXluko6t9xzoYakrSxoyqGenXfzQBl8A8sG5X0J9Nid6-yzb0nWw4Eh_6ovNFLYCgz1txpXM8q9n5GRosDiA5TFzKb-_uA71AMjoxUUXuW8lLuxWrprXZcIblLThviLdTy4jR4kaMLAYDV0sCU_-vVLPiieoT65XBZO_wO6k-yAXxLH96Xkwjv3a9H71aq12kHQ7QDy63VGan318CGKz7PzEpaQqSuV5qz_NzaKTWhaB5Bs3rhXcXbV-5yxGtvzcXuLkfsIACaT0AVufCE1BtWPfMgPIPaazxvNmBvyBDHCqG3PLtQ6wvs4IlkYulTydaKgJrKZzKXnJD_C-CoTNNxlY1bX-nVP35uF9qi9DI21J75UMOeJBnq4Hf50_4idkZvaYeaQA0D_LeJ1clLp6wmlZ9Yxl8Gbrc2iD-wI6WHOFQbsoDSLM0l-WHBLAql05N6huJ59iFZukhMnmL_-TxzTSZc6ingXUNahpAX-nMLqLisQUuI0v8P8Y5r7HVIBeVlLzwpdk7GnAH2lfnikC_PDmxJ85bjsZerjr5Y-9wkQlhS1SgEsmM5cGXUR1IsSKJjhSuQHB4xk5-9SCLQaG7uUjmYZ0lxXyBZ1BKJsjMePIsfMyG7sK1EP_LeY6YPTiw4VKj9UHNtqLPIqG3YcVFX8IEMoZknlJH3c_05Agvikupvinp5fCDRHE8z3mKr_NmmrF9fauGyIKlYmMr7c0jUWmqnjlE9oAEJxhZNV0zvlTgwouaRyQciF0Z2YxHPaY82W7PASaoeZSd-GBtfm7hdwdG4-reNKKtdHEhQHlWshRdwo-I0QPLvTd3Epmgt1OM7Sq8xUFhwtLY1p9I7u27pn-mTOhEykQuyLvMm8bi7-2Wy_qHMY6cYOZyY0_D6LoXOddPtPjPDn_tT1zV08aNXPvo2Ud-bjW7KIrub7Vg6jXFHn07BptcHzT1EolwCwQ9iP79Jul0En3wl0saA/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Ho8lcYaf55gOSvP-2jd0si4JjJTlRsMNw_OHl_tGXKN5Fea8Dcn_8BYczQC01y_VcgcyVeMBKlNhDaCqeevlCE6jgmGBQnxIYMeq7qmDo8J3pjMZVPeEtUKjUWIE-E4eTmmmnNmJjSvddyUvFnuNxk4bcf94dsrUrkiVH8oYc3o8r6OeAFQtV-eiewU_f-CY7DAmg1aEAYi8t0aSpkQxRRY4A3rvbjvF8BGza4T7k6V7lwuGNnMEa-xhepxpRN-1s3WjPyKcA5sNPIN6wuw4DqxDE_rLeLnr5Ngu4z5F4SCqAslNUl5fyeAD4YGmHX-8fXwtoen7tASABsyGWw6WfwO5RSiOBHP1xIN3Dgw_3fKyYxiyHsvQk0h550h1lXXoI3L0tS0WPsNwzeltFHF2wPh_O11_DEvYZS1ybAYvjxUnDsw9bTknIFT80naGkx0w46FD6HurXna1FZ-js1s0XdzKeMe-e-miswFGNsA7EkMrPyOhW2RaP6OOgxGr382uY8d18DU-5e_KXddgywliS_FskwCKB5w_-dsEFY6I7GwSkZjcrdsSEGq4pKakqr18RfjxoPHyIpuBuGqB6PTO80OYlE_TJpLltk2Zt-Xy9cWX2tA9G9utFM-Fv1qZglIplN6mYjUpY-5jtJAIF1mTojeV4vOP5LbW6s9y8wQFW8JcRws_0AQWUiayzy6NKfn0uNJR20ixRBZBK4qC1arI0QyDdwyF9zuCUu0VY8_SJuo8ueAY2wVUyUhpW01SAgkJopSoLT69583YTCHNDzDGF6ZUfZ0uZicRqsGHdRf3Zo-i15vWlNyi4r3sC7QHjrUeM1HdHEOqdBihnv4AdhCWTfe27V4iny4RGOsMgfXJoN1ZMMjHqVunYnTVdNcYtPSTwRAKMbqBolkL4ua3dVI-w8PeooNvpLVr1ECOohyLlJ5AW3tXilik1_oNdMm5aP7A-RtrRj9Yc8VdB2lBXwUsDlLzYEQlWC_XgBXSUQWuewurIz2xHB4sPwaPI_sK0xbstcsr6skRfLY9RmrplzQ5Bg/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Y7JF5lGiIhy3QabQFUFoT8YT313bML3ee3Qje4OqM8SUwJuapk9LXE_HVfOK8qJTlrfO4GcJFWcv2I-gPUIJBM22KhYAb5BxaRR5HGkkvUHay-Rql1Ehl-KKlTTvH7m1LIuEVO66ZFmAzAdO7SQlshZQ9zFr64foSx1KmILbaWA784wjIzA2tQkHcwnY5nt_LqMkRIJ6SNubRZYmdirnQcOIlLAbN5G7KqwVo83qJE6erjHB-pRvfjqVgbYmdZ1w8bgCTAWjez6_499KWT98R-PZ4j5Ru01Y3RqLKAvoZRvdpMzbWtitceDH4LKE51TZV5kjIDNW_-lxr9mVNRVvlBMzhire_oDaDsbXEBJiLye9D87djFoQ9iYJa3fZFrGQjtHlWcqD_MmBhC2NY3Cl27x5M_zpfHc0Gdfy0lDQrmUWjUfnNpetrUCdOUI2LggEz7C-tuyOWsV8Z2dIDS9-xGwmavl81UAFNnlgEpLJyYB9Cw-YbZRy75HosW93RIWcioQvmW3UGi_6yS4DX-rYrYygDxkmma_x8PDguNebUjihouACBwlqSb3GZUhnHvYBQ-Wzc_DWjnTQTx7cFZYhilBLDtHQ0nnbLSV6xpmuVdFs2jet8VNpSYnSv1z8TKLqj7NtYS2T-1XzJZn2_mC0nGKDyHx2XdM9f6LkEWw2spUP6tzQK9XBaxVrZVTd_1Npkwhf54-1vPtdoogdm1U2rk5aFKh8ESUTfM1vL6wyILim1CYmbQx40dP8mCraGXkP9m4VhxP9R7W5JH_0IiYLxG1PYSUYgVnjuEx7bPtLFoj2va1vX5CJfVGHqXc8uRm95CGvqDIdJS45DM3B-7YCTw12arDlnNHXmnQH7kMDIt0iG8zKlH5NiTO4160yZysOrfM8wRN182A4zSgNgjfNwyARLSSUsduI73b6xx7vF_S6ZYlH9caylFVtuAEJT1qZBg5vrVF0UoXx_dQBc-NcrPx4xvs-Uqt7aCyOF3ogv8cQDeKe1H_Ij_iManwlbyJdukhZJWGg30N_M44Rf03Hww/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg8xH56zz1o2Z9r9mPM03OmBv6cbFPsZM-6A7g4eUfWveg0OS_YI8DZdqXm_UTZKt58R-Eml5DPseGF2l7jNF5k6whvVwWkCPYa49fn5vZkxjiDclJRhIvqzKpqNxOk57KTW81cgBfKCReDYH75VXtiBjJL-mh7uVrGnxUBITOU3SHY52axN58g6ATcDZBN3L88HBtNGblgTp-dZMcUkVWQfgDWPBC6R7n9NQtWQTstgYlcS39bHNupnpME-mJJ2o89Ra2FsUCPfczjTwr0JInmKDgh0PUCtBJapz90WHmVUN9ttVLcgD0dXINrAYRTBQcORh70ug6sGqPpG0MylG5YtqN9VvQSo8nfeD9uaSLtg930yS8h5W4NFYe2kSej0PsI2PLgzCUvSgvE3Xo_do9swPS8owoWOLYjDx2rqCy0L_tTO_sCxLaz2I86fkXtjOwXSFwuq5ESDS3HKaNekZQyDfej0PeK8Txa_-k78ioRCMOql46Ti2K7SZtyc2zKFY4MKQkNpWhGXMTRn1NFRr0mGSC2yZiKT-NqaY5S4ofz20d8TvhVL5QsSdS8NsZwYIsKJQ1-S4FpzYLqnHHZTexY3tyd0nk7Py6Uhl1TNLxoPWHeyBb9BDxCI3QOozA9EUEQBm-ERDywbwT6vN_e_sBytMZb0FUCrgpm1BCpBUwG6ScDIUXYVegAIFxUfFaSLnl0IwUCWwjH43RqEQFSvU-GqnfnoZW2WFjHsJR3pgys-Kq8cmQkF5RzXq3XgxG1SyZdUHppEsg73ahU9uWTfLJRCFEhdRnniGQmzpuoVXfdMvvihIxIuRaDXUC7Oa9LQ2ZMvXXYtVp0CRNS5MdiP-SEyfoWo2Bd8L0-_xd09deZAxs_dKWPKLw1acupCo50sJZn-v3RWn37qeM-SDryJbqvGNPFHzNAIJfaOzYiQW_-Yahoi0q4IjO5JzmmUh4nFEnOxWuDA83BVHW_Kow4LXXj7adhBLA7EGDWALvyZr8d5MZuuI3FT2D0vXDwWFh-LO2M_7puD0N88M1cqteu6W-_Ic/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6gSEUEBjSSqfpY1HHlJTc1_vYqToM1ouB5cS8ImOnaFZ_au-NGKBQU4pv-CxLmbKvHfn29pYkA1Pcy1DqdQWIhhTUSPT3gP8m67TLw5jBBDV__l8VDWu4cQ_AnTKm_SdSxq33VOtAfqM2pkyrlivil70R2SZSAfCAKwfLl8g5CtWDcE7YVhVbRv971uHpqaXHKfZc8It7pl46UOK7r0j9QnH6w8tYIdTB3pUU09XSWVxGE2insKgd3-sAwG8ZtMwRJktBbAhyZOtFbeIDJIESyofm3He11MYFCHApR8B7eD0gc6t1O3zhM3V5Q-teAswkGLv0fDQPxPXsi3PPipW7EGqeihv1p7bMebDLYwUHRYjKJd6oYnkzrkoTOfkSjPxoINCw1nv-m2S_9zlK9LLQJZNu-ap28JXJhc76ZHeGx5XdRKkzJeCmV3JTZNQ-InppLsgBjKZQAbMwqQG4diCYZvKRoANUDRUUaeTnA40d_j7DoYnL966kZg3QJVVB7cHmYYsT_rQJ_qdHbAiGoJsverIPkRvL1z670ZSskI74gcHU7xo0TSqGCcp9F20bSSy4CPXwSBnBZVfU4NnYn-BXNggDCk6-mNRdIbFX7fb77kOAlkDl4LJe1zWkxhXTuMVHUIIHe2X4cn7gvSHlBWda1zARtK0C3jri2tquI6_lx_dz6zt1i6Z-m2hRe17bqQnLwkQGqZdhs0YxCHwgSZieqe_NnUjYfK_WY_9cBUTXOfgJ4S8HCjAqiWsYXVx0CICxdTPnPk1qXRRPZWENGW6FRpvbrDi273S24wSmjJaPNN-weNCg3DZUtCUAOqyUbw0PO0gQiUu_MHqE3ssRMIcUF0moMN5pCy5zrE1ZjXU7rXbuOVrI4I-U4QD8hHtF5QP_BVNTdvhZLxYqHNYrYzBkmeSZD7SOXQWINNc03LN03tt317PgDUOUwS2zYr_nKyYx3Qiqfq4vI34n009LMimkAwrxTAPRahMMqwx4967RGcfrWGZbwhNKtHhBfukjO9w2w/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg8yF2Vds-VwlikN9Tdt11zvYI1nA_A0DStL4FEatORsFLguGXLKYTBIgtHf0VYBfYHhGSUclQyXDFLFVLJlJPlM4Et9SZC9ZMWPlB1tt-xUyvi5_8_TFuGahyxhLE0U_MXawDDPy25MIjWop0HquYwn-AsZr2YoQy3x1S4EMM2q9bJFjoYn97q1VKgpeI3fVaZJ6NG_Hh-OciaGTFoX6bEWtNCm-HsQkTj6-EQSvGkXwws5NcdVz6fhx8nYEy1Y8PffbPbG11lWJZNIkGMwcrVVqA2g0RL4AEzqIUp4k1t4mCcsbVQqp98PgpV_VzdWRbgJ8v2zGjO3Ss5KqJqf-u8xLafIDuyNBqQbr7s5I5CmYOn6Gr-5PDCMTG5bPK5yVhqwNaRrOWhDWYjNvwK5VdT3cvv9ZbHdust8pQcYF6p4isMryBFUJog3ctWNUYT9XgezXKv6Cz64BktoGHvIsrrB8taLn4Wwfv0yX1W0Lhyz7o2H_JpD7079z8R8jfQsjqaVrjiFd1ICb6NdIRd7Ox8dyBK0KKF4D4nkmFHgmULQEBX2d_0kgjM6VGxI0zNw9UAJC81QxuXCTPHLUJkTxktsahaWK3RIZ396UDIl7WJvhRP2ys_CK5hUaVlWk6UciXX11fFUh09NRp103HFCRePQKDSoYzxzndRmuZLH5bBuGx25QJCj1K_DVsBfK1lk8r46zFLbzM_Qw3KpFzOOsh3U0RyBFXpFm9crkfR28O2dTB231aAcAByoG5zCpsC6fa0aBTFcfUQRD1MOYtqOd7khCHbxfYJNMq_bXF4UbFW5IB147cGaAw717nEdjTOueXOyOOh4IlUXm42HcXy7l9fIqwcohaMa96Yx9iB3uCXujqJwYt8rNmnsXYc8HuMl-zQmEVKGKcfNnLFod9QSXVFXP01P1ZcdOisrjE7cYaofmJh05zUNSDjyjMl2XUR55V6uBqAE8HBCn2zNXn87DQfe68IjrcXw7HY5rM757sDRZsH-4zND2vv7tkWJ4-mwCN5w/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVnq3YI-qmFeJdr430RuWlb5jbEE0KxDO2FSWDcvctRGjMZr6tBZk8Ch-bcTEi0MSBu1Qi5zKkyo89LEiLTmsCNko2HjO5gzXHsU2X8zq1acAyAVNCLPQiFTJzK7ueoEuMNQdU5x51N1bUbJfH1efAMCkLfox4IKWxlf_667yw__KZzf3-jjOdWL_sziwgSEqtAQI1t6V8bphfzXptiTpCckICSBWD6mrZvgP2ZN17tFpzmJfE1tI6A4WMc76jRc2Llu5_x-8EXRCB-k1MnecPqVyqusAeOjcyLNbD5ED_Izk1eD2pGv-3mXvjBZLxqO8APp1uc3Xp8rQyrvfIvC9kpSEvTIaso1Js9JmCGHoBcrBeRfHjzwp-QaKkeOb-JTNWpFrsKxM4kL2AkpOKwQxap7gwkyStcz5sUumMSptx8q3x45DFpXejWYfXuoace_uc7aQnLHqIwIMg-Ip1fmuRBiO0LMg7qnwoi7a9Xq71I5ObzV-ZTA1DQoUbHMFUxOZTI6bxQPXhB-fu3zuD82cBbCAfx1O9HE7Ak4u0VXOsm_QAcKveCgsl4xzwgSbWpv_snH-er6CX7THRm_JJWw89qZnYG9C1G-rgKp05awJLWTy9zR_kh2v4jsaAirMKKXUqVpPh_QiybiZwaKEA9zfSAtTIxMGb2ywfaNdQL_kSKvEVT4JVG3kC_-S3rJHIPVctev3ZC-L5COFmDNtI4FivcR4S7j0IrtZIAzv7FjFNe3UpNGOaWBnMZP1jeBYUg3qDhZ9eODhDgMijvsgmxhl03o87Jfr_5dagLWXkjfs1_g87FHRIdRMtd8007HWODznIQZb-6xKztLcYvCeR5p-Mcj_vWm3zyrClB-mREoNTZGsn8mWljPM2JUgQOzwM9MZHlLw8ognFTPQgPlF5WNvxCZBP4_1Eq5WLjpWTKQfhjzXWv1P4TnlpLsQf1GbPLyVFHVCX8cDR5h9R7rpMAFojp4Z7r_4FlkNMuHkcNKyYVEgnPzCWRTXBFVdqbiPL8SiQQ/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVhD98cVrBZkW_Jm18Db2cjrtQTVLQjLIbGGwud0uyk9tsA2REqk1LTFnQFC1O9hTFJpi1OZWHmsQ8ewrKaqJR7NY--Qsov32o0DQMTIdRz6N_Ou8ra7xp0qUw-iXAV-pNBG4XoVdcDNUJYwr3XxVdW53OUtt1Z3ZfdqqB7J0TEglaGVj7OgcOnf7FitDNSA-sOrjbjbaImcyyL12MmpqCV9qWyUtRO2uSZdDuvIa6g5PgU46a6o6dOxk8EV_HY2FHTHZdU3CpGov8bFWN1tQucd1xxj1IYKLjn6VCqzLYeoFie7EOBzZ9jAcoOduGg4TK2NyquuRqnwkg3SqreT08jU4xSJ7d02nNJ9wcrZGf2dHpTmMUjBs64pGjIQ5TlTAa98IX0FTWjTKIF5LjdT1WxipLpJa6jGxdVrCcJBIBLdr_s1C7P9QVJ5hWjw6fH7vNmyGaPoYwdRVFLIFCAA_l9pk3Is5lIFHNwPJdWJWooOAI4Qxfj9Hxz3wwmpetLeg3lh0wCWKCWKFW77r7i_ImotTZAe6uWeV_g7vPQjoU-lpI4YdBECO8c84yyEc5P7jfJ2N-NR9z8V0XOvuivyXYTnfpcTQhR5Y_BYf780pweQY3MVTQvq707bzQ5Mz4Y6LC1d9eKOx6r2T17EpqQNQWYKdVa9q4QrnXfwI5Q4lUSDd6w2s9ZKxrtkf0h0OJlFMsJBs8ApXZjra_2dVc-06D-Vn3QSNoQOoyjrukn1hDLwomiosUGCvkx2AvIfYXH2rAwDCbT1wxx2mvNniRIRGa8W9LYjpQC3-m1LTu1y4-iiEdNkSb8oCqrNrjuHpkUdm4uoDaXZKcnjMKVsIrG7wH33mKAlqTx9trRIu0V1sen0T57AwB8NwrvYd0o6J11Ti4QLpyRHXTrbZ0vffGyrMAqhsJkVyvZOZFpdLOZZPim0gK6XFs9tx5NwNwwAs_sAZDZ_cL1BN2wV9USkO5XzOqNPZRM8UGIsWOWyJQGt5F1I9n-_hmDN83iiODRWdCdXz7g/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/IDvxAFkYqiL__sNytBay0SOsaQJI39uv948xYA6R7ktaksdxbcWDJtHddis8uo4mOhSmPJeFmhMhiXpswh8gLvQlUygz35FfS92jtpE0opKrkYl-S4tzLSDqQtzHooSCI1e18WrT7I2GhTBmGHPq4lGp8apaFj9bbNgtf7XCsYnrjKPadwh4TWjCQaOvDGZVmw6SXYpACG_YwyHwMV8lj28c93Q3TYE9XsQC25zuhpn7g-ydx157rIgDm4ePpNVnUulYnlCdPurZQRXjhCrFvqDmee64Ql1n55oC4YXoUWhsxHHJmc28SMj1HKoq6pNTlYBP9omvpldbudx29_HVdJ7N6-UV8IyPrTLACNVBXYKqew-bTUT9288CySgGzQqTuIf7FHh0WuMe6m8ggT7r4cE847V2fV1MAO0tRDgl4ToGN2FRXp-pdgLGyQOBK8VncLrBuRDDO5veGiZsIRVS31ucFxAtuxq1-uTUXqiKX4QE2w_V8eUGkHI1h6Q1h5-G-bP2tNZGqDaKkvpP0M7sVidDTBgKJz0jDcKwt45RQfH29s0v6TQb7AFpDhw_J6HiL5OuA0tvta3p248FGbyNmE1k-cDx1KFny4KFJoPxQ85kZUwk-AweWlqi0A82Auvttu65CLjX4D2nIpfqd_M0DO78c7r7L7Nox5K_x2i2hWqHg9_FWGDHMz0Jfyf6OZJCHIAGKZmqb03zodjPdgzBRIUKcvpUraocCGKpRLvvVfq314AFqGmoGuwDq31YtTVRU_F1GDcCYh0-Vyjo5i6XeN4rpJUhqPLfxLhXQrb_7Y7BXSQK3ci3uHItzpdkS382Zvb3WiLVWvb2WkuGMAtCMhGOmrBhuWcjxVe3YMWkyYxYi34cdG7sCZ2JhjEA-eTWdv91OoeDckSN9mkz9aPA8E7RFrZPE3pJYGVta8Qcwqi03lgpPy5ZOyNtptmiyqEnEoRrtrRhquR0zPNqlBEILKekXaotWflJoPydj_-IY6WgD1_pZInQ-MpoYfPDjnFdHxFXRVk0UYuI1GTgzmy4KA/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVnpWefXcK6x2CRd9BWN66yDFgguz4amZxYoiTpjH5xX6NUvVO_2FmugRvyRYFkBcOaUji5iG_gBD7T_Zp0GgzsdV3obW3zoOhptd1egBIy18F8MBRzC-zyRVcKNaQy5WFYT92BKDdv9ANYoZzEgCPTK0JG0fgB5m1l3TO4cvCJBitrt4GInYa8I11SrffqWXftUttwLkf-RFJpDs-6tReApg9AVY5SnoGbZ5zW_lDlLzjRL99qRoLdoL4zyg69PULIs76uTkNcF0hGP9H4kipMdOJ5XAEXi9_IBnXnAFZIVFWtg2LZG5niBCz4sw5eZCdktZDR6mPL3KC5et9OFFQi9_AxMteE42WpsVGTkmSGb7CRduCRZvtdtuOVl5FckYpIgQxwMX2FRqN2V_IT3WmwSM4LY74eErxqB4bnpYO__nzH98a1VnWcn-2iCUf0VctLDcd_D19witz2oaP3Bs1C_uGvNbxD8jrWlgCxJ_uMPzOKaM9g9r1SbTTZAywL-gLU8eb199e04WK4WyyaBJpwuAquFinD23v-6HjIKLmomZwWuAnOlGJC7lFjGNAJ1SiBYMHhqTfpqRRbGbnnIlPJkv284n7GX6ps6rde_QBA1It6Dq78pBHakyOSjJmkOJtkUdgSkWuUaSSxmhOjl07FVLGEs0wtdZI4iRa5IEIU90XmxxvOiZ6IdVCpCicBZTfkzcR_IKRELwJUoV5zevNteqWu7cl1a2rFrjuy9GoH-QsaTI29nRKJwYO_KLqTYfjvCmmAKta2Eg26MdutChUIwH3axr3UwYHJYUjPGjVsj6yxZTSEoAGRg2Q_RQXN9957QZv4AmIx6TMDYZZwjzN5RL1W-YYsinuczGxnPSl_tk4VhPuU3eQLZZiLLn0fyrTxvMfsabAZeaWz3ZAv5kUaWuYhpEoHz9EOTUR59INwTWphBh3uDpLzPMXz7T4sxFJRxvI60PolVWo1mHSE95xQY_Ncmw1kIxvwEueY22VQuimN_kLKePn5qvB9avSM1INw/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6mXGwaxy8YXGkxsXheyPFPPLjXMiUR3x8a93ewwZBdIwpCSRbhs89or3I1YhHbPLjq1tsSwFCx1XACbpZz9MV74XsffhP5EA4uoaLcVfw3el-z3mbraJ5fZUVk2OCyDojV5MFVlwmPG_C-AtakDhhDd59RoM1koL9cw_ddcZqec3hN-EKjBocBMIFM3f7kdoJvqfRhVrNKLl4Y7yrfli2F7sq8iNKtnHhTfvt8PvKyxVm49npqM0yQn0BlTvhBQ2E0WlztN9GYLDUOQFxOFxeEbr9U54GAHP3_SvyoIjUi8dDiPfhY15-gde3NOKx4HkoVudpNcNzUemNNx7lT_evPEtMwt04yoj3_xV-M5ZJixMjFZ2AEPyppONbe5SI6gZK1xPmsP00g9jcrZEzTLBxmARj1PsKpkrJfi3E3RgiVfbkBSR4twJT3s3koI5ujyBKKAsFCZSyKGT_0FZBiESQisBIVn8wH8_bllyusBgARSS11gZMANdOkyXONfHna-q7Gy5mn8cWJ_yRxI98XKuAKEuzFuRHcXNJysZ5X7CwedkCQnZoGlyTHmoalEdDo8NZSaXKmV0YKje_z4H3-ebwTY71K3RIIudlhxfLAes_HWTMbvAFpTyfbAGbMQvBY_FFU8PEMrBrdUAkyPqRS1bmzkq-m87ozgRZau073HmItdeWh67cOO-GkvrGHtK6Ozaw3aBarTzHbnae6EMN5_eNj-I1ypSGbMNKH9PxLNQy-p4PBEZl0PrdMlH4c8xhOU2rDUk4WuxKWI_FwSHqMZ3UcxjZEh1tR18KpgiSmYvLy8nq8YP4j71tN3MGNhvplwREELmJim9kfUQRu6Ev7orCioUYIUFk1fMVYlwZnbLErTrPgIK9yAkqaDoeYISay7NBqEiVGVJTddLkgzMNNkOsRG0VP2RfFAa9b1nslfo6yZ9Xnu3DnQqG0C8zvTgc37zqnWm9Bryb2lACmlTR7uT47bv3xZ1OLo5D1KvFWgf3t98rhpar8Dt_vhaG2n5DvW47g/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVnuuZVzjXHDnIPtdclI9G5Z-uHyBnBeMIwAHieTzw5rE5XKkwbccRs3gGDXdQrFZp8kKlA_Uze7wGmAMHgft0e3ciRH6rgMObo6G7cK3L4PSMXcm1hn_o2SexSqcXZiQR3jJb-HHVt0689dGdBNFQ-MVUBIEiQFVC5XxJQj4DFv7QKsjESekwgnfVlE_N0ZceyeqKjfUoZfYaIjP2xqt2x7g76Qh-Nz73OLiEtXUCW4cUh50z-_weH7ZPiwnypBXcVDED2fVyes96QjHCQIctTaVRd0LaJeWGUX50dH-4EAAvE2_tLk2eN587DAvb0U4pRnHYczF-DUCBMXXX4DaYB4pkB5-bIv7TvbFsSsW9D8cR_OVGCNM2Et9u1hobgGySK9O0DGlE0rjBlGIzJ9QcRwFYBN9DxJR7rPr1kzsu3XtwkioXuoclx9eXCDt4lo8c3yAlwUeWiu2cz2DeWKgSYc1TDncNGI1SgWD5yq_0HWv6fXmHVvMPgdS1AVIUbBZauOBh0FtedUQWOpTxf2OrcfEUqqizkBswuwZF5F3VY5OROXyWyK8sjJYIZ-lMtr9OFwBbBVKvbPSKsRJgcbux5tWkQjW05Bs0S1vKJ3hsvIyEmjFIRPauvuwXyjeKUY_0bcdJMioM9X_wIxylEYM0TNqJODRpjxCIqkbOYff5MQwftqNecutCZ7KjWH40Iwu_s-4hJy6b4RE2YwG9L7uQuhi5AE8HLqtUZqkFPCySUb8gev7wHLnfEXERMP065q6KEHjWeN7znlqkk8uyOvG3KXDCNvG7y3_O0WU6X4ks2XIkY_MbSvrP8BW2c2NnmY29_LSOi2gUftq3vyYsvzz11xW9F_v5EwURF4GNWIwFxIUROLqxU2AQp0vhLrz7e9nb_8VXUnnWiqInRHYUlbNWSdJCmcbd-xzJQ8Qgy1Au2AMpinpfIpPy6eheX_DTl7A7BLgg13UIUL5tD8ShOJEYibQYq-Jmxi7R4rBhf84wYVJITum2RFve5e2IoHCbODEngpQV963LEhm8x_aYe7NTO4/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVmtO3nyNX5p309oXkrJhU4o27K0t8d620EY9H33tMXIVm1kS33YqeWPMMAWbrRzUF4rJpLj3A9Cq-0htWu6fPKUqfTeHldaQ_j_mRyfZS6WZEPTMzDIT8NaatwujzJ1Srkg4XmI3Esaum5dqVgKD63XOXg8D7Rxt8GTjKIaewPD9__8eVYH_CSabCNRFvw1JkxQLItn9fe5dtO27EdI7Bh1lbJV-TzF7ch0vUQAi20Fcl6siZrbIAGprMfV7PBZfaqGfr88Ytz29vC5QPcvpeLNahGrjAFAY_itTGAkQJSqcw8lVi2d0sBjUH1WhAPd8VXw2ZIJzl_6odzR_ejZDwZNUihnSdlVwNhLLtPNy8nwnOEV6Zzmlk8uwh64ZqsNI_nLJXD5P1uSc7-zSl0pWjdY5zod_Zk6OJZghMm8bHC6GxSxmcNlZvcCOub_DhAQg3DnNdijHJjjrOqFYFq5bh919pJX5Wi6DsdblqyTH8BXvnIwbZtIg2YOwTD1IH2K-UcqJ6YVSXr6bmzTUwRdYY6C9C3SE4fdrhSF0R33g2ITmdK8Fv-QrTjE_TQk4hXslUfzCon9kuG47ZPBgdKcizZNYTpOlQqDMO73B5TPveyHaAaqFEX7_uY7AP4YsNWM6tUfP9qMlEH95F5xD7Air3FptF8WJCuMPw8bj7d-FDpsUq2lzlsYT73Sqy_OHvSrrVVyZED3IO0ok5OcgePW6fgzu5Uz42GsRohhO36NEC-f5NqM7US4REVXGrF0A8V5dAy6BIA6B8I3fSjfgHank06iuz7hxlFeegUh7MfsiAlf7qUlTMewVdE031IX4V7wuUQr3H6Qyv8aeuLDjzHWxRdZLa9poWlVSyQSqtp9pI7kPu0LvSz7AI7AHPS734kx-FfSPzFaZ8tKgUGmZEd0SwS9GnN2jV4Z8BAQvLzRX0wiD3Ooy8wVRuh-ICjdyuTVdpvL4PTfTInA7LQ3QrSiKBVpk6MmY4v9TAWn-ToxFE9R_AwEkwYfflXwxJDCKQadGbA/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/UzDiIDG-ZmH8NEK8zoFXJUBe3G0Y0OyR3cIpiDaVXUJDxwqnVoD6lLHg-ylDfK61C-VY3DuC8yYDLxJ1tSwoypZFttgBC2cJAEAaR9sx826Z5w5AXXPaPchXBxLGY3tsdw7xqEjD507k8sedjINTudBvY836BAStmw1736umHLC9KXsMZ-BFuBReUEnVt6Eo9St1q0XGtlEVRXs6tJpLeN6J79vy5-FMs7OgjeB27eVpewq9ca1Qr4rt0dmPAjmJUvYENy6XpIl7Rg3LPKGk_Wk-smotbRrdod5hhYie2051k9j4wbM8M34H6ETSsvYepPtk0TWSoXXL7z7cs2oVgRziEZcupbSFLnMop83bbPVYVeSnOjzH3JAKSHLKWV2yJoropNTK3OyIf10vdWgYN8Dhe3BoVvCN1mAih7fib45-cJzj95nVql252ANHRVTZOZNADeWAq90U0iezE0Kp4UXbA4475CG_6JKXAcDV6m5skBAuN9PMqcXgm8pD4-tWnFhVk5tPKKjO4gAImUMrdx7UE-XiJ8-5ehBLnCQsjBPAgSVFotPZMZx9PgShB9Uvgj5EaJfyF3NERyW4-_dXuBMP2GXDaSqKAONh72zgaJfeCevGqTEYlOqi3ZnpEpP0yeOnnT-eGiFtrf3BHDLElJzPzH79540yQ-HOu15w-SMgcNZukW5K45L0rCEEAD65djb4StM1Q1ainv_A0eizyM_vV1C1a4IvPVe9FdQXP4kVmx0q0pgO_h3g5hD2SyrxQN5BPl3ZjGVCq-24WYm5TosowII54TKLUgDmmb8AqUatdRasYrtPfsS1z0b5cREK2k6JD7a_9duBXevBnNLGWdpJ-jTMFdO9NAh-4fmjmHGnWKvI91VRsXSxvD_ZzgNlTJOY5e2IYrKfv2q1w1eWY6jth1vrFHj8xSvOVgKOdx2xaQaEbJmso-8RJimyWQZF7hXkhSKy7ysIATpnsZMgJGStecV-qXaa0hIfBOY3fyGMpWLRsLKH001l2YAT3TDf63IfwWVm4jGuQL9DuLsfKQ/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/da/bid/imp/DhiZj1-N1UeVhTxMGo4EswY9zlnZHVIKbaMyKL7l1vXx3tyrX0zTrmIiwy0eQT_rb72Ii35MRQb5k1tp5bE7RBtT9DKuR1IgiFrMV8eQgSRs5M8j-WDU19ZadmySNO9jCPe_gwxhoEvnUillNhVSN438l-Rt_LHvVm1J82AD2jaF8PcuCmGSl_9S928tzHilLD4qKTJ3xEa8qu6FaGQS2iTT62E75ebPd4mrkuZlpuK9pmEH6o2pmIR0yfLi2mDalGptcqasu24O3o2OOHG2DQ |
-| http/1.1 | https://action.adoffice.11st.co.kr/da/bid/imp/41-yRhud-9i9R95OzeyjQlah-mg2z7RcLtn33xnvr7yI6HwgormlUEN_mbpYqgr0FM2PllXk_oEB42aWERVmWaybikrW1GmCZgSNN8-gn5C24o64KqKi_BWleNGCynhh48fwgKwshG7zk8XceNSm4qkuAWqWFk0ru2RuK4HtLmwb0D-K2H1wiy6qeWMpMNg4YfDvJSOSnH3EbaHg591ts_uhpeLgYju0GBWzmksRRhiHztNB4vtqGy1Q233o8-O1psfd6FrtmCH7DQni5L9q3Mz5vQ7fCBRWk9psLLFkS30 |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Vvv-I2UT85jc_SIe-i1FclUo21-FhwOLgq-iFx1-2oNGbzb6ItTEBKMMbwDt1nLKYkuF3aYfeZj-7TiH9ec174cOnkGGBkw2Ddvm3a0h475gBRocTABhkN4H7hg7uLK0di41SunaWbopvSRLqLqjW4iAq5DMRA7B013jshQU-cx731fgmWfpYBadQ-tWaIGxj1uAJrKey6RnHAipW7JyloM70W7b3HNKbSQ23BB0jXZtKRxihOgAFHuJJ7pG3ZekIElk2j58NVFt6R05wGicws4_zHufs9eQ-JGp61y-MWdCekJyRbUcLitH6Q3NDlCStB_NPRC7uawNHPjhG0aml02TTiFklWBma9FQc1Nh7GBnA6qeSP40G6s9hMchjHD0-yLEgLFwl4sc8jBC54vTh3hjkZ4ZoFBmr7MyF-D5Etu9DkhiwJ5csEAv-mPeudNVSy1mUZ_rEH67mNVagmLvzXEFPzTNylarPUSUVTcXo9iNCaGQugZYkM_5-1f1hOcHBcccDXQdatxkmd1UDzI8xm1D_ZTc3md2a27HuSUJf-24fTgJNthSJdR4SG2PBgMJcPxyvlOypwm-dvdRT6U8vVI3IrQRPEC2MDC5ler_wTgxU6HqPg-Qpvin1ZncuRvUJLLduc1uYqEz3vxLzkdnz8ZwgVCDJsoZzxfVQfSCf972HMYsGT44BR3UoExOLDwS3ORiwqEC5HlmDzP4kRrh4FfekMZgXxCJjezSehIBKooL33S6tx1_M0gLvYcY3lI4KTErpuY7v6yg78xy-M3Sd6EGXR6-ZkGsMXn3QVfDRnR07_WjcJNhfybMH_DO36bFQzRWBqL0f1Za8XDuY6J6fzqy9XUnBzK1zd_tIztgHmzHxAbQwQ27idHKqEIcVxsNXcWK84szJz1bM1mob1bkxc8iVNKy17QC1aiBNeqNLCzkJuC-6mdU850Qnc1eENaOZJXmXHVvPrsymq42vUoeoB9yO5b7tDT1qLJOm4_81gPZGXoIFiyzb-p_TW4guBi2GdksF2csbwTk5gSfQ2m2PP442xuFLJ381ixV6I_7a0E/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/MMuKZQVTPenzztXpJLkPT1wXkDCa2J3BSOZQQfJstuC1bVt4yjAS6RIOhGA51IO01DcolBNuR_b4PCbMhMeIFZXZ0BryE1YrRUhUp9_oL3tLgMD0DaH_4kMTHRij-PVzcMApiAT5ieSHK0HP0sgsmV3w47mnt5xw0iuyphE6kJSo8liDe9zoz2fZc0dIwOxaFnnWAlToaeS4HzpqgvsDFo3IiDURSEn92i0iQBpR1KkTKsTCx23Oyt1rN0flOBIBk-UF2v1tvtzLt_3g0db9yXS9x9zgnGaz46fcWoDJA3OvZbQXUna-81XJy6TwjTOrT5sRTPzI4DB_eKQSHHeXdgxkRrWLxNXvb7Ez2JfAvMj9TlThe-rgFusf5TA2gewMz8XrMolIt6SraswGCfL_Oy6RSuxKdhtllU9q2_Mr7eXNHVNrXCKnEzWM7vfFnJW9OA1L4-pKW_Tm-iHKNAFtFxmnh0u1yCQRjuLccm1wyQ_Izg_wApUOvDGj0woo02iEutmaUFp9_58q5txvBFOkqWLoal5HZXhosuJz6D4AAgEsCKCyBph9DL3Xc1Aiyq72d6zxPS1DDS7YUnEhmcs3GjNtY-vQKWP7Z0NW4xKeZ0H7j698L6i2YeaikIjARPmuoP7lD8AsEJ1unlEXS8XIPmAbWXKcLk4XWu13CLV6elRj2D7xY5DOqXRjzFyw3Hxy6y9qSlS4o9FGcvJpRoaGTJ2uTV5_nEhSmiBx2eMBhLzEKkobGjQjVk6-D32kFGkfwsGXA2qagZrqdwq4j-sbRCRnzlffz32qsofD5xcMNqmy9WylHnhuwlqr_2-FVyxVNQQhdDOjDOvrxUJlC9UXcjAbVsK2eZJOMVSdZ4QYVaoMG9JodwLhc_DvQwi0tJhlEC8LTXtxvZmnRcWXFWG4pNPOJVq5on3z8UcqK9W24OrTz1i6GO-04V4RMBBmlwUXC6KQczTrboDYb_wfLOfk1ni9w2Kv4hQMht5aMSNzqRjZsYj1FRwmiX_kQaUXh145oYc9g-b09LbGHRtG-BqnzVo3Pb1CvAjSoeL76egRZA0/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/XWSkX6nm3bVkt9PCNYQvJbc1CRxgmdZW0LjpOY7HqjtIZnrghq8Zd4Tc1z0a-RpoGm5e1jp0AIWjxfHRMRIc3T_0hS9bTwo13jaFPf1EgBe6PG3ymU549B2OvV9AgqpyDAf1WWuTlWWPPnc8suVCfAn5nuFPRqxlcXanNhJXz_h9h3VVEW2gCcqdJ_myLXY_oJpN2v7pCmZZ4u7gDoqLeugF1rhLojF8SwXzk8vSWvlpD1DDc9gi7HqbE-eeAG-hZpmoW5JlKJVDdCnUOnIdNPPo7aXrTjqALN-DwZNfJVX2RJJeHwjtMWwGSmEuSqovn6gztnty_C125yK9OksTe102EkmVuUzstn1xH6PZrmOZUkOng7tyjbRcI7ARCb32QrzeIA8Dz_lmTIvQc74voXHdPnVx_ODPj-HESuPkgDRkhA4TaDaOJG8pt4sLEWuoOJXaUfrRp4WwEeCqh_aB1IL12ZVs8kajkpO_j6R2aX9d7P-EYHuAqX2-BEjhKnqjBSDslyx6tUlFI1ctVEvMR_wQYcqwxtX3n3kYvJu7J93czQlkcgf4wKhHg3Ng2oDuMGhjpm_OFGoKK5PFA4FVef1LX31IG0-xsNL1RW_IKlRjS32Ol3_U-X286AQM1l7gs4whIX_OtLBI6b3wdcHcqdGEs6uIAnehWSWnAsjYd_4iUWeJyZM2JoHy7goc_M7S4gX8mnzmyOL5vFTly0bk9KeefVV7FGg1G4kc3YNPfatAMYGlFaiM6Sx-lE0POqFwM2pbaJckcbqzeBaLAvMCS-jumdxW66aHviYAQgNVhxd-_f0XXMOkMulfspxeI757oMTYZoLYQu_kbvdEMBiORYntVlAto9EBPdJRi7GO7FbvBwP6tq43Sm366sF0j-Y4OSd6F4nF28fkPq94A-7ycDb7QoMBKxy3lwzta_UOgkGZvV3D_2D5dxI52_ozW5CeDfPjjQ1502FBiQ96Nm9piqkhJEHvqNS3CTrdirL7PkO5sZOKVoDqiLCGUTqBPWPYvkYg8QB5aKeSDQPhhCe0PMXSvt9feFeBEjvgr_HoNwU/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6vlVYeIT8S78a7rdggRIJD-OOrUKq7wXySlukWptAfARmoWZpKzxtjLRwnjzISEqB-vYOUDyGu3bRH-kjNxR8sftirGqU9FzOaC4yA-SL3jDdhhTmAhTqjWm-PdlP96uxt-AC3Zza-6LBA7mKqHXxvAj6tiWBhzAE8WRYO9yFkfLPcalCSPzlFxp8jyJ8I7xIhlrCL424jzDis4sS3NCFiULkSnFS4gzWgoJn1Wu2VSvzPRkd2u69g-GnDqKnZEPUJXpRhb2fMap-OVF03Qw9ojrIpjWpUl2wugQxGf-n11llg6D5bg5wS02dT1lepBTN1XQF_B2Z02s5Y9b53dbyk_RinkuxdtOhYLCr6BkDphZ8AWbN-M9yFa_5eXpoNi49fQIpGv96XtGlT9e4Nd2obDIwWUDFoDB2HH8PGkNK5418SUnAHhuephParz-ufI-A_ZhQ282FxjrPoH7hvvStVLk4PX3v1Ox5lZknctMKgG9_-ZUJUtbmZrYjJvdD0sWQl0JR6wnl8L37SEj7rEF1sqT32foma0M3vyug47gY6j_I0M0iUholOvuk8HdO9GbaUl8IBrm6yL_sid6poOI_YRZPMZOMbtsvjcWePj0gS2JAkWFiwqORmiTqeIjvPr97S-Eh5YitXA21fLPBu_gyvHmv9irb_9a7fTIneFQ4gpIDUlKDn_KV1HTO1uMyREj5bwJhBTID7wWo5cgUaKLUkUqxxbMiQA67AMgK16v6mLI9QEkLxJUOrSht28SyS9apuJonsyTfcNvMwa7wrfXmqGN4mld8KPHwaZk5NdVl9Z7lLS_bOBoYWSPPKP80wFq2RAPMtuvdvjRdEOE1a2IOpKJ40ldS0JgFdtYi0BX4nqBUJT_x37FWexNVqdvrtWSmunWM0Rz4_Hwa3ycvPGaRl_Vp3QfaZxJuU4Cm7vrOZP14ciVXwYaiwirVJMiHPNYIvNqLc7Wpp-48Os3GNjfVi601WOeSY8RKKZTX9OPw4uDacqIiSRiJIibSwtSx5HNFT82VzZdGDp0p3qPVwUVBSg/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Vvv-I2UT85jc_SIe-i1FcpE2SK2_dcfsvaJxhxXd1k9QqPDGlI6sZT0E8F4fdTuJJyFfsv_AOyAXp2zMR7kMLCCx73B0LPGjR7XmNOVBQcPMdxIe7UXWmCcNlRJhXK345JR5R-7yLfvf1MNFjinCGCbfkcBZVltebghSvKZmfOdgDoQ5ABs6lrnScWwLEWleCSO5rhgWnVU0rglqqZR8rocYPZtnX_Slc2XB0H8qPPbrWUUKMNLCznOdW0xPlGBh504zyfEx1gEQ0ZE47DKadalKIvfuHdfCjIR-iTGq-8XiaBWEk0iJXIc3HkGSSF8GMgAOi5VE_D_Tm0--NMK5VowBljizFaXE0q_qS_DH5RpyZicgt2gn9Lm5qMC-UavLb_vg2icrNZm4dmqZ4LUENgMkdRQ1wSxAY1u6BDv0mqg9Zwmni5TXq34g-6IGjqZpm6tsM7BW5MlNca60X2LCFewFAvke5UUtgAQmHAKdKIwmuBl4YNkc20NFuhB_LDxzAHC8-hDRC-GT56rxDnq8gIR4U915I01p-liAPiF054r3ssGrsVAzhHOjydVIJnscdSiv3_tHsR2BklVehMouDkdmiNRaRDNphJL7Yfh3fc3JssinEPxVluAcqbd82NqEGPoyphSZy5v1xr22mUfluvv-mXJgp4oIKUKnb3c-I7jF8BVHCQs_xIKCVGz_56UNlLJz2nhs5cRlETy-dpazkZkt-IZFKyzG9PMOsA-3YL6wsjzAbEUKAWclNG_0k2ESncyvkiUm952V-jd1-cGBNtWQ1QNmJ0ixZYopfAwnX_kzMnwI2mMgZh2RR3geJiwTqOPFsevqj3iWLGZJibX1bBv0UxoB4JCMPnyRh3V1pIT67pGwe3dovHBSypEIcsf2DqRcaM6LNQ7znevvY0NlU9QscT1VOMQkPp8uUHtk4GQThCuHn7_SLKEAaBFQFZcufXDN36Ud0BryKSpsYWJI9WzNAPGafRso_LhQ8GZMaMGQQWvCuQZ9iGzpxdAKExjhLJ6UnYz8ZmHQyxenVejPhfxucfQV23XoCNGGKWVdGWE/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVkRG61iGsklirKJeG9VCwTWqzsOTM0ofBEvOunoDlIW0D3pXT0kTcwEiNYJ9vpD1b1w46Ivz8RHhWV3Vo3BmrvqPGOf0rImIc7QAETBGdI1_C_shA_9dQXpscQpOJQEsWrpCsSdle_1G5AmmVZ9S25BNIDpR1onHN_LLvUs7_0mTZlyCxKndhj0pwv8RuxlfZxChZcKCNcyuliXY57wa1o8xnZWNTzbXzNpccLFrDEKd2Y6xSQrH6iaNNST3WGZwE1L1GqvJMx4x7vYo1mOztW7qgQ-EIhhrw39BkL0WN81vQE06K56jjIbvjYIF52ZKJLMgNr6LZymHIAP87kvyQHKU_v39p8Xu6DJNQtsFbmTHwxfMvnlljSSYRr4_nHutnE7pfJjzY_Nb0cMNtdbSXq-2DsTUxXiH6PJnhthMCDCOwBTO-__lN4-LtyDnJ4QO56tZXSwbjdX1hm2smIyVj8D38dSivRoN6yM9u73-wBMqPIFuHBWhNNoOosPIVJymdAbih-PVjNi7AhH4tu4pG9ZdM5s4xfe8HS_NwVn7ln287dtlYV_NEAOJyY5lsvlZAIFphEM1dG-h11za8CJ3VU7rF24aNJxaWLZ8j9jlR-LjkD3Jc6Atr0Y5Q75OeAuOSNXb8jWyl_a__U_ANAs6sz3x3nAOvnpETEm_1ArKdFg4lJ-sTkkmbFZiwxILFZa7uN_U9SqQ3x7EpCWY9A3djP_FwEas2R5arwnlf6YiFwXpUW19mFclU1Ye2Si2Foi2X06_sMyMMfrIUHeNSkqWjdxV8zr6dNXevpVb7VJ0PNwdVRqYNo3iOS2qd6UR6gZnnC37gv6PB4u5bnNdHO7g7GBQl7LYCiiJDEJ8dGNVRD2Vf5pFY07LuNoW9bTuEROt8tcuyVXU99kAA2Bod4i0ZvZFjg8LlObXiaqPG6Xu-VlY3XXbTHTWwnYn94eCeiiKK9U45uw-lmq-5TpdzSWOZQl_8tVfTUEkr3q-sPi8Fq5uXYvCkO_ZxkJoVaw8g7OJvC0DnLvlq6h2BkV4IPbM7CY/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/ObpofrKaU6Fj6A4QyAuQdHJE6hr_e7IEUykopkQORfAsRLW8xBilXy98T49XmJxihVqo0z6782ox9SIu8PMTYzU3TQrqxJ58C8h6keCP02w8aYtqcsj_0vPDkSZ3lMzxASVuNLoSOYHvARwYP8EhxH6SCGnMMTjKrVQssQqrC5kB1zGlovuELHNfh7wo0k2_jqLy9mu3L3ARw6bAhvFBfxTIDND7wxwuJfRjTFPo8VBFR-XZSPjqsR5djW4ci2D91Kvwu_rJkNc-QbzhW-UUd3326QOi5bTx2FTWW4ACsaxt3CqFSqorrR0BOYIJO79xitEdQdmQpBsHi_aAr0VL4GQWHhXzxwZX9x2vmWXmPr60b_5u8_8IhvQhNTtlCmVLLeU6gFcusbqOtQae9mNixw87a1GfxNqH4JOG2BElBOlTu47WQIAbYsCk7tL3PVA2nt3KBi2Mgbvw2ShwXpNyzA1VFy7LEHxcpBw2nQhkP3vnL7kIKf5DzeCRBJ-7JfceixWQCfjkU99Jq4gzyftRx-PSO-zfojI1g7tTox99mMc_EZYO8bB23AjuBcd8FcZHYzAnW64mo1p_UDYxHIUo3M6dPir2GFHonOCxOoiysDFwhEwdu9W01bPfuq3kUUcfi35B1DXzNPor2RFXBW_8KQPyWUtaypVxNas5pMfRyPrvgiYy1DRDqSTePXxw0Dja8AzabtKRGd-omdk70CCNOa6BsIAZnqFYbptXfzxIoXwaxntRerw1wZtb2pXDPFbC7L_tGBGUsWX3RoIVBDEer66VgavqYV3QUsrMGqRRuwvczAZiAP1-YO8QrrYKpsplkpazOxE6X6fdVhgwntVqsYSHkylbJx3Mq0lBP4B69hnECT4L32frgVhJ7gM-eYdfnElZTa6mHAzSW5wfJhyZzYM_yj1pgd3Ng-3HYbl4lKX8ORo7xLd1a-q84weFSXX36SmkhnNLwZ8B7FYXMxvmuITFk8yJNHGi6rf_hS1WL2uI29PKKN9mfDYYpyvBIT3SUfNhPGaAqhJSPrgKrcRT4w1CQq5bRioPIV7FNT_EMJY/compress |
-| http/1.1 | https://action.adoffice.11st.co.kr/brand/v1/imp/f5S22n_S3J6zPNoi3QSvrJuYGJr4BMEjyRRzWF5CqP7BCYDuNp6IJV3agpi1gDzyj0lFy9VTWPtfZRzIUrM62BM1ic-I60nVc53-hjyyEKcPOHvCKWA5iqf1sWsFVnf5uedMgTkI8-KAwslxInkmdoyIQovRLDpfyNRhIpGpvkNm9uBUoxXWKPZg-ZGGXyTUxdBiO0dAlVIKl3pxg6p5q6MaJOaaxrI_7ChmnKUN2M3ktalq50MdqabDj9hOyj6ua4TjzUbh686s3WVOfckMYU9U6t0sT6QqheeOytL-ypFCeSMl5-gJ4u4JtnB8vCpElG2iX2D6_xBFQRYMGgIjTHahXPd3G9OncbrPKszFprq-Z8vUz5YBmWdz-HhdQDfGfMl6-3Wu7h7ctFFJURomgQITH4k8P81T5TpxhSlqBDSkGDqXIr6Vn-JDVMb_WfEhmisrJnSLqK_Yy-lDwkEIR61w0F5Ben8jVqvbmOjznw8CGoZPQd4XHZci6-rFR76LQ68hXRp_7gqtjSZBJUoVqJH0YVcjtoYHOIt3mwKoQcHbXXTfj3Rsc6GS3Eo8Qv8SupzThNdcYbB43qRkRdJ5pv01SElCkiIBuWpZkNqkG_jES8AGl7VgaOLlwtuMYCHHMzLKiRlYI1cAOtjuIhmCbxnhRjsbMeC4_awI85TDfLsNQucsLTMG3zMRnX0deI5KTSa91oVw3Mm-p7gYCCRhr99q77xw2eaK_TQPB9RMoUmuHvIJOt0iRXAfF50Jxv8uDyd6HgyRC6oQ_QKv_NFNLS6wERJ1Eh--sA4XEJHy-sQ8d6L5LG8J_8jM7a6ahI0zjYdpbOHpU5fta32Y73IDLw |
+| http/1.1 | https://action.adoffice.11st.co.kr/netinsight/v1/imp/6_oltDF-O98qC6ZkuOOCY_Rt0JGLWSa4N54cZty0gTb8iO2Fs792_Xzsz_oaGKqYeJPFoYvk-rVG6rEKV1HlqLyM9zFZP_SVLnnT3vd6TsuPZypmBzh3ZZ7kum-U8E49UOJkvJkBVJs3cfGvE_XkBCsi1Z0iXubu6IKV-3UVX2rsEjhegaAXPLgI2lzMQMXBfngtK0vlQY6y6YbOxiYoiLTTBrNgQ84Ua-5aNoDZyw46OCmMPyb21sGCGOY-5klkqWv8aqLciKZRr77YasLFAt7ewMIo0gaU_UcyGaMrBcSNqH3-hkRjIPjzTc9vTrzMtVQMz42CNES6UHDdOfH9iYt7DoTmDKZ3DH2l1weoAS7fWuKneNYIzWNb2Hm7e1F8_lO_R44tf9LTH2EUD9vkhxcojt-ar-TT7PtBlHzvDEfs-rSI6rKlDytYl0c5DGy_jNA4b-KDhHtViJVIXRwjsw/compress?additionalLog=rKMbJ5cjtLVX4c2DEGjpQx4BVs8bk1gpzWiM5_rSByySoIWTayprQrQycCnBW8TRirnk-VeWC2Ms1aQsjBiLBWa-ptxTcCHNlKVHqHtv5IVfSb0X--dvqMLXuCd5z5q8ajv7kbXbeW8xmgE2y2JXZw&redirect= |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVn4bnhrbAsnXLM6lzXmQwT0dZv5K-T27utH_zP__IlCtdq1a0XJhz3QSUyo9MiXUiam1cpcRc6mOxGZy0QNpEbCrlv4ftJYsNMBwfvkAU8pEMGPbiGxIOuNMgk4q1Xl935muTIKFbQjpnerDQFa5olK8CgcA0AL5-xVe3X4h2YFpPEAHnPHg_OL0bZ9zEhn4COOdMb4PLVXgDc9IoEOSYMpUdzJVdsUqdrlU31KMGQiKWEYhRbmdCprgh1YNBcC-O13Ej6muSMgjnhyOcDxvDdbvVcxn511iS7ZjqKtzosWVpfxLZY01zoS3943RRoGm3Is6a3Cw-lde3OETfvkIH9Q_ZBjhDps-AgQquAbcmydNBiRFxm35LnjA3h0wvBDkNSyvnBYDPZWLieefgRtpfkBYEsGFez3ImiVidnjOA86A57biKHNxAFISiczsifZAEwkmnobwL4Aif-VUrMJzN3qYFima7JRu2qJHbPDulEB1cIZZqOlpfo2ID6v2Lp6KSD1KMlxlc_P0sBi4kRN4gsdQcVtApWTau1yTyNdy0vAgxGP1NcTQo6tzPa5AbMjgaMwb4E_N3g_1sZe_4MHOQM4-HV_csaZvHUgq-AcHM9KAbKnSBke0lef3E9LIk8Qp78bUJfO124K5MXbDvSCEhHNtTT1VVwTwTXpJmAiogODcxJp7xX2MHrVEjXH10aXdaw_O-kNcVcIgkIwIP0KCKxpX5QIm8L0BfbVegz4mjJaMW4Q3sZLgaUg4shsnBmDmS57CTgVB8haWzY4wTmppIEKtoSMM28Z5hQrdT9e1DEfUn8-jF-30BIV1YBEkGNDIqjSgNcqzJsQK2gUzeNvON_gAr_drk06-lIHQ5LDzAfc0UDPIdYagelyNYa9R-kwgCVajvVVUb776SvZNPOSw_u7qR7IIxxX09DzBrB9M-4iJ2UwSUEGmDsjSErJ28pDtlpoDRpwXglz0PqUZjz-qSolyybSydEPtWKCmGHdTBueeNkC6J8jpkhxMViVjl3ldsQ/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6nv2Tu1wluYJuBw3Fxskvj1YUxXsv1i8R3FvTlM73xRx30dH0hR8_ekt67CTqbaMxfR0mizjt5i5iKmEvq3qsPcM5p7chjxAQNkJrgw73pdGaJMD2Jj7rhuHuJ5vppGUE8r04YSNLhDcnOefAuqdWb5Nac5zY5b93CQa0ilnGukdNycg1ViBzAPHnf-m0qK_P-EfDkiJDJ9ILUU9-bSK9jgrEdPUNKFnKhxQZswR-vQ_5tyE2XrKRCoYKem8OUJDSYmyzeAtXzT7RUBq7kq9jVN2wsoBm8viWiwYON_ct_6oEHq67fX0H_2uDi6K5IGWJmJ9T0rvqb8jc4PMw6AM2SBTTVCG8ZR7x1BtpC-h_GiYuLduTzMdwfZlKvuyXfMH9a68pd71LTwKxIy-YPgSscWR-unn422U23owvWpbq_IxjMRqM8ml_H0Kbc-ghWHRS-X7k_cAa1vqPGr_mPqUH1rNWVv8krV55L98_1lvvM8yK50ucKfKqZEIbTb5lidYHB3v-H-PFpHgdsVdfffgy_fI9ZHaa8ZvErpppB9FZz0ODhLWu4fTlnz09hDKlzZUcxPtzY4bRboHWtnzt9blS1dXu7tICezk3rEyLj-W5FDmv5o5xUXuzeBb1obW1VKPXt5KxkpnZXiueM-1lY76FNIAmRXy8lZL2VLydAfgEDyx9jpQ7uf4FuqyGBnftXJJYepa5lACGu2FNwV8hsts8_al4zNBs0YjeHxcZxO8hNw9X6y0NP0yJ1LXO_zMAPh5ycT9E46JJjbsX0OcmQtjQSi_UHv4D1EYS5fRHbiqCJ6vCb5rXe0KwdNHhE_n8SbVM-JD3inj0y-vNsuq4SMNKiGRFVJHAqgOF1iZk3L9wD5HPFC-D-4-b7WVMhdcmVM02NMxL1_JWMTM7fHZaavtFOKFaQfTjap4NZKItnqsFiKbqjIlO8D7Jaetx00k91HYWnhrUCxX5hu38biJJZcNCJovRtfXW9erkq-wGjx2WDgKgF_TtZ_2CrQxRkcj1bWpsQ/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg8_Jy7mzuoo5IwZkWxcoKyOvqTRkyfkbtYlG3Ab7tr3JEH5Hlyt84I2VjA8n1t8g8JkMlAcHBMIBmet35rB5qwQ36e_BMQ2rLhrF9ZhgAxIwaCLVnX5dtw5-5yXKh28NyGLetCiMWHytUrPV1G7HaC-Jdav8k09TcT7wRAAQVvS6BDrYv14YobbCiCJBj5Z0ZB_R2aRVx1-UieeRwaQ2SjVa5jpdRU32JciPjgyNiRXQNtQR_bCi7QYq9MgKVecYroeY-rWPDnm-75iAOY0sQkYgY55PBm1gp1uDflp1R2qJbjuMKdbfB9mEHuSBVChX1LkV5FQ2Pxm54eAh8JrDfGcJ03p65gQ9jXBwi0JeEP7uW7DYzpVNBpRxbpUhNTIY9eLNdi-LZNQLFTGPbfIxChaK0p5yWF-Seye3F17IDBZRUqy5rZ-7Dftgc57Rbj8RXqIh0ai4ApTjEIZ0FaLyyhn8ytfVO_CzHiQTHbrebH6zefSi3F2JeObAb9-t21IM96JHaLjXxbMRtiByI7DFk8RzH4zhiNvB6HWwiHNKj9YRJtIxdaQYU8pzCUwymyz8cKBXWLTTyys6LjGawTtZfsjbZcYUhenV3ERuq0SpYMiLirr0IR7u0CiUjbYHx4gq9G5oKZq3_1FU9cY_jSWYQnql-TN3Hn9jtwsEaAJCeMiw-WNwOvoyW5dS1xf14cNxSpoS78laTJTyz1DzaUR5Sfx32LwxU4lbYA10w647qi8FI-wfO2oXPnudNL0Sizshpn6k24G9UFpO1jvZpkr0RDndxOEOjrqMuPuf3klFXmq4TMtOaP4lhp4lSE76nlKgP9jkewXZdw-GX9g8M_RpY5OQFtsrZuhxKUoLergPvNB1RHopyB85Fx41Sr_iwfrOZtmO5bOjAysysIACH_Ye4qX-lQrk0qj4UBCkXubCw3vhWTynr7aCsS51Ca3jh0Wn_aypzbfn8jk4FbnUMRf5EZ7GfStt7VwoiyOikSfVaFGWlemzFtW0rcdUv6QhL5j387g/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVgPPUBYJHMdkWQhD6wXm3oJoMwbvxKGPPHA3nFUEF1OveS9SWW8WJZv6rx0OW0tANpru_aXolszK6zvjNrRGoDFvPP8HJKxcDbLlRUNopIc_nqoEJOCmqSr138Veuf_pEaJfZhuwVLwapGt-lAFZdlntZPYHqZJnQz33VJbKUBqjfHtFXs4B2yoy3bpgtCk32FJBFMQgYQ5k41sjPgIQNrtGCHetw_OLCq4KODwEKt8vMyFuRGijhBVqwmxw5Yk8Pu58z758SuMck_ksRszP60mLpFxwnfjRCzwdUKVbIrg34MLgox3LjjNva2ndYIF4-uF8FWFCnyTAhk9MdYc0cMGwA5fwwC_Bo3-ZS3NTZRaEnz34AEJH8pwUOftI-nWpELA1WLcjzwnwXFOeayJGcg-AEIa6hl_Gwk6Gk1EX4RFV9FyaB9v8jgXgy_wO9vyqo7fBY10QYtrtZvwjTuZdfURXkFOlaNqDFdCk8Qezft1ws7wruiP392wmGR3Wf-BNwA8qjLrQleXlJtea0nwHL5QTLPC5TFlIzktCsFPxgqxyEQrqO1JKjoF9Hr1o77JB4Z9ION6qrGMEO5fd7CZjRy_eNcl7K1mMnv1fFkTNW3cvkuXFBNr-Z1aun_PIuOFmKPT08c_2xpZ921Xzb24qpGhg40RDJO-tDcArKfTiK0vG8uWXSD_2TaGu90lsjosbOR-L9dtSSYf1GpuBFRV9iX2pfgh7DpV2TrOmo_QEueEoPeDUgRfpciY7z-ynAHyv_mS4wjpIyQHBjRJQlEBiOlFqq9UxJlmgPORfjZx9wOHXQRdZXSghylu-lM4MPR09t2UtMhFxgdqdec-f2P21a5bTE4p1Wgr8h1scWJMGeIcbx7vZlBuE5fuyHJ-qmH876k7Qkc9tO13aQ6sNJ-1YUiVadwGo9SaeDe5X93fEFuixxmfdgU_Y8Guf6QJamz1QLnklM46dek5Ph4ODi5SG_xTreIk7z3dScN7tpoHpCxITzSPv9GJjHVF_a_s1jtaoYQ/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/c5CYznCHXhHdEuXtfRmnT3rdPWoM4rShHjJ41CeA6gC7PJqZ50_i299hxtagDjCp65oSgvVWa8IFmFdVPfdjI59ZqafzLA3P2rLQppqpVxH2UzMgOe6XIBHd7e4XRAerGYphScJ2FjPwx3NVcuvd3Tvx33agcLYdzwVmr0u5A9i-moHwPPoAnFQsnT3B-qCTLiIruw1zg5Er100WbNtKs8E2_N4ul41Mp3hTusyns0icCAgb9sJOQH2_3LFpfUDIWrQ2IZ8ORTqjt65XQPSB-yvjaBT1i971ylGpTxp1K8fLu1-PYk11A9fLAB2aaGAO34b98l7fu0htxI8PZdqttFw1lt2b8Iw1BHa5yHccqiYqrt3YgLR6QSsoA6DEsBpbON-8qK8NM_vVWsfFHGzisMLhFctnjeg-GZMOudG-aqjTvF6bl90qacmWft7q-uQlX_T80IIBqtJCvwJK5cVtIv-ljHjwn6uoiX_0Ng6JPU-RKp6G6H7gP6-7DaieqGKEAkvJajPSZvSXMmSIM7ytNT766cKg3a9_xYfXHrw9ckf8FPvYnDyIoLyHHTtslfY03nA6jauCCxDp6fZ7RZFLdFhkrQ8UgH1zkVzy_mKoNkG7yGmay5sbWO6_n8rOgWViJ-rWHYnVQO0SJksO_8yjc3q1aLXWXkO2usd_svoagiFj9NIHGOHSM0-DmniygM-sf9eeeopHINdn_3fisSp568UHGjMyqiC3fDAae27Yn8rzv_piHl18ChaoqOjGXq1M3zIPuNTpXdirAIu7ex2b9cs_ZO7Fk3jakkzBFF7WbAyXRSetbceO77Wn1FlluEloatytZB7hZkvIe8WLYxeRqQOUA1aqy5iS8yJVmBtYFO_p4EfSy3JsqIfT1mJcU4lW8li6uaDY1AfGf0nHKzoGSPiyvtGrn8vHiB6lkoZ1troxFyY31C6oMMNyi6oHS_gLYcWAr__gNl1VhcQFZLDgp88MKlkfFhp9Mb6ELCFSsa2dCXDXlrTbPTY3lX2y6uA-HBw_hSv2YLHIQevviUBJjw/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/lc5D8KszH0ppHCmf_Rg384S2gfv475383UxVF5WMJ-Zp_himCT7hfFFkUezk6mq9F8-cG85iCW8JRlc5qcsNzfWSYNCXbN5nC7bS1gke2LDtghivhSP9pXio2Vn5WRX7jWHpj2AK2uQ6yYmgCgzljWoGoZRA9t06vkin-zUez2esm0xjN7wnzTO64pdtXSLCNsAb0jPfP046Kmt1YlyD3QnJ94WNSYRod9F4_aX1AQ7pQHV9x2Vttaj4dchkAP5yQc88jzr8Ghc21gSxCQ28mty2-XR-GKcJsaFS9OP6hoNS6goeTnk5mQi6Vtk9CZgJn9ad6FbuDoHuA5Wx2iYUw7Ore4X9o1B82dBgz-0NYu5V3Ea6VBZXJxvBWF6uXEbaNmx6itl8dQSm-5yc6Wp72MOLM2Aj7n9C_Onh3iPU_x1GdzcCI24nYbMHSUCFaLqKrs1AdUJHDqTodqG_-z-K4nk2EYln0GNsniWmnYyKN2az6uZEW2O6ciRGRj9aBwcpzoUKUVizwkTFOp6cUp4I2olWOu3g6p60RWYE85eGdMj5rzIx_OIhetPurDlUTQ8uv_B1U7_aYYTsHM0ILH0BCjsNQTJ8RZ53jlvOhni3u_fGim5vduQTW2mQj83UrDFELB1XG1rMJ2_z0xu4jxn6THvTLT5maCTeEZMERiFRZg5MqukDuoA6NZP0M8TyFaniqdTH51zoqy9UQe7BDkQNyfD1-mCScIgov5gPdT-Jq08J48w-QkOH-5Sj08y85bQV7piZ79lp7cZZ0bwsPTRVpRMPHtAhRzYB1iYZNLRfgHlatNsRUhRf_3orhYvbSozVpWPMa91VHtinEUSusorfk65kucV0eD9bMF-rJ5Pc2-989fhj3sacjLWGFgl1orJrIicf4cpb_U8eFD1Rvh3y9REnQZYlMIBSObPWguannRo2IIkHpJZneaRctJ3yKqN1n8YFZiaKnZovXA02ET8j4t3CQYvQgZ2AHyOED7u8hnM-rVZNUvXaoEd_HRHV4AbpJBNUHn1Jt3_55FPb9b68ow/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/8JAkHOtHxCMxXXw55xpg8z9bT-odskZJsr-kPVSq48nobZdbmE7Xd-eYsgXumj__ee6BgHCuAhkw2meCrX5d8uXzwAaQZ_g8TkSbaxhhmAqfN8EzIC-Vz6VIz96-oYdIsv2B2slgfOnoykkMiJ5_hhomwYBBvLjgorG5EGPaJAFOgiUN8PjDJP2cqe8PrYb59R75PvUgXl4ntXn7Hkr-0gRGD1LyOSStQSgRkhBtnz-XskMisHjbFuHPFPrHrRANlzl9xkgEw-jrNQZyb5zhagd9E8JWP5IlZMiAvsZ29tmJDN4yvwPYfsv0aN-aqcrRSqdZMoZfrsg_ehfcH-3Ok2QeILpfUrsh6A0V8CRzbzjzqA6EIFVFMPcV4_LlGyPOQHWZ7rEGJEZXkMNAd9pkZSMotSuJejhkSvj3U9keuDxctMo_rthX8fKybak6WYD8ztP6LLa72jQMaoXClOvP_9nEd4DqtL6c6mNV6DgtD8iKS2VF7j-a-KNtA7ghyHjVwt_ckDyLERXGsVXlVkT-I5aGPkI6aGvM-oLIhFu5TjmvZT1FXwPI5osmXlKQSO6NI-gLa9Je3MI6MZBJAOFrhs7CMNbXkTUnKFjcPNA_XwY3J8Toq0UADypyxjyxEIeOVOfGfnNUd0QeQ6ZH1Kgmtcq5XwMlZ3BVZsDSsbTZdxp6tth9lOpEzJ3L5AX68a9nma-DgPGMvRZTWnAOQODjPj2JVC0tsqleweakl9qs4LQaz-8ENFJk6zH8y3-E8k7wnBQIs-Os1hVn4DKBjFRVL3tnSNCDHaK5fnKyOivTHQK0dpl39S9racGDcEodWg3i_5d5ptqzg0FqJ9dqkdSerfqlsJ4TbnSijAhA65qC23xiiE8VJ5KDfhWIySW9SBUnSB1kIuiQxIk7_JkQo9MouIl42I7Jr1lWiUSis9a1ilsl9QBxJm_F3rvq3InWS2nrh6AqHd8BKkauUIhoDLfr1N6vOcb118ldjKO8600SehOICRXkAEOxD_1UKj1GkIftWd9XfxIQo8b0DNTZ1TUnv6zgd8SzJFS26PnW-4eT0Hk/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/MMuKZQVTPenzztXpJLkPTwY82nK4rPYKUxKhgRgG9P4TX8xW6QIGlIGga8Izr8tr_iO6QxUzOWCRKOuDTGaVm-NB9Al_ZHSAeju6McYe9BoTH7wlOhAiuIAfZpc4EJxlHj9Z3i24yOOVDa8MxTA6wzQ6OPQP-aPgpQj3_da-BAer6zf4mVpVDDD3-fLzI1Et-G3d-SsMf3A8lHjNXinQ1bkKNeL7Z2ZntWMxIohRrdsE-890OiHj3ikw-qkPLHKHRKMTyBnuaeZ0_pOViHFt8H0gX7leQGE98u38hbxGkPEJd0GHrkSrUouE4wbo3slP86D5DF4WBbwKaM1ADjYcQSMx9KAJeUPDdlUccGZJyb3rh0zBngWp5BTKcgqklzyeP15haD3DrGkjCEYobBGGwTMDVj2euah2MqUEAfrZekahWD9C1UMpeN945tzYRgdz0CT0nYPHuBxavUP89I6ig1XgDn3deEa9mM6PPnuDnDqURMiPl0RXsfWhct4FjKXPEkXtrxpOJ1kmGGRR18Jz7T1rJRD2YGaLFaZM36xP7ZjR77QlNxYFe6HMnsRRY729JvLR9DWkqO5hRmJsRKdn3D3A2mxiCVuk9ym_F2MLfRIfm0_pVO2xjZ6MNUP1CnIK9hQewaa1pFpaTgg2WBp0RMXAIzXD3ch1FFTO687BNen0f5SC7bfq7pEfTqolDCPFIbMr7Y55o80xFOQGGDr_Cp_RPbKggJXiGvo23iE_uRpYcy3RDJanLXb3Y3AQ-uvob51LoowLjFBFAm96EwrvibedxrvAWcQbGisdG4kMEJak1ajHRzcemRLVzTvmv0ImR0zRuqcmZSnY7t2Oi7D3ioyl_Nf94SpvugROIBZt3HQC2SIBxh2QvBDRgJNruaApumK6kkSKfip2fktHBdnThSwLOjIdpmcNSkFNDI6qPWxWPd5UFKr2RXIKLx4cRZv-1T78oKsZ6KEgoYSXZjXblBna8dqdiQWuAaSyCbe5o16LjtIL9o2-vt8l403KJ-eCtMIw8gZl_aAV_FzSrm9mfA/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Ho8lcYaf55gOSvP-2jd0sq9aLh7hfTbSr9SB_yHLIlPFNg9qBDzE7p_L-rc33qZovycPBb1y1Hf4cwoqecLgmiEx5VXSJtocucqMJe4AEB026rE1qAYjNOxqPxS3rRfXdsRf_i0QBFqB9ZkajhI1Yvu4pfgi_SDBjXz_YhX8FLfpMe_0l0aXTw0L5gIJdlIiO0O_vQgda8L5jRFcmuDobZK-FqzTWNFdaiuuZtNbY_405ZDxnD-UUEOV3AIoMlSMT5BqwH2v9polyT1jVFoRQp4xoPbFRTPGV7WrgOUv27cSlKT9K7lcQVKpqaF_4ZRd9eRTEpoXjztJaSO1AHrNa_fKOWk0jGtSbh0U7WLaatu3GO2_-bF1aT35yERR7SbPkk166RDb0u5AC5YiQ3Muku6grKewWENAOa0OY9y8NzQRCNOei5FuFbamDneXtT7AHwtprwyw0-km5W4XAAHiNd1qjqSI2fvjAeN85M7GfwocvT2zMUWwf2UKGgrYtgQrCh2AoT5E7IDxVfPHOZ1WTaqBga9BV75AGp7-b123-zfb5jOwn4PCopDWZasBM6B2DN4ZahxjXFRMwuZmM_tabX9ZX7ShNpzmwz9cDqFjYOnK9VU35zloGbY59HGIJRvPx61fsGwHEpkcv5ZkYOXTmJcPXMod4AxMNLHYsBMmr7qzGXlqLu2e2B-OJiGXujV-_mfbsj-OI-FnYwgRXpe0P7ijPRPRDByBgs0ItsImJCwJdFSocAM7wsV7_2-R_EWwP1Tt78ULnkxPodZC2IFRr6599NRbcsfHAVqBbocdSQYKP9pNZWQyxDbpWgLTkKWaoJFCNxgOLprrwlpNGH4WGNmfMUe5W8zLSe-JASnWMRBu11TIF1DhC-LDm1pJ4h9EGNfEZz0t04Co0au6J92tXFQ6sn2QHdR9Swgacqw46VBKYeWc2UtA0NEVr16zAPOx9OmDG53giK0isXt226eX60fklMoelFD3rk2MGSMsiYI6PDPIdym2sfpmIEuWsgHV-NrVItkNyFiU6WZp9pe0_A/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/Sey-Lmp4Dbjb58kyT-8ABygVIs0l4yGDjKLJEgdwRCbh83XgkaeWhvnRwHOImPSlgj_qILQuWzF49EOVfctrCMmrkjzT13laOxhi6rZOE5mgTVoBpSK_gPKKX2yUeffnMH7AJIgij88JVbue7q8LBp3kSqmS7rfZrq-FkiwPw8_abeufcT7eGLD9Pn3OwDiIPNYbwO7tKlh__A1n5ovEqQqSCJGeQ5N7q2npS28OJ0eTASGBHKWKovVSGQLaPFtFqO0MnuCmxso3jZPpDsx7vYs5_ha8OsxSV60-DVQnkjrZwMfcz1F1BZmpgB6dHqVxCleQ1QOr7tCZpCwr4VqpbTwcwunual5uLZ58X-cLrxlzzEu5Gog_ofxR_qbaF3WfzmR0MsiRjIoKhCq_C2wAeJkvoeHRCb3UorUDAHyIZcMaK3dlLP1OUtymSb2PudcT-8SyjVaJB3uxfQO1qCEcKkWmc-0G-gnF__pvBX8lwfmKQX2fXOCBs1WeFwKsLkMuvmTXk8f6UO0L06IkAI58EjeslNQ_7uSy0xkZd98IKCiiabXbOYsqzhclCg8djsHtzU9Ku5mNgV33N28RzwKvGxVHu7g6LlgxIfF_egb9FDd3Qk8sOmH0cxdp8SkxTfZMwFyeCt0Ygvc-G4QGN8sB_9H6ssiOoNOQcSZV7GJfldCFOSc_uA0AWIH8jPBH05hFp2SRoLpUOS3j58CynIh0xFOBRtlcQeuZCIZk6Bvf8NQmCxObWgtfl6phQPwGEEVrqOBHCM2KRMQ3_I3Q8GKLcsWa48iFwV_l1O6dxlu__5G80KtTQrH-VY_vDXvxpUnAlS1j3bgn0j-NXYoo13SkbtgwcBrGJH2HKs8v5d4ou1Ja9q_ZpGYrKaR9OtySbxYKY3x-Psz8iBjDKJFtK6a1PiB4UYHTDEiT4UngW13QiWqwFZXHjLKvmWXbf3yTyZhGUg5GNSRDK7AMUJzi2l0mozrxSMbPhDHEK0NW8FBaEy-1LnCdX-jxS0vuWyaehx1jssKId69y42XbBPwNUTCTzw/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/amWeIwN0A0nLk4gWw2EZQdM0cCAX-z05M5Nlhxc3_XT4aLgeup7cfP4PEWQd-b_R8z4p5ab4Zaf00xubh8taOYpNp-R8dJgCBHiyGr9yP7NZMK2T5ure5iH2Sc6lKqXNzoLj6w88AIfGfCD2jP14WCu8DsPUS-tSL_aW2cguYREM5lON3cREF9S8vy27nM2deiIVMcEfHXPmImR4dfSsDz27tcROUqht27ZocoIirZW9jsgv1DZgUscS66ePnq5lIyKio6kYZulQQrrUO_s26mIaoKPaD02oIaiM9J0VoJOzVAuV5Fy9S1rOWiKbPqt27p6XppA38HvXFyR-U_8CPD9d_WYP6ABjL7NPFeUidmAqNGnp_3sQDEdfkq3v99t0NduZVJGjOQBFxytxRsDSaI7FNPXdCfG7kyeb5uER1OG0xmTy_afYfl_fVsKRu-P_CdvJ3jn9-uPXEGX44heVR_H2iY3OLkNm9XAvSW38HHwezhKvlxoBKg78nEdB2I5V8JNR2jRwXIknjiJsmf81GQj0EZC1HHyL15IQSYcixjLHnzAgD1F36C0AIYMMd-fLvy98p-WjZbe4wARAqXxsNve5_XIRUH2LZh8-npCNFz0LCqFKTCsG_kc7TldXOfWtymXYUQsimTvqGmoAR8t7YYP9MnxAX9kmySDgOEXDTBGIqXjVsP4ITms1g38yNG856fa9Z2UD9cKf4fGYPs2EzKo5a-jvJF47AejX5IfoG1g2Mqevy7UC_qdTknYjjE0Pw1wvp4x5uGSC7oiCTBDlWgHRtb4YXfro45Hlz5PwkBTXd1Ho6zu1aXGS_E3rB2IUTNSDF-m_Vjx1fYJhZsla-P-nuLKAXdpJXIBk9oxOauyWDciehhu09BoAkVuc8R3nYD40jrtShcmFLhNbWpcEB9rgD99-gcKl8jBtnc5esko_ByRp-U4N6j-cqfqTjjF3tZ3hNp7UV4xFD8bqXuGAAlA77J_tipTdlXE53Kgg_QW46z3lZlCSquxjLpW3GbKQDa5tLsoy5F1rGumQiizEeg/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/mOVkO0D15wMZfTxuZjYispziwlbXX7cLiGAZzoofVkI9CvPjOyOOm99R2B5KbL-opOhLa2EgMCkB1x6ZISpjdCQyteLw5VmVwHN_D2Br0_UxUA0wt9aJ9_mnUCNkNY4v4vCmlLh3WqiK35X4OJvsGJoWG7ORpPyS2ySa5FJ9Jp8FSRn1nUerSWyA7p0tHsHKaWxx7hLAzYFGzXSADp3MYrW6ACfcng3cNqys5SqCNTLO8glsxvSf3GCD9p0aQ97y1fvYyB9jRMQfbS14pKXPBJ-Ot24PeJ6yr4syrU_hH5UMor_kdf4ajA4RZg4tTCFh0K522GBTxogIHuBkMMxiVP1OroJ508yahzKxw3vfiCelAFEGes_CYmHf9iQDoMBqQmsB-D1Ujp_ZQ_wVSReJz2an7NNsuHu6TEqJQD15MiBQ2NSYyU5JHgX3ZhMtTSnLipHXdgX_BPchUF-S-oPo_rO4IFQ8RlUJPE4bislh0HDgu7IcfyO2-sbYkjgjAlcO_eCk0pefG5qEkz1msn00HWNFaEN8VCRjDnQ_JTNCKZmovk9by9eC4D71QQdXCuCB6UPpH6lG2u1WzlSUI3VjX4J-zZtuR1zpl-X8sgyGZJjxAlbA-GZwz0jovocfJqIZt6P_Vmp6UDX2CbpWs_pOs-Pn-YUQELwNGqHVVntMjheRPvV46UtbIkA0DAhZn8rHtmegdVsTyO79b7PAsuIwi_73WnQfbmiQ_EXQqE9oBwBB0zNqxP9oeo2_8dzO5bFECRgSFIk_5z_lPodd4RWSnBhKVqw9kNDMmPjoXfIF-ESWfBRJXFKvIAVvRH9WCgbb4BpdElBuAOXpcBvg5lMDjZx8hbYfIzidzdEU666ipXHGAqPFK_bbvq-HVJ19sWforDmI-RXn7qx9EjaCe73bziZBWge6t_eO9fkHOSWy0TSsuJuzhx_UGcffGc9GllZdJ5zvgFi6dLbt8SNT4aa5WLoR0qfzQzRCmc8X6CWx7ZEeGCQArBtGQCdR2TzpwYb6m9w3bHpHDo08M4XPHPo99Q/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/IDvxAFkYqiL__sNytBay0XI79TYJ9dAqSifaoshHtT4OqnnvGYM7A9cR_TfaKWd1CPiSFvo7subHl_p70H5ssg-PEI-H6UcUnoz3sQTt6QKJe1zIvTsxOXhVxce-O-qHBEEH2nVjS_dKJmBSrqDFfOMqdt532GAOJbEvjWpM1b6S7m7dnukqF5QYUe1Y4vlWqHQ8dFBp9DRxvHC1VzF3aOX5OjdWfjNf2APxOXHGdidR7P0P3wDsG36N9M7Ynr_1AKItmrLOXFHxxJgi_dIiVjZx4P6ltv9uf9xv2uK4UFYJrI1-ML_pd8sp4b-A0wP33Fff1yowbAkDEZGdawrEg1APmAYltzRDHjeVgcZKT2purkV9SluBHkkr9lkVQzlF_1wbXtZm-vFWahEs3VGI1QA4sPOen_ww4G876JJmzvOoy4lUzDtxxYHlerSoFpDTn1zlgcsnBdGXNGXFVHpWWEw2AIMOrBS2-klqQeAiLOc2h_iJL3X1tsgbS8ZGSdPXQGsQgeDhPU5IVN5XlzbCNsTS98MC_k4atP8pQivNacdP-pyRepSl-x_HR-s2DTtODa-iY6HNL5qDvKE5U-Fm743HajJBJErhfEiIXVjdfIqtnMvhxhybgApw-eF8LybkP39VbNi4BgfpNHVOggFKXeNzD39IenPP3nlW7oVgRT2ay-Ht0shkcoKbQvsCrH8JOy9aoHBYJyz2cs_M1iAvt6Uzjrz6S7nhI3WVsg8SKNXfk1LbsSGY97_m06N6sBQBdK6TEir4WgB-geJ7iOiivZFFXtF8qrhagLAFTpL50b2vSOyKAkW5T6e4u7uOodKdoj1Ot0P-tgmMnTJJYZTmh2OfjC_o0oGmZI7IVrSiajKmSGWb87bQWXMtGmjbN5SeG9o5bdrY6AMLulttUk5qhzqgCrDDOQo_GEyq-YJdQwW8nw4B0UvkK74-rUtHKjAPP4TfdKiaZKB6kIuKdj0zsS4k0XAwQQJaHQLQbt98VcFPB0KksxJx1R1h5gngzoura726oMQkQgXIbjpkhnTS3w/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/IDvxAFkYqiL__sNytBay0ZZWn-S8xB_FsPADlMQid1HP2rchiA3eiyysSt3rOylmkyC-FSd0_kcd4all0z5igeDyQGOgfgrR99ym8Cs2UN3h20qp7khVo_zbhuhptXvuQraso_cZXUPVvfbkvFBIgpw6TQtByPPXtN_30q6o7QP7PihSya23pqBxHb2fNh6Z5HsuCBMx5y4EJrAV6u7l1noEKHkb6N2_2csscu050HqWvKkqrSenQT36TNNagy-bFrI2cQeNLzjzNOcOHhsqsvaCXi0mWHjyrzA-9FvqTRQ3QI0lh30XqnL9dxfqlj1JT2QGeevIvlywvB54o523vKjLk3viFC4jY4MlugIdeZhDSDpZhavf0aqVQ7d2zrtv6hNKyJ1TOeb4FkPpcQnyEEMhmeUm6LZCuKkmvQ8nuSOu1eMT_6eqOnEEj74u58cifaq3R6y3Xu13hOqyIYvgniSxNy3q6cVYOogV9VwOvK7CHCsP2BN0oizx1BsME-dLS7amsMEyNsXqghGt3JDHCIqvRZtR5XyxMKveSO4Xkze0voL4Wy1jH54IsNGN_FuTmNVDW6-zy1Bj3xYEYS9fSd_Rddn0C2ZjzcqIQXrE9bwI6oUzA3yU1WowU034XRpjISQl7bfPXX9bMPI861zeYzhtPvoeT_AZF2VwJjhJEiuwHKijTPUq9c0TcQ88uVFQxMW1eM1ZUCKR7XlhZrWmS-7s3X2KuLPKPHww20ISo2hZAqvsc-IHRrxG1Qfbq59-hwzstltYMvfBNGLhk9mIy-jB0lQ4c4omFSMsAKnkROjDJP5wWuaGTfTCb2oL_bgsF7JoHe_LXWyzH19vflZK3PRAssf_le_YGozG-UGQzBrMTk8pqPi6E6_KqybKA1Shm_8JyTEg9ldqe-imBZfua1xl5G6Hoa8Ks4aZITvaGejt5LvKlC7dg8kKVtOF5ZCo1v7grOBfwnJbhMXJ_x9s60M3U-DSv8F8DZIBc6poeSiIsAfiDvxM_g1OjWxbBR6CoeQ6tPsANi9ot0dcGZKViA/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVrmNLGsrFEXJaV2UJjYi8LzXieTIb6asLEjwoYHgERbvMPhRWUyhwQ6a1EBEFooyBgKLl6yJ7c7JN2NE-EPljFDalh06VsWtl4Z2Vrj_WwAvBmgwg-gtJETu69K183rICzFGLLZQM10Ho-GxsrZsFHOnp_Vg-fOfSLuunNqxIv4vbjG8WH68o_qar9AegsEJrUNoy-rOHgo6vSM6mVvYp3JERLd0UOrrW80H7bBchhweHzoP0dJSZUtcv0Wwf7Ta8L5KAohEUxDwcZcDNAKsjw6YYDPh8zQGiuOVayz_Hbqa47NYxgMV38H2jDrjVj_0fnh_cZZMwJAKKYKDBW6T1tTj_tIlpH3weslydChzBY8aTesOSeM4UhXZayFP7YgXBCl9SDWnQXBJL9JvFOHlcS2RWVjglwKtxW1uPUodOoF94qZDQ1zPz9fHJfjvAGHkCW0aD2PotgW3KcWl1tms8hyWkndkgij-w0qrPXfGTKuVWKq55BJDeerFteIblWzcFxxqcA7GaiZlK3yR1uImaMu0AZ_WC9TWxq7kL4HjDDmAaYaRSHHH2OaKelJYpRNRfNvfIOcvQaNkcwbf6o1cNZrqM8EhqAsVV2NJMrcsAHunMtRwU-0Xtef5oYkTjw_e1DILB0o0s0PPeqwkt7fP1t9ePNJi53qyxZpwXMX0f-gciiwYKWWJIw-hTOqf6Dv_pcv0WMzQQdN6X2Rth3wM7P_YM5W9W7FOCx8JktJ_mKDGpypjpyTxR3wVga0rioqaUxnxqR0gSXaOX3WN7iIFeBehxCWWk0zjZvCoyUOgUqeXA3EamUh4x_9AdoGABEsegoB27gP04Lb2qka3Y5Lsz6O6TwSLEqk28CEBy2j25FVhZUHZkcWdS1pZAIDOKmktCeGM-YskTrdkl0x3YXR_V3TgDsimUnEHm7IQPKxD-joGKwrxgUFnFnxXYuL3V3RtG2ueK6NCcKXjzu_AS9HSCbvLFoMU2_0UnQm9d0zUjLnzoaE1IiE2jQEDej1s1xRrMQ/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/9ZWHnyaoy4ITDZNXfgLJbAt9W9DBvUIwiTddIKdL07lgcFJQmDD0YdIFaQiOGn0AR9YvX2zeVCb718c8XgZPq0e2IhrA_B67MfL8m84CIsBxs1DIOPeYpk3bDoMcOyHU87XgWpB610TvA4VYFvvk23wA6fJzQkRSe0zCHDLHFPqG0CzTy9Cjuj2WGS2jZgxZkNkDfaU7yVOZY_kaVcVEvcOM9t8zIYj-jVZvPMk1L1AhOySNKJ9KI_Yt6UZ38WQ_LHL8mdI7luM35KgfU9ybcx8cLkzi4T3ZC0cgIcoMqHItCVYbtQewm2kKOn1j3o8W23MO5dcBLRricpOEPXK6_Ckpl6O2nd78RJaYVvCl8R2b8FI0cXH54G5eM7C_xWgHNPwnNdIboUle1Yg2PjwNwuUIeZzSbE2Q-6cBxBnbfmrju4lTdl1uMIJEkbsh1v3GQx1jDS1GKMbW_Wdg2Ji_5EiaDpU1c_M6hQCxvXhVcqa_FPO6d0of-o0b8-TDNpHJnAvX23y6SqcoTlilLoHuspxQR1wSilGZda5Y1mWgl2i82dwQvXCg9xs4ugVYMn05PwlGeM4cKuteOpnQ1oQyN8iarIv1U3lr552Y0jAEnUKxTzwfWC_B2Kmbh44uUor06N-_PJu79ih-38AhcAEmorjnOBNbt5-7Eb8QDwSxSSxV2i_hPLZp0934ahkTQtPDbt9KPZwWH2Haq2PPoaetQYluMmGK551TfOSZ-rW60cV2arG1ybb-rvyuDQx_7XTDr5V1_QmaecvXqyOVUajjhsfZCJKlnnpjS-6otpNS0zGo90xT43rWKHJr-3t3l3JM4nSHPZwsoI5yb310xKfbORW9NIHKa0ChRXlDWUXWxTntzW22iAql6Tvi6Vr6t83oADSKADITYbvBsD7V3IAY_Oe0VRvdrl0BAm9i1o01_xSn0kVgacIhmhT4vwNG_A3wwj72vchWG8mVQUz6oNs41GYGijMrrY6BH_gSJzmL8oL7GmqE9bL5Kdl2-JvWKz4NXtQlqArfhIacbpQOzc0fXw/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVrl2QUb7k0WO08BgQ81D0Z5FFo4ZPbwGnXnLAj4QMIHgqchw38tgysag5L26oV2iNxz4h6Z0I9gVjP8yloIojj8K1AhayqI3ebYA7javb8XkIz-dTm-fjTl8aUFn-bjJdjIBYZOSjMFJeKo7JKXWGWURDJjuBgWmCSovlaBLJ_DOyP87DEEbcqbIH7NnxIov_ml2JE7ku2G9k8ZEC_vG_IJF1xVRMPrG7w4eQqZurESAtu_tQQ5upb-LEXuvCR5FPXRnXCFSUa85lkSqGJH31plbeYTnLSXZww3PoeONLIEB1RT_fAXSDj7gALQjHqlL5hOTEegqCF4yTJQonXLCENs3vJU-0IAYWCv4Nb5q3cxS1O44NZt-kgC5d1Aw9sMwOlzIHIp50c6Hm5YXtj-NJfrUTwylNMGw6UBQXUB2QxV9dIpUXWA3Th0LhsvTImDG8wL_hH99WAoGAewhVFhKfUHX-rWKPtE4-qucWESICf6fF8D38fHL8WUMoc827UgX4vcfdi77Se-wYRNux_nyFSDBAbqiwA-JfmOV01X3RsxWI759lK_qAm1FcCTHIxWp1wp4i4cJeqKLSh6roRq9J2YLlc5zN4JO0jNQP3XzRnkenAHFoM3Sl0vwYLNk510poMNQ19xAcqzIdvS8u0DKqFQxr-vLmanLHw0rxV0n0nV7JjrJfGrdVHKjrmkLeBYbJae1iXA0gg3RnK-MA65y7P3Uy61XOMphTBxNySDvzekWjWyMCpU70VaB26dZ-M3gY_uFR2avzlXtUREP-nchcMsdUVCfolgtonmX_C7u7g4rCWLZWNNfsOfOSHXBs4G0cLhnxx0fRwP5tD5A08J2y4Sq4G9eFAwcFjAL-BEEN4RssFPdj_ktpz-lZaxP09R-7OyAuC5tJb2iZ0lKBRgTYzdu06shqnMArQyRTSoUbC1zHEOtaSpihjt9l4PHF1YUubG29U9JxdmS37m7LxtX71gSeIIn8SCom7Hr0gJrSdcayGr8V5daw4AFTga8pjn9gg/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/da/bid/imp/DhiZj1-N1UeVhTxMGo4EsxTzD-vyupxV3tX5ad_3FVZLBKI8-5HjBAPJqFDARUCNCcabePaTlfmTuVl7psB8p9_uhSM7t8cI3U0bh7OYZjtVxb_Su1VcOzjIG3C5ZxfLEJg7-E5wURkevY_LdJ3pk6U5d7YavhQHWsOvBG9IMtoNoznXN4rYuuH8duBXSOC1jIRXAWAE9RZwcW1brmATtHeAQB-Elms8m_hFaNOGhRNiXAxSnNzWIou1HUa8QVedTPRJBZa6e7IpwT-_fmYkNA |
+| http/1.1 | https://action.adoffice.11st.co.kr/da/bid/imp/8uGyQoyba11RMFnIm3XffWykOYHwh1pkinKg2ry9_76PA9au8oWJZfxVd_at26lLd3C3gD5JeUHIEMs-FwWsUTlYNC8-wjgZ1-hlv7ENTZhxvMhVl1Q6UcTX720bQ-uL-p_a8F70mJnXQOsNGiVZ6v8-kco41ZwYpqhOLUZ4yBy3z3ZJjxNXBdTd8Thxq8jwW8Q5ZqRiqFe9GqiTsBR9P_Qy_B2WMajVfzC2BW2ewIUFGpgl4zUjoRJpK2vxQyh3W-kLKUVRaUty72DYu8z-mg |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVtTeo3V1_1KeeOl-dKhs_o-wk1YuP0zWH3XKx4isiHpavl4cBC0wky-_jTPRMWs8uUXbX2VXkR1SP0Y-M6jENgl5WPaUiq1felYQ_MkzSyXvH9MIiazDCG-M_xhiFVs9mKFVW4EYbBpGW_siYU17salOeAZpxJCRMaQYM1aPOFLyef2-WzGoIwAISTvcy0UuxyMkEVZPnAbDzYxAh_If2D4IsuDbEgsZbC4GxSNKBZQ55T53gaRXuADX-yDPALXSH756OxSsiF29tPiSgFp-4KIQMgAIagU0k190rlxrnxONKkEzT3MiVnHSBGJsgJ3Pj1_4dlVNN_cLXXlSAWWsl10jYrRuh9MAzvvtYY2zGOaeOP8f25TPrPd9pv2tApNYzIjzav16iBWNEE0uH5_wOMNgnlD3fTYO6E6bpNaFNunKhato_ul3luiZDSO5QB9EvXD8Jg4CwBzxWkv29rjdBzzIT0iqpzcuwYCubVsRLVpXlcmYThUsOgefAflxsJ69rxPGvDb9HAnyOpggcW6K9eENIeD3nkv3IHWv2bNNcVTEPIFZFAwwllGlMx9XnEtHk_UUw5NWFKrD24Qfdd0q66oIii_xLGWRYzRewsLvLX8GPxVq_Tei0FrUzeyUe4gYlnsBAphZQxhIGjkoIhN66x7sg6sdUFg11cF608E_vlRBeDIUISOkIvIG_MckRlHcCdkETCQeq5XbPxW7xZvAwggG2xIxSqfVZWeF_hIXFpUBbMVKMlee2qWgURh4ny7omRkl5ML3PjiLMBaTvlDOlKodila6siX-oIjXaONSByeoHDJ6aBabpWjj9AgvdVe1AXOSDc-xQ4E-7MUh3EBqNgy9koK0KJLAabKABHyo_z3ZS-7kFwYFf1hg5a5Fp6ZiYZZVq-VgeGcgySVuq4SqDMDsPg_qykfcvcyvF4kIoKZg4kXwie3sZdt3DWWq2ufaYKZnM2Er0h8xsbuQS5-ICVuaJmdhxnd-PzvgTuv-W_U9I5MO-_JcWxBwt80CIph--UdJDERFVJDHjvb-08yxres/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6rjg6ueqddWlib3PJwY2Mc3q2FykXaiiPzd1uXbhTzYxPo_-63ClpIE6DL9sdfFgi-gP_b1Rv71FpT3z2PiHezu_9Y36pjM3EW9u6KIgZhjRfwsAhSgkAYk7tdnnAV1AbgNH3S9Ze1SCuWuOYwUwIj2EUmV7_ad5q793S7-Fl9seQUGhGSL9v4-xJKZO4xbHvwqUmmJqe0zFPpgMt_oDUKgE2bmraWr9njA_LgzxvTTXApanBP-d71wu51UblA8uVr0rxcaGuLRyQWrZB1lEyblKCL8GLSRyzrq-6TadmLBNHD4aVTV25Bgt_ZrJFW3uIsw_TfGFAEUa-lFvwSzZA9i4p2_pZipcx2lArJAt8dt1s9EdSYn4dnZLhEr6W9BHY23Y8noVSQm-39Sgj_WA5ppVB8qUKk-B5dS_56INtws457pMR1zm1MM6acDQ0j8_iJW4TVWScZbHR2GK2cQc9mFe8RhGgjbB1-CKhhBJdi7vGDLbiXV6Ll3Wos3m7i3zcfSOXnhEZephDu0vbg2nSfhfQzUf-pBhav6wOr63q5fKjhozhPH-BQ99V5qqmCuKWYzK5GN8EwEACqOeqAD3LlAtAtBFqzSy-d8wcvNpY-bfyMVE4AawNsxYU6qkrb1WQ6jrsOIXEK0rsYfxFOxBpVmAq8ZbTzV4jaehZsQBaT9Xvgld5QePseN_khDHWKO-5Elao59IvChl5OcZ5YDrmCXTPXQWTB614uw6u0IlB716l1gp9VxfaG_2e5_Jic6WWUxnwOWniq9rKa6RIH_V4mYeZPKFQ8VMPFMc23Wb85hmVvLZjV-sxdxMrF71zeDHoOMHOGnAS30EW8fGPDLBJBBEAigal7S23U7855U758AYaLNDhSzikP6kUqzMwK5pppulS0MS8jch4MV7gAXD8TytWT9-kPVZaUxJNjTunFpWp_AhgKKGYjhaQK5V40fcr20MwQAN_foHzM5E53oTqFWlLLQKnguZ51va2ZA31OmLd2Q6OP-khChj27tCEeuBJw/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/MMuKZQVTPenzztXpJLkPT5yBf06quisp3F-jGBtOvDAh34Wd7BAFKwX7HfbucomZuD9LN6CNyhlyvd3E0bGN1p_rGmVUosilJ3VXAcVdu9Y-yUminwEFLCzq9gd3MvwdaJHMdz-3uceAgFxaMUDMT50Od6vLOT2uqAtFnsOXpWNFSXajFfrPKNsyu56W-EgK5xAGlou5hXveZbX0tTiOKQ_gs_BJvy5Q5I_k41kMWkOGzLznZ14EWdUFxNIqptIPWPpZI0DAC7hOFda8ftrtuMpgy3sBHQtwaqJ-weV4ZTh0fvY0I-NLkUMDRo-8VB9K5ezxPpSV4UbR4pCXho4-U3rYGi-PvaZTpukzZnEdVRS2TQrqsHWKKL8AKG8unts1ipmiBjdcFLjY5gG-oDp49WWLr4PaqeKXP83tD0gevdik84qQ9SwffhX7g3WpJVWmq-EtHC_klK6pZo6EPTjbDv_K2Vhv5IG_I3ztpn1HNAQXZMH7eFIRvPXsGvkL1QeKCiRdCqEcKmON4SqyI8jOYgX0hb4ypfCGEQAQKDoZfxMtM5We0natzTj8PowvBip4bP-XQx487a-dQ7qhBIfOLPmopTC1U3XEEtDnbNNYb0LlNrrccnmyht9mSRbqPwz7w5ZYbtWfY7xHDj3BRmIwjXQBs3WVmRIU6jl0zicqZm09gA35oDCJbKUNbtHpw4R2KIb-Ee0KThkjr4q0Fc1HI_8k--Nm4TKFped_JOdNLGL8D9S_eRrMCyNDbluL05lZdHmjEtlNnsgd1igoKFuzTRIhOjA0oXQEj32xaifBbYDwUjikSUVim1sDYIfbXquJr5f3fgfhOW-qia6XpwSysG7sZJ3-wODJhq_qz7hxZjZV4dhf8_Ye5hQd517jHyzwbgsM3gnFvVst9aXtj-SNuLQky0MY3UsycXwk1f9jE_Gxn5utG-AQns7JCsS1kwjljlr8Egf48cV-Must_YqsoNeKi12hUvcc8APxj2ByM9fBlwkrAuQiDbwGjvZXfFvq2Of2chHUTL2mQAY8smjcsKhCEDrYINRG2DrUGxLFECY/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/SJkQC5Xe0oeb2ytefDgW6ttx9J3pWpBA9VFO3avtTXv_Q0c7Mq8_UYgifJvkVpN19cSfdRrbz8Ni2UWCdlOPdqCsJJC_i5ZeVSDHctNH6zQNkE7On04vL7EzGX4m5vK-mfrxcFNr5GMHHw_gys2rLxAaZI9NlZJIuhh8hbMPSafE6AqgVFB261OvH39naGi1ufnJnO5o5A-qVmcYQmcKdgxstqIGy9i-i8xhMixeKUTtTaDfcshnGSKQTlkvtbpXaxHa4YJGeIS7g0qo9pME3cS7RYLfWjRcnFhFbI5KW5L-biVFBPar5gYNinim_WNVB3swBu2gCssUQqbGFZlw_lIXX35hoBTYEl4LKi4pijhhnJs5YiFpRZmApYwy4XKSQizkBRNA1OkAdg_URHo40qefLN-jjAaIXZWmOW6TWRVCY_hwzPs-lmh1Iy3Arxx_OAkhKbloA6V1i7pnLbv4qLDTL88cjtkPuhjQ0zu4si9g71ACgGC4H2i8N7XP3nogPaV_g6gnmRHlawF15ffONHC9eneJdma-0SYgENMqK0NMl5xBVZjN9iib1VgNU-aB0-eSuyNb5OdUawkRFwSCiNkzAD8iPsfRGAo6nXSvMx6gO6jKkajdR0DXz7fUXPTpT_XblFZg9nmdYmYXWDun3IUsfUm-G2PQq-DNALUz6VX_xCXBugv76uRqhBSZK5rrE5fLV4BUg7xQWHDZGgrEwer-ZrOcYIcKYUKDygnY1L4NxxkAbEbUuxF1ofZTyTnJwSwkDuty5BSdmYnN1xeyzqhSK8XI4Oqmqsm0LWBuwQR727qSh2Jh7KQaKTqm-jC9v7VzIRuMxg73K_WtOLYinR6LKeuVPaP5b-O7E7z6j9Qd3cPy6RCm6hCPUE5J7U3bQn4UQC_27IkGRCQ_lspSVSUET97NB5hQfYyIoig2YW5Hipujdi2DEIBRGj9lssE545qAtSwq5Nx5zMxVQFO5OHj1HCLUVoEz4d2GijpztjOzU2lNTJZtWkOUeY3UvQAlctmfLfy0mSpqilKTg8UGmNhGEQ2J-7WSgcwKAXqwrpk/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/XWSkX6nm3bVkt9PCNYQvJY9qnYXS1kE-Ld5_TDRkzM7x7c1V0hmlHo9G8CIoQRrDlKQh9SbDATdbnoJdl25vpOSn9IrBVG9-xELcnYnp-I86raP3HlJfOGydwxnvQM_dq5CaqkpY4f90jBh5-toCZI7uiMAeg11dR1meMUkwMBFSYlWswT5v2B9rCQiYsc3a8fchCEy90eZJR_9E-ldy2HRAjKrxh5ehqzScDuIlC_pnNJaBWOMEpCqCDUNWEpg3s570w9MNRIhCagdfj3ngahNRFjl_aD9Jw5T4ttQSLhNzvBW6AX9dbafiJE29443D9hzhUmIcq-MvXOqWmjOBrqkPzJVDwd1EN4jPpbr0bjL_OF1g8E6xNikiDIscuulabzUT4-kLY0qvWHiBM6j8_Yyhvwa7SUr3ipfh49iE6Z62iKpd6ttvqmcoHHEUgN21qIHjxZcLZLe8kb3z0S0t3VWU4sTGXDwk7PF8LOWYG_N6-8hMxmuydVjgMUGSHs34temaBvvA0iImQ3mkLK9ZRF7X5H9s3BLkTsYqs7ENz_yGeNiwzQCcE3iDg-GEtIX0tHDDII5QHXpeHDq5Ycf-q-xgTyAkEbGkIsiYOP-HBXM7eGre4v-GTA6C32fopX_FvItKcRY_cbz6qXKKz4hqF_MaEJCYpk5O3Mn-NPBkr-I9TVQ--ThzyugD1AW1MD3Rqbunmy7VUZPpzB5y_zF0WHHTUXgAj7J8lj1njHPQHoQjqtwUZ1JLDdXir1g0iOp_JbQVWD90g7tYV0BfzJNlXJWfsfzceHuD5KOE0YIjA-Y4pGjKv38c-ZagUenPLG-O_SWVadEcJyWtOwJ8rH5p7Sy8dm-rBaCvcP2v5EtmkI4GqLBT-LS2krjsaZpQ40rcw4K5aDDyfcucht_6a4q4yC2qyT59OXQK0yN1bwQVupore0HA-A-F9Blj9eRB-UY9IpqOvaFbFTsCdPsAhuikdNeF9yF55YLixoxvIi-NMqGO-4y0nvdsVeNrlJ4_OTlzMfauzG7dhtAzI5iF4fMSQ43z4Gt9qXxBwtGAY7Hy_0Q/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/PDp-WRjyJA2ZGXfgHuaJn42vE1aLAWmwr2H4BZS9Ic2bz6wXXOFk8hWWXP_ODh2BUceQPCVWIUML0ihXz7yng65gQQhveCRNii9MBclLDDt1XB-ocNp0d8mnPS-z6hKXME6TeswP6Dm1Y6lEUC0dWzesuTTjbpjUkor_eMFdv_KFlqGmIQm1DNQHHxdjr4BroVdlLThtWAoMycWimMMytHlzOIMqe1Cqik683auXicXQnKQG8tZxMEk1-4WaJHNZU36YLsd17CToFqqxOK5xfKzyRxIGIiB1EEh4fRAzhrdqYjw2spDVcJ0KAInktalMiBbUtQGCiXw1C5inVK9pHiX4oNiDX_FA1yJ6c8SxPkZycJq-UEacw48Z-choxW8s1lsZtki8i5YLdlaQNMNLPZSv3XAUueW3ggws_qn5z1frYyEvp2hi2-yXv_8JQgyUqtzCroSi6Uf6i7CBq0_zbohdHUDmfaG4opFik_kQrg3Dg2AXQWR5QfZt9irHXhbk4UopoIpr3OOPor8B-zqn988VqAkSyTWwGaqseZDaJPCu9SXgYnMwqilIeXurt5lwc-kd2mwWxQJUcEzt0o3yNPok6YqCyn402ggs7h3JnbtqWr_M6jEh3m7fimxlQ9nQyXfOfwBKI391cmkhF4ewbnVNR2a73QzQVze1aVY9BCQgerSj6Id8LcjgHPYA9IuuNMMTmY834zNmg6mOvykVxiNhA4oEYkh2KLJ3dXNAjtyptbnGWb9PaBgyKrSJ8EgoD4f06iCbAuRiMrF8HNDbojGSYxTssOQr3Iq7KCfOa48VjaDAL4v6IMwTtPOKgNbQUP4hwlq7XRp2v712n2OZ-hR83ZA_sqouB1YGkC2styOpyaJJIB6cQ2-s9I9r2pWCvYUDHgCLBHpkty9gN0M8qIZ1-UC-cRZSNVC2q5omK28K7GDoD_lLom8ot8i2GAi6Tq4M1ujG900ShGDzzSwiYpgzYVj0uSCbSGqLOiaoi4VMpp_o4tsJhDtRWYGoSFAIMQcc6E5UrW6c-ZIUU6ojZpH_uj9EIkf-nZ7_gqDgiMU/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/act/imp/v1/a1eTFTKp2cDQrr_lYVamVnRf0MFLp6r4ZB9Tki0Gfd_7MW3AP909zbFQ_AUBo6VUMaDeBjR2KBII3qCusGBcD9S9vKEHtAND1ECulVwn2afuN5vh5wC5oEWp0DI1JGcPpgP86P3wRBwuGRNOWS3gTiwxJcmc_xvZF1F4SsWZ6Uy-nvrN9x26yHvZ8GfOe2Le4NxO-j74bsIUXnF3dAIvqInyR7Ki3UDQyAV2ktGVjK_bo7SVZyPV7QpgTSjN6lQWEFeaHz5aGS528XmPg8BtblIxfBsH0VF3pXggjLa9QEBY7oE5dwrnLcHtLft0qqxER1hXmXigCSOhyu4VAvvYZPfsPYQWSKQFBjY-wNSgCvIgy_8baud-UXhgHPsNH8BX-dctcjc1PGNiBttB6VOwEIfyQbvH2ljaAiqVRu6F04mOQzqUHkIxkUgxqwO5jQXSQS7zh4m14CkVV7wBKfEBD-ad4pAuo0A9DJEzAkAeG3YYVdnWUfn6EMhOPyMH4JbHmsfOpz5wPhCzestIvtB_4o1fyjrBt8w720HkktEkniiISYjwxJD7XuwIBOD1T4TvTucXqyTH3_qC-8tM6JW-9GGJ61iHCU2CihcPCmINmBiq_CD_5tr1GUZ0Ng9W44eStd1NrH7CpYVCig7xxy7JZE9orz_dcvR1KXcp55tVntrjd6vqTaOX0Qz-V_iAKuITalsO77i0_3PHG3S68anf9itZeyT8IVNTXOUyogKjR-2eUXMm9YVSf4oVTHxKwDFnft8YWtXPxEuyRcFzIbWmtxnDxyMfljM8yT1SStJ871VLuMLfarQYgIZtLaxf-hYkiBiRz5-yCE425vLJU7GmSy8wjpYSkVN4Zb6qO4ZrzHKZHz4U8I0fFEYBo1EO0z-rYoxGUI-dKobGnq65SYSML3lAllvrIHl7YZJ9kaaADV3A1CmnSPe2xK0pgsl4POLGiYmlosdkTa8Knv4h2P2WbN54n-hVamydvXWXWxj9fzcvAeDVHoFvoZMcOd2IwFL3STTdJk3E4s3LmOjFKSAkzx8SfuaVrPISur6roj6rFTw/compress |
+| http/1.1 | https://action.adoffice.11st.co.kr/brand/v1/imp/f5S22n_S3J6zPNoi3QSvrMOzVrD6rMyqKyb1GIIJB6zYmVOfpzrejZTF3leXKDg_golgifeP91gs9P8vX-gR7DvCh0cdueHf1IDhoMtf16ORIj8lBi040Z4fgid9SHfJ3UcRctXMIJxUh9UNoTv2hCMJiUIWFbfwNmv5uGqBy-ngVtF7Resjh-4kAgpSL1nMmpGyQmiFX4TDIwc5zRsiG3EmVeVqITIyhWYvcepLR4zQ-XQ0Y4KpXP5jdBK2A50gQyyBMsBss_9DdwVHnuww-NqBzFoKTutzjN71t66ZTNkQ8L0VHJI8qEIwzE3Zo-zzt34l7hpX_C0ByJVg4TtDGPu-VKqAvb9joDHu2JpRc-QveckyMvmQtfdv_blxhWsVmLY-vR0H_PuaXB9WkqrO_mdEcskI52nZ1bM72g5B3wanEZmuuv8w90CmVnQSKYH8uEPRv8D7exmI7IMSwB_LZkzzzsP_T9OChMWuIkRKWFs6rkbWZSW11sHY-3EoXRoDlWHfQu7v1Zk9KUQZJCxalRGNDq87kz83Kygkr2p2rcbFH0bPOuWQBkzlWgUDO0bg4GCJwV9yn1c32MfeSAFiySx-guJp4N0OVpkdjRaIncCqLfu22AQZXG9s5asLNwF-_u-YNLvtASWCX6Ze9yW_h8KDMJ-38EL9eUpFTTyKjhFAFRXmDN7d2xRXGRnIcudPWRe_L1GZKvrGlWw7jHAr3NEJOTzWFAH84WCMefOLQ2ufZ1T2f03qsYVK8m4Ep1bd16JStBv29m-8u62tYiaQ02fWxDfEm_HVj99hbQd9t0EJPlxml3og93LgIlYkeRb6HUhgvu7GX1L031CFu248vA |
 
 ### 🔴 Serve static assets with an efficient cache policy
 
@@ -1061,69 +997,71 @@ Potential savings of 371 KiB
   
   </details>
 
-53 resources found
+55 resources found
 
 | score | wastedBytes |
 | :---: | :---: |
-| 1 | 1757892.82 |
+| 1 | 2010252.68 |
 
 | cacheHitProbability | cacheLifetimeMs | totalBytes | wastedBytes | url |
 | --- | --- | --- | --- | --- |
-| 0 | 0 | 430190 | 430190 | http://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
-| 0 | 0 | 329614 | 329614 | http://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
-| 0 | 0 | 87452 | 87452 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| 0 | 0 | 42840 | 42840 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| 0 | 0 | 305 | 305 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| 0 | 0 | 305 | 305 | http://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
-| 0 | 0 | 230 | 230 | https://idm.skplanet.com/getuid?cb=jsonp_callback_3408 |
-| 0 | 0 | 185 | 185 | https://www.facebook.com/tr/?id=2299486926950990&ev=PageView&dl=http%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%26decSearchKeyword%3D%2525EB%252585%2525B8%2525ED%25258A%2525B8%2525EB%2525B6%252581%23_filterKey%3D16481818898&rl=&if=false&ts=1680193655241&sw=360&sh=640&v=2.9.100&r=stable&ec=0&o=29&cs_est=true&fbp=fb.2.1680193655240.612066211&it=1680193655160&coo=false&rqm=GET |
-| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/brand/v1/imp/f5S22n_S3J6zPNoi3QSvrJuYGJr4BMEjyRRzWF5CqP7BCYDuNp6IJV3agpi1gDzyj0lFy9VTWPtfZRzIUrM62BM1ic-I60nVc53-hjyyEKcPOHvCKWA5iqf1sWsFVnf5uedMgTkI8-KAwslxInkmdoyIQovRLDpfyNRhIpGpvkNm9uBUoxXWKPZg-ZGGXyTUxdBiO0dAlVIKl3pxg6p5q6MaJOaaxrI_7ChmnKUN2M3ktalq50MdqabDj9hOyj6ua4TjzUbh686s3WVOfckMYU9U6t0sT6QqheeOytL-ypFCeSMl5-gJ4u4JtnB8vCpElG2iX2D6_xBFQRYMGgIjTHahXPd3G9OncbrPKszFprq-Z8vUz5YBmWdz-HhdQDfGfMl6-3Wu7h7ctFFJURomgQITH4k8P81T5TpxhSlqBDSkGDqXIr6Vn-JDVMb_WfEhmisrJnSLqK_Yy-lDwkEIR61w0F5Ben8jVqvbmOjznw8CGoZPQd4XHZci6-rFR76LQ68hXRp_7gqtjSZBJUoVqJH0YVcjtoYHOIt3mwKoQcHbXXTfj3Rsc6GS3Eo8Qv8SupzThNdcYbB43qRkRdJ5pv01SElCkiIBuWpZkNqkG_jES8AGl7VgaOLlwtuMYCHHMzLKiRlYI1cAOtjuIhmCbxnhRjsbMeC4_awI85TDfLsNQucsLTMG3zMRnX0deI5KTSa91oVw3Mm-p7gYCCRhr99q77xw2eaK_TQPB9RMoUmuHvIJOt0iRXAfF50Jxv8uDyd6HgyRC6oQ_QKv_NFNLS6wERJ1Eh--sA4XEJHy-sQ8d6L5LG8J_8jM7a6ahI0zjYdpbOHpU5fta32Y73IDLw |
-| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/da/bid/imp/41-yRhud-9i9R95OzeyjQlah-mg2z7RcLtn33xnvr7yI6HwgormlUEN_mbpYqgr0FM2PllXk_oEB42aWERVmWaybikrW1GmCZgSNN8-gn5C24o64KqKi_BWleNGCynhh48fwgKwshG7zk8XceNSm4qkuAWqWFk0ru2RuK4HtLmwb0D-K2H1wiy6qeWMpMNg4YfDvJSOSnH3EbaHg591ts_uhpeLgYju0GBWzmksRRhiHztNB4vtqGy1Q233o8-O1psfd6FrtmCH7DQni5L9q3Mz5vQ7fCBRWk9psLLFkS30 |
-| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/da/bid/imp/DhiZj1-N1UeVhTxMGo4EswY9zlnZHVIKbaMyKL7l1vXx3tyrX0zTrmIiwy0eQT_rb72Ii35MRQb5k1tp5bE7RBtT9DKuR1IgiFrMV8eQgSRs5M8j-WDU19ZadmySNO9jCPe_gwxhoEvnUillNhVSN438l-Rt_LHvVm1J82AD2jaF8PcuCmGSl_9S928tzHilLD4qKTJ3xEa8qu6FaGQS2iTT62E75ebPd4mrkuZlpuK9pmEH6o2pmIR0yfLi2mDalGptcqasu24O3o2OOHG2DQ |
-| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/netinsight/v1/imp/1HvGknqKMxec8iBxDiknegfcHyU5G-iWybjdmx9Gyorn2PghQq2pcCNS7g0svOOTw0_iJPuJwGvxOKSdOrs7q9axoN7uxJht5VaD9sFETQGEEHKSd6LK_H550jf2ow9pwNiJgMkySQq8B6L_2sPksx30-WlUTKiiQDyxoP2LjjUR2HFqfiA996kSGiAIPHA-j18ONgaZCv1Qy1PISLtndpHIUTpMUydargXzzbCCUt-o7gUIt9SLXAqM3VHw9ZLQiOUmcX9Tj_6KUhtPorG0KK66CTcHdh2uxgOWd3fT4584k22vn3y-Tm4txrHCHDS00WPJSPeDPh6Zir2Eeqd50udsUG4vdMOcBf8fQHECghS4CelTC81tTM3QL5d5pF9Tn7W19hc4MC6QUOB-lctaR0pPa_jie_m4i_-5wFHg_Cy8TF8xxr7s4VCBLESOCoXGmJx1XSf4CiZ-a0LcKjFM2g/compress?additionalLog=rKMbJ5cjtLVX4c2DEGjpQx4BVs8bk1gpzWiM5_rSByySoIWTayprQrQycCnBW8TRirnk-VeWC2Ms1aQsjBiLBWa-ptxTcCHNlKVHqHtv5IVfSb0X--dvqMLXuCd5z5q8ajv7kbXbeW8xmgE2y2JXZw&redirect= |
-| 0.01 | 60000 | 65335 | 64790.54 | http://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
-| 0.01 | 60000 | 14333 | 14213.56 | http://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
-| 0.08 | 600000 | 279578 | 256279.83 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
-| 0.08 | 600000 | 88337 | 80975.58 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
-| 0.08 | 600000 | 36758 | 33694.83 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
-| 0.08 | 600000 | 11682 | 10708.5 | http://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
-| 0.08 | 600000 | 9108 | 8349 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
-| 0.08 | 600000 | 6159 | 5645.75 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
-| 0.08 | 600000 | 5029 | 4609.92 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
-| 0.08 | 600000 | 4262 | 3906.83 | http://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
-| 0.08 | 600000 | 2597 | 2380.58 | http://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
-| 0.08 | 600000 | 1669 | 1529.92 | http://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
-| 0.08 | 600000 | 781 | 715.92 | http://m.11st.co.kr/MW/js/statistics/pixel.js |
-| 0.12 | 1200000 | 110555 | 97656.92 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
-| 0.12 | 1200000 | 28966 | 25586.63 | https://connect.facebook.net/en_US/fbevents.js |
-| 0.14 | 1800000 | 81531 | 70320.49 | http://c.m.011st.com/MW/css/search/search.min.css |
-| 0.14 | 1800000 | 33764 | 29121.45 | http://c.m.011st.com/MW/css/common/common.min.css |
-| 0.6 | 86400000 | 63714 | 25485.6 | http://c.m.011st.com/MW/img/svg/sprites/sp_common_202338_145939.svg |
-| 0.6 | 86400000 | 52286 | 20914.4 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
-| 0.6 | 86400000 | 51231 | 20492.4 | http://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
-| 0.6 | 86400000 | 41361 | 16544.4 | http://cdn.011st.com/ds/2023/02/23/1376/3d3bf8b30ca28aa484a027b29bfccf06.jpg |
-| 0.6 | 86400000 | 40183 | 16073.2 | https://cdn.011st.com/11dims/resize/320/11src/brand/20220713/5849c3ae-e751-47ab-8341-2594572625c1.jpg |
-| 0.6 | 86400000 | 16221 | 6488.4 | http://c.m.011st.com/MW/img/pui/sprites/sp_icons_2022127_164248.png |
-| 0.6 | 86400000 | 15742 | 6296.8 | http://c.m.011st.com/MW/img/pui/sprites/sp_icons.png?2020812_135733 |
-| 0.6 | 86400000 | 13530 | 5412 | http://c.m.011st.com/MW/img/common/sprites/sp_gnb2_202292_144417.png |
-| 0.6 | 86400000 | 7545 | 3018 | http://c.m.011st.com/MW/img/svg/logo/star.svg |
-| 0.6 | 86400000 | 7122 | 2848.8 | http://c.m.011st.com/MW/img/svg/logo/star_fill.svg |
-| 0.6 | 86400000 | 6771 | 2708.4 | http://c.m.011st.com/MW/img/search/sprites/sp_search_sorting_20211117_143657.png |
-| 0.6 | 86400000 | 5735 | 2294 | http://c.m.011st.com/MW/img/svg/logo/amazon.svg |
-| 0.6 | 86400000 | 3557 | 1422.8 | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2022816_112603.svg |
-| 0.6 | 86400000 | 3557 | 1422.8 | http://c.m.011st.com/MW/img/svg/sprites/sp_search_2023323_155816.svg |
-| 0.6 | 86400000 | 2735 | 1094 | http://c.m.011st.com/MW/img/svg/logo/shooting_delivery.svg |
-| 0.6 | 86400000 | 2553 | 1021.2 | http://c.m.011st.com/MW/img/common/ico_percent.png |
-| 0.6 | 86400000 | 2400 | 960 | https://cdn.011st.com/11dims/resize/160/11src/browsing/space/banner/2022/11/11/2211110938115601546_579.png |
-| 0.6 | 86400000 | 2271 | 908.4 | http://c.m.011st.com/MW/img/product/no_image_100.gif |
-| 0.6 | 86400000 | 1702 | 680.8 | http://c.m.011st.com/MW/img/svg/logo/amazon_icon.svg |
-| 0.6 | 86400000 | 1430 | 572 | http://m.11st.co.kr/MW/img/common/gnb/gnb-logo.png |
-| 0.91 | 2592000000 | 59382 | 5556.7 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/6/5/9/8/6/Jmoqp/5530565986_B.jpg |
-| 0.91 | 2592000000 | 58508 | 5474.91 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/8/7/7/9/3/ydPCw/5564087793_B.jpg |
-| 0.91 | 2592000000 | 54969 | 5143.75 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/3/7/8/8/5/WmlMt/5446537885_B.jpg |
-| 0.91 | 2592000000 | 36888 | 3451.81 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/1/9/3/4/8/fIViP/4262019348_L300.jpg |
+| 0 | 0 | 430505 | 430505 | https://c.m.011st.com/MW/css/fonts/11STREET_Gothic_bold.woff |
+| 0 | 0 | 329828 | 329828 | https://c.m.011st.com/MW/css/fonts/11StreetGothic_Optimizing.woff |
+| 0 | 0 | 327680 | 327680 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0 | 0 | 37334 | 37334 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0 | 0 | 21803 | 21803 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0 | 0 | 231 | 231 | https://idm.skplanet.com/getuid?cb=jsonp_callback_92273 |
+| 0 | 0 | 185 | 185 | https://www.facebook.com/tr/?id=2299486926950990&ev=PageView&dl=https%3A%2F%2Fsearch.11st.co.kr%2FMW%2Fsearch%3FsearchKeyword%3D%25EB%2585%25B8%25ED%258A%25B8%25EB%25B6%2581%23_filterKey%3D1680196256546&rl=&if=false&ts=1680196257917&sw=360&sh=640&v=2.9.100&r=stable&ec=0&o=29&cs_est=true&fbp=fb.2.1680196257916.1020343478&it=1680196257212&coo=false&rqm=GET |
+| 0 | 0 | 178 | 178 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/brand/v1/imp/f5S22n_S3J6zPNoi3QSvrMOzVrD6rMyqKyb1GIIJB6zYmVOfpzrejZTF3leXKDg_golgifeP91gs9P8vX-gR7DvCh0cdueHf1IDhoMtf16ORIj8lBi040Z4fgid9SHfJ3UcRctXMIJxUh9UNoTv2hCMJiUIWFbfwNmv5uGqBy-ngVtF7Resjh-4kAgpSL1nMmpGyQmiFX4TDIwc5zRsiG3EmVeVqITIyhWYvcepLR4zQ-XQ0Y4KpXP5jdBK2A50gQyyBMsBss_9DdwVHnuww-NqBzFoKTutzjN71t66ZTNkQ8L0VHJI8qEIwzE3Zo-zzt34l7hpX_C0ByJVg4TtDGPu-VKqAvb9joDHu2JpRc-QveckyMvmQtfdv_blxhWsVmLY-vR0H_PuaXB9WkqrO_mdEcskI52nZ1bM72g5B3wanEZmuuv8w90CmVnQSKYH8uEPRv8D7exmI7IMSwB_LZkzzzsP_T9OChMWuIkRKWFs6rkbWZSW11sHY-3EoXRoDlWHfQu7v1Zk9KUQZJCxalRGNDq87kz83Kygkr2p2rcbFH0bPOuWQBkzlWgUDO0bg4GCJwV9yn1c32MfeSAFiySx-guJp4N0OVpkdjRaIncCqLfu22AQZXG9s5asLNwF-_u-YNLvtASWCX6Ze9yW_h8KDMJ-38EL9eUpFTTyKjhFAFRXmDN7d2xRXGRnIcudPWRe_L1GZKvrGlWw7jHAr3NEJOTzWFAH84WCMefOLQ2ufZ1T2f03qsYVK8m4Ep1bd16JStBv29m-8u62tYiaQ02fWxDfEm_HVj99hbQd9t0EJPlxml3og93LgIlYkeRb6HUhgvu7GX1L031CFu248vA |
+| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/da/bid/imp/8uGyQoyba11RMFnIm3XffWykOYHwh1pkinKg2ry9_76PA9au8oWJZfxVd_at26lLd3C3gD5JeUHIEMs-FwWsUTlYNC8-wjgZ1-hlv7ENTZhxvMhVl1Q6UcTX720bQ-uL-p_a8F70mJnXQOsNGiVZ6v8-kco41ZwYpqhOLUZ4yBy3z3ZJjxNXBdTd8Thxq8jwW8Q5ZqRiqFe9GqiTsBR9P_Qy_B2WMajVfzC2BW2ewIUFGpgl4zUjoRJpK2vxQyh3W-kLKUVRaUty72DYu8z-mg |
+| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/da/bid/imp/DhiZj1-N1UeVhTxMGo4EsxTzD-vyupxV3tX5ad_3FVZLBKI8-5HjBAPJqFDARUCNCcabePaTlfmTuVl7psB8p9_uhSM7t8cI3U0bh7OYZjtVxb_Su1VcOzjIG3C5ZxfLEJg7-E5wURkevY_LdJ3pk6U5d7YavhQHWsOvBG9IMtoNoznXN4rYuuH8duBXSOC1jIRXAWAE9RZwcW1brmATtHeAQB-Elms8m_hFaNOGhRNiXAxSnNzWIou1HUa8QVedTPRJBZa6e7IpwT-_fmYkNA |
+| 0 | 0 | 0 | 0 | https://action.adoffice.11st.co.kr/netinsight/v1/imp/6_oltDF-O98qC6ZkuOOCY_Rt0JGLWSa4N54cZty0gTb8iO2Fs792_Xzsz_oaGKqYeJPFoYvk-rVG6rEKV1HlqLyM9zFZP_SVLnnT3vd6TsuPZypmBzh3ZZ7kum-U8E49UOJkvJkBVJs3cfGvE_XkBCsi1Z0iXubu6IKV-3UVX2rsEjhegaAXPLgI2lzMQMXBfngtK0vlQY6y6YbOxiYoiLTTBrNgQ84Ua-5aNoDZyw46OCmMPyb21sGCGOY-5klkqWv8aqLciKZRr77YasLFAt7ewMIo0gaU_UcyGaMrBcSNqH3-hkRjIPjzTc9vTrzMtVQMz42CNES6UHDdOfH9iYt7DoTmDKZ3DH2l1weoAS7fWuKneNYIzWNb2Hm7e1F8_lO_R44tf9LTH2EUD9vkhxcojt-ar-TT7PtBlHzvDEfs-rSI6rKlDytYl0c5DGy_jNA4b-KDhHtViJVIXRwjsw/compress?additionalLog=rKMbJ5cjtLVX4c2DEGjpQx4BVs8bk1gpzWiM5_rSByySoIWTayprQrQycCnBW8TRirnk-VeWC2Ms1aQsjBiLBWa-ptxTcCHNlKVHqHtv5IVfSb0X--dvqMLXuCd5z5q8ajv7kbXbeW8xmgE2y2JXZw&redirect= |
+| 0 | 0 | 0 | 0 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0 | 0 | 0 | 0 | https://snsvideo.11st.co.kr/movie/item/www/125/12549910_08_1_C1.mp4 |
+| 0.01 | 60000 | 65239 | 64695.34 | https://c.m.011st.com/MW/js/rake/bundle/0.0.3/rake.bundle.js |
+| 0.01 | 60000 | 14175 | 14056.88 | https://c.m.011st.com/MW/js/rake/shuttle/Log11stClientSentinelShuttle-2.0.6-94.js |
+| 0.08 | 600000 | 279229 | 255959.92 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~app.bundle.js?v=v_ed4e6acd0 |
+| 0.08 | 600000 | 88033 | 80696.92 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Kukkuk~Review.chunk.eb66ed077913bfe4b1c3.js |
+| 0.08 | 600000 | 36500 | 33458.33 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total.chunk.42f5aae0e2fc8657dfb5.js |
+| 0.08 | 600000 | 11453 | 10498.58 | https://search.11st.co.kr/js/searchWebFront/search/public/rakeLog-mobile-search.js |
+| 0.08 | 600000 | 8856 | 8118 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Today~Deal~Compare~ShootingDelivery~Kukkuk~ContentsTab~Review~PhoneShop~Shipping~Present~Amazon~AmazonTab.chunk.c828accb4942d56e7a46.js |
+| 0.08 | 600000 | 5884 | 5393.67 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Deal~Amazon~AmazonTab.chunk.069fe5ec66c986523828.js |
+| 0.08 | 600000 | 4778 | 4379.83 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Review.chunk.de84ebbaba827d21e825.js |
+| 0.08 | 600000 | 3987 | 3654.75 | https://search.11st.co.kr/js/searchWebFront/search/bundle/vendors~Total~Amazon~AmazonTab.chunk.987888612a6aac39ca01.js |
+| 0.08 | 600000 | 2345 | 2149.58 | https://search.11st.co.kr/js/searchWebFront/search/bundle/app.bundle.js?v=v_ed4e6acd0 |
+| 0.08 | 600000 | 1441 | 1320.92 | https://search.11st.co.kr/js/searchWebFront/search/public/browserNotSupported.js |
+| 0.08 | 600000 | 559 | 512.42 | https://m.11st.co.kr/MW/js/statistics/pixel.js |
+| 0.12 | 1200000 | 110556 | 97657.8 | https://connect.facebook.net/signals/config/2299486926950990?v=2.9.100&r=stable |
+| 0.12 | 1200000 | 28963 | 25583.98 | https://connect.facebook.net/en_US/fbevents.js |
+| 0.14 | 1800000 | 81368 | 70179.9 | https://c.m.011st.com/MW/css/search/search.min.css |
+| 0.14 | 1800000 | 33622 | 28998.98 | https://c.m.011st.com/MW/css/common/common.min.css |
+| 0.6 | 86400000 | 63618 | 25447.2 | https://c.m.011st.com/MW/img/svg/sprites/sp_common_202338_145939.svg |
+| 0.6 | 86400000 | 52174 | 20869.6 | https://c.m.011st.com/MW/img/common/sprites/sp_eui_202327_191751.png |
+| 0.6 | 86400000 | 51119 | 20447.6 | https://c.m.011st.com/MW/img/common/sprites/sp_eui_20221013_180137.png |
+| 0.6 | 86400000 | 41237 | 16494.8 | https://cdn.011st.com/ds/2023/02/16/1491/1f551fa766e86bd1ff4313e6a456c133.jpg |
+| 0.6 | 86400000 | 40180 | 16072 | https://cdn.011st.com/11dims/resize/320/11src/brand/20220713/5849c3ae-e751-47ab-8341-2594572625c1.jpg |
+| 0.6 | 86400000 | 16074 | 6429.6 | https://c.m.011st.com/MW/img/pui/sprites/sp_icons_2022127_164248.png |
+| 0.6 | 86400000 | 15584 | 6233.6 | https://c.m.011st.com/MW/img/pui/sprites/sp_icons.png?2020812_135733 |
+| 0.6 | 86400000 | 13371 | 5348.4 | https://c.m.011st.com/MW/img/common/sprites/sp_gnb2_202292_144417.png |
+| 0.6 | 86400000 | 7378 | 2951.2 | https://c.m.011st.com/MW/img/svg/logo/star.svg |
+| 0.6 | 86400000 | 6961 | 2784.4 | https://c.m.011st.com/MW/img/svg/logo/star_fill.svg |
+| 0.6 | 86400000 | 6604 | 2641.6 | https://c.m.011st.com/MW/img/search/sprites/sp_search_sorting_20211117_143657.png |
+| 0.6 | 86400000 | 5568 | 2227.2 | https://c.m.011st.com/MW/img/svg/logo/amazon.svg |
+| 0.6 | 86400000 | 3392 | 1356.8 | https://c.m.011st.com/MW/img/svg/sprites/sp_search_2022816_112603.svg |
+| 0.6 | 86400000 | 3392 | 1356.8 | https://c.m.011st.com/MW/img/svg/sprites/sp_search_2023323_155816.svg |
+| 0.6 | 86400000 | 2569 | 1027.6 | https://c.m.011st.com/MW/img/svg/logo/shooting_delivery.svg |
+| 0.6 | 86400000 | 2398 | 959.2 | https://cdn.011st.com/11dims/resize/160/11src/browsing/space/banner/2022/11/11/2211110938115601546_579.png |
+| 0.6 | 86400000 | 2379 | 951.6 | https://c.m.011st.com/MW/img/common/ico_percent.png |
+| 0.6 | 86400000 | 2107 | 842.8 | https://c.m.011st.com/MW/img/product/no_image_100.gif |
+| 0.6 | 86400000 | 1534 | 613.6 | https://c.m.011st.com/MW/img/svg/logo/amazon_icon.svg |
+| 0.6 | 86400000 | 1269 | 507.6 | https://m.11st.co.kr/MW/img/common/gnb/gnb-logo.png |
+| 0.91 | 2592000000 | 59381 | 5556.6 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/6/5/9/8/6/Jmoqp/5530565986_B.jpg |
+| 0.91 | 2592000000 | 58499 | 5474.07 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/8/7/7/9/3/ydPCw/5564087793_B.jpg |
+| 0.91 | 2592000000 | 54980 | 5144.78 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/3/7/8/8/5/WmlMt/5446537885_B.jpg |
+| 0.91 | 2592000000 | 36914 | 3454.24 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/1/9/3/4/8/fIViP/4262019348_L300.jpg |
 
-### 🔴 Efficiently encode images
+### 🟠 Efficiently encode images
 
 <details><summary>description</summary>
   
@@ -1135,14 +1073,14 @@ Potential savings of 177 KiB
 
 | score | overallSavingsBytes | overallSavingsMs |
 | :---: | :---: | :---: |
-| 45 | 180809 | 1190 |
+| 50 | 180809 | 750 |
 
 | totalBytes | wastedBytes | url |
 | --- | --- | --- |
 | 58890 | 37424 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/6/5/9/8/6/Jmoqp/5530565986_B.jpg |
 | 58007 | 36935 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/8/7/7/9/3/ydPCw/5564087793_B.jpg |
 | 54496 | 34018 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/5/3/7/8/8/5/WmlMt/5446537885_B.jpg |
-| 40784 | 25870 | http://cdn.011st.com/ds/2023/02/23/1376/3d3bf8b30ca28aa484a027b29bfccf06.jpg |
+| 40784 | 25870 | https://cdn.011st.com/ds/2023/02/16/1491/1f551fa766e86bd1ff4313e6a456c133.jpg |
 | 39718 | 24051 | https://cdn.011st.com/11dims/resize/320/11src/brand/20220713/5849c3ae-e751-47ab-8341-2594572625c1.jpg |
 | 36439 | 22511 | https://cdn.011st.com/11dims/resize/248/11src/pd/v2/0/1/9/3/4/8/fIViP/4262019348_L300.jpg |
 
@@ -1192,4 +1130,4 @@ Potential savings of 51 KiB
 
 | score | overallSavingsBytes | overallSavingsMs |
 | :---: | :---: | :---: |
-| 64 | 52509 | 500 |
+| 75 | 52509 | 300 |
