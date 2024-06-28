@@ -2,19 +2,19 @@
 
 | Accessibility | Best Practices | Performance | PWA | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-| 🟠 63 | 🟢 100 | 🟠 76 | 🟠 50 | 🟠 89 |
+| 🟠 63 | 🟢 100 | 🟠 79 | 🟠 50 | 🟠 89 |
 
 | Category | Score |
 | --- | --- |
 | **Basic Metrics** | |
 | JavaScript execution time | 0.0 s |
-| First Contentful Paint | 3.4 s |
+| First Contentful Paint | 3.2 s |
 | Largest Contentful Paint | 3.8 s |
-| Speed Index | 6.1 s |
+| Speed Index | 4.7 s |
 | Cumulative Layout Shift | 0 |
-| First Meaningful Paint | 3.4 s |
-| Time to Interactive | 3.4 s |
-| Initial server response time was short | Root document took 260 ms |
+| First Meaningful Paint | 3.2 s |
+| Time to Interactive | 3.2 s |
+| Initial server response time was short | Root document took 220 ms |
 | Total Blocking Time | 0 ms |
 | apple touch icon | ❌ |
 | **Aria** | |
@@ -142,12 +142,12 @@
 - Unit
   - millisecond
 - wastedMs
-  - 7.28
+  - 7.88
 
 | URL | Total CPU Time | Script Evaluation | Script Parse |
 | --- | --- | --- | --- |
-| https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406270117 | 91.87 | 3.79 | 0.43 |
-| Unattributable | 75.34 | 3.07 | 0 |
+| https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406290116 | 93 | 4.14 | 0.49 |
+| Unattributable | 77.37 | 3.25 | 0 |
 
 ### Avoid chaining critical requests
 
@@ -160,7 +160,7 @@
 2 chains found
 |  | duration | length | transferSize |
 | :---: | :---: | :---: | :---: |
-| longestChain | 2912.77 | 3 | 1710 |
+| longestChain | 1956.43 | 3 | 1709 |
 
 ### Ensure CSP is effective against XSS attacks
 
@@ -196,7 +196,7 @@
 
 | mainDocumentTransferSize | maxRtt | maxServerLatency | numFonts | numRequests | numScripts | numStylesheets | numTasks | numTasksOver10ms | numTasksOver25ms | numTasksOver50ms | numTasksOver100ms | numTasksOver500ms | rtt | throughput | totalByteWeight | totalTaskTime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1322 | 184.04 | 40.82 | 0 | 6 | 1 | 1 | 149 | 1 | 0 | 0 | 0 | 0 | 5.77 | 69669509.38 | 173788 | 45.39 |
+| 1322 | 180.2 | 42.24 | 0 | 6 | 1 | 1 | 156 | 1 | 0 | 0 | 0 | 0 | 22.89 | 20761896.22 | 173787 | 47.39 |
 
 ### 🟢 Avoids an excessive DOM size
 
@@ -219,7 +219,7 @@
   The last screenshot captured of the pageload.
   
   </details>
-timing: 3564
+timing: 2616
 
 <details><summary>image</summary>
   
@@ -235,11 +235,11 @@ timing: 3564
   
   </details>
 
-3.4 s
+3.2 s
 
 | Score | FCP |
 | :---: | :---: |
-| 38 | 3362.86 |
+| 42 | 3247.44 |
 
 ### 🟠 First Meaningful Paint
 
@@ -249,11 +249,11 @@ timing: 3564
   
   </details>
 
-3.4 s
+3.2 s
 
 | Score | FMP |
 | :---: | :---: |
-| 66 | 3362.86 |
+| 69 | 3247.44 |
 
 ### 🟢 All text remains visible during webfont loads
 
@@ -302,11 +302,11 @@ timing: 3564
   
   </details>
 
-3.4 s
+3.2 s
 
 | Score | FCP |
 | :---: | :---: |
-| 93 | 3362.86 |
+| 94 | 3247.44 |
 
 ### 🟢 Uses HTTPS
 
@@ -333,7 +333,7 @@ timing: 3564
 
 | Score | LCP |
 | :---: | :---: |
-| 55.00000000000001 | 3802.69 |
+| 56.00000000000001 | 3758.47 |
 
 ### Largest Contentful Paint element
 
@@ -418,13 +418,13 @@ timing: 3564
 
 | Category | Time Spent |
 | :---: | :---: |
-| Other | 82.6 |
-| Style & Layout | 69.59 |
-| Script Evaluation | 12.74 |
-| Parse HTML & CSS | 8.6 |
-| Rendering | 7.2 |
-| Script Parsing & Compilation | 0.83 |
-| Total Time Spent | 181.57 |
+| Other | 86.66 |
+| Style & Layout | 67.66 |
+| Script Evaluation | 17.19 |
+| Parse HTML & CSS | 10.81 |
+| Rendering | 6.34 |
+| Script Parsing & Compilation | 0.92 |
+| Total Time Spent | 189.57 |
 
 ### 🟢 Max Potential First Input Delay
 
@@ -450,47 +450,47 @@ timing: 3564
 
 | Metrics | Value |
 | --- | --- |
-| firstContentfulPaint | 3363 |
-| firstMeaningfulPaint | 3363 |
-| largestContentfulPaint | 3803 |
-| interactive | 3363 |
-| speedIndex | 6125 |
+| firstContentfulPaint | 3247 |
+| firstMeaningfulPaint | 3247 |
+| largestContentfulPaint | 3758 |
+| interactive | 3247 |
+| speedIndex | 4724 |
 | totalBlockingTime | 0 |
 | maxPotentialFID | 16 |
 | cumulativeLayoutShift | 0 |
 | cumulativeLayoutShiftMainFrame | 0 |
 | totalCumulativeLayoutShift | 0 |
 | observedTimeOrigin | 0 |
-| observedTimeOriginTs | 131131015 |
+| observedTimeOriginTs | 83413725 |
 | observedNavigationStart | 0 |
-| observedNavigationStartTs | 131131015 |
-| observedFirstPaint | 2951 |
-| observedFirstPaintTs | 134082222 |
-| observedFirstContentfulPaint | 2951 |
-| observedFirstContentfulPaintTs | 134082222 |
-| observedFirstContentfulPaintAllFrames | 2951 |
-| observedFirstContentfulPaintAllFramesTs | 134082222 |
-| observedFirstMeaningfulPaint | 2951 |
-| observedFirstMeaningfulPaintTs | 134082222 |
-| observedLargestContentfulPaint | 2999 |
-| observedLargestContentfulPaintTs | 134130497 |
-| observedLargestContentfulPaintAllFrames | 2999 |
-| observedLargestContentfulPaintAllFramesTs | 134130497 |
-| observedTraceEnd | 5279 |
-| observedTraceEndTs | 136409733 |
-| observedLoad | 2968 |
-| observedLoadTs | 134099164 |
-| observedDomContentLoaded | 2938 |
-| observedDomContentLoadedTs | 134069068 |
+| observedNavigationStartTs | 83413725 |
+| observedFirstPaint | 1988 |
+| observedFirstPaintTs | 85401716 |
+| observedFirstContentfulPaint | 1988 |
+| observedFirstContentfulPaintTs | 85401716 |
+| observedFirstContentfulPaintAllFrames | 1988 |
+| observedFirstContentfulPaintAllFramesTs | 85401716 |
+| observedFirstMeaningfulPaint | 1988 |
+| observedFirstMeaningfulPaintTs | 85401716 |
+| observedLargestContentfulPaint | 2078 |
+| observedLargestContentfulPaintTs | 85491702 |
+| observedLargestContentfulPaintAllFrames | 2078 |
+| observedLargestContentfulPaintAllFramesTs | 85491702 |
+| observedTraceEnd | 4381 |
+| observedTraceEndTs | 87794326 |
+| observedLoad | 2071 |
+| observedLoadTs | 85484430 |
+| observedDomContentLoaded | 1981 |
+| observedDomContentLoadedTs | 85394830 |
 | observedCumulativeLayoutShift | 0 |
 | observedCumulativeLayoutShiftMainFrame | 0 |
 | observedTotalCumulativeLayoutShift | 0 |
-| observedFirstVisualChange | 2963 |
-| observedFirstVisualChangeTs | 134094015 |
-| observedLastVisualChange | 3013 |
-| observedLastVisualChangeTs | 134144015 |
-| observedSpeedIndex | 2992 |
-| observedSpeedIndexTs | 134123135 |
+| observedFirstVisualChange | 1999 |
+| observedFirstVisualChangeTs | 85412725 |
+| observedLastVisualChange | 2082 |
+| observedLastVisualChangeTs | 85495725 |
+| observedSpeedIndex | 2045 |
+| observedSpeedIndexTs | 85459082 |
 
 ### 🟠 Serve images in next-gen formats
 
@@ -504,7 +504,7 @@ Potential savings of 132 KiB
 
 | score | overall Savings Bytes | overall Savings Ms |
 | :---: | :---: | :---: |
-| 84 | 134723.55 | 190 |
+| 77 | 134723.55 | 280 |
 
 | total Bytes | wasted Bytes | wasted Webp Bytes | url |
 | :---: | :---: | :---: | :---: |
@@ -524,9 +524,9 @@ Potential savings of 132 KiB
 
 | URL | Time Spent |
 | --- | --- |
-| https://img.pay.naver.net | 184.041 |
-| https://m.shopping.naver.com | 182.44599999999997 |
-| https://ssl.pstatic.net | 5.765999999999963 |
+| https://m.shopping.naver.com | 180.20399999999998 |
+| https://img.pay.naver.net | 177.45999999999998 |
+| https://ssl.pstatic.net | 22.894000000000002 |
 
 ### Server Backend Latencies
 
@@ -542,9 +542,9 @@ Potential savings of 132 KiB
 
 | URL | Time Spent |
 | --- | --- |
-| https://m.shopping.naver.com | 40.82 |
-| https://ssl.pstatic.net | 6.83 |
-| https://img.pay.naver.net | 0.34 |
+| https://ssl.pstatic.net | 42.24 |
+| https://m.shopping.naver.com | 19.29 |
+| https://img.pay.naver.net | 0.28 |
 
 ### 🟢 Defer offscreen images
 
@@ -589,15 +589,15 @@ Potential savings of 132 KiB
   
   </details>
 
-Potential savings of 1,240 ms
+Potential savings of 1,170 ms
 
 | score | overallSavingsMs |
 | :---: | :---: |
-| 44 | 1242 |
+| 45 | 1173 |
 
 | wastedMs | totalBytes | url |
 | :---: | :---: | :---: |
-| 1285 | 1710 | https://img.pay.naver.net/static/css/customer/naver_error.css |
+| 1214 | 1709 | https://img.pay.naver.net/static/css/customer/naver_error.css |
 
 ### Keep request counts low and transfer sizes small
 
@@ -611,9 +611,9 @@ Potential savings of 1,240 ms
 
 | Resource Type | Requests | Transfer Size |
 | :---: | :---: | :---: |
-| Total | 6 | 173788 |
+| Total | 6 | 173787 |
 | Image | 2 | 168908 |
-| Stylesheet | 1 | 1710 |
+| Stylesheet | 1 | 1709 |
 | Script | 1 | 1659 |
 | Document | 1 | 1322 |
 | Other | 1 | 189 |
@@ -643,17 +643,17 @@ Potential savings of 1,240 ms
   
   </details>
 
-Root document took 260 ms
+Root document took 220 ms
 
 | score | overallSavingsMs |
 | :---: | :---: |
-| 100 | 157.99 |
+| 100 | 122.9 |
 
 | responseTime | url |
 | --- | --- |
-| 257.99 | https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406270117 |
+| 222.9 | https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406290116 |
 
-### 🔴 Speed Index
+### 🟠 Speed Index
 
 <details><summary>description</summary>
   
@@ -661,11 +661,11 @@ Root document took 260 ms
   
   </details>
 
-6.1 s
+4.7 s
 
 | score | Speed Index |
 | :---: | :---: |
-| 44 | 6124.83 |
+| 68 | 4724.34 |
 
 ### 🔴 Minimize third-party usage
 
@@ -710,15 +710,15 @@ Total size was 170 KiB
 
 | score | Total Byte Weight |
 | :---: | :---: |
-| 100 | 173788 |
+| 100 | 173787 |
 
 | Transfer Size | URL |
 | --- | --- |
-| 165633 | https://ssl.pstatic.net/static/grafolio/naver/500/02.png |
-| 3275 | https://img.pay.naver.net/static/images/customer/naver_logo.png |
-| 1710 | https://img.pay.naver.net/static/css/customer/naver_error.css |
+| 165632 | https://ssl.pstatic.net/static/grafolio/naver/500/02.png |
+| 3276 | https://img.pay.naver.net/static/images/customer/naver_logo.png |
+| 1709 | https://img.pay.naver.net/static/css/customer/naver_error.css |
 | 1659 | https://ssl.pstatic.net/static/fe/grafolio.js |
-| 1322 | https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406270117 |
+| 1322 | https://ssl.pstatic.net/imgshopping/cnsv/m/html/internalerror.html?timestamp=202406290116 |
 | 189 | https://m.shopping.naver.com/home/m/index.naver |
 
 ### 🟢 Minify CSS
@@ -817,7 +817,7 @@ Total size was 170 KiB
 | protocol | url |
 | --- | --- |
 
-### 🟢 Uses efficient cache policy on static assets
+### 🟠 Serve static assets with an efficient cache policy
 
 <details><summary>description</summary>
   
@@ -829,14 +829,14 @@ Total size was 170 KiB
 
 | score | wastedBytes |
 | :---: | :---: |
-| 94 | 20562.08 |
+| 88 | 32051.22 |
 
 | cacheHitProbability | cacheLifetimeMs | totalBytes | wastedBytes | url |
 | --- | --- | --- | --- | --- |
-| 0.84 | 407069000 | 1659 | 260.82 | https://ssl.pstatic.net/static/fe/grafolio.js |
-| 0.88 | 536539000 | 165633 | 19834.79 | https://ssl.pstatic.net/static/grafolio/naver/500/02.png |
-| 0.91 | 2592000000 | 3275 | 306.46 | https://img.pay.naver.net/static/images/customer/naver_logo.png |
-| 0.91 | 2592000000 | 1710 | 160.01 | https://img.pay.naver.net/static/css/customer/naver_error.css |
+| 0.65 | 128828000 | 1659 | 582.13 | https://ssl.pstatic.net/static/fe/grafolio.js |
+| 0.81 | 303514000 | 165632 | 31002.61 | https://ssl.pstatic.net/static/grafolio/naver/500/02.png |
+| 0.91 | 2592000000 | 3276 | 306.55 | https://img.pay.naver.net/static/images/customer/naver_logo.png |
+| 0.91 | 2592000000 | 1709 | 159.92 | https://img.pay.naver.net/static/css/customer/naver_error.css |
 
 ### 🟢 Efficiently encode images
 
